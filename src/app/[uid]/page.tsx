@@ -27,12 +27,19 @@ export async function generateMetadata({
   const client = createClient();
   const page = await client.getByUID("page", uid).catch(() => notFound());
 
+// SEO Fields
+const seoTitle: string | undefined = (page.data as any).seo_title ?? undefined;
+const seoDescriptionRichText: any = (page.data as any).seo_description
+const seoDescription: string | undefined = seoDescriptionRichText ? (asText(seoDescriptionRichText) ?? undefined): undefined;
+const seoImageUrl: string | undefined = (page.data as any).og_image?.url ?? undefined;
+
   return {
-    title: asText(page.data.title),
-    description: page.data.meta_description,
+    title: seoTitle,
+    description: seoDescription,
     openGraph: {
-      title: page.data.meta_title ?? undefined,
-      images: [{ url: page.data.meta_image.url ?? "" }],
+      title: seoTitle,
+      description: seoDescription,
+      images: seoImageUrl ? [{url: seoImageUrl}] : undefined,
     },
   };
 }

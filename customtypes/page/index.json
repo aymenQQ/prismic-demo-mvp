@@ -79,6 +79,32 @@
           "placeholder": ""
         }
       }
+    },
+    "SEO": {
+      "seo_title": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Title",
+          "placeholder": ""
+        }
+      },
+      "seo_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "SEO Description",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "multi": "paragraph"
+        }
+      },
+      "og_image": {
+        "type": "Image",
+        "config": {
+          "label": "OG Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
     }
   }
 }

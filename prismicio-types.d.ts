@@ -159,7 +159,38 @@ interface PageDocumentData {
    * - **Tab**: Styles
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
-  overlay_opacity: prismic.NumberField;
+  overlay_opacity: prismic.NumberField /**
+   * SEO Title field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.seo_title
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */;
+  seo_title: prismic.KeyTextField;
+
+  /**
+   * SEO Description field in *Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.seo_description
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  seo_description: prismic.RichTextField;
+
+  /**
+   * OG Image field in *Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.og_image
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  og_image: prismic.ImageField<never>;
 }
 
 /**
