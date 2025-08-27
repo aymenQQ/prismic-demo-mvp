@@ -1,0 +1,84 @@
+{
+  "format": "custom",
+  "id": "page",
+  "label": "Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "internal_title": {
+        "type": "Text",
+        "config": {
+          "label": "Internal Title",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "cta": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "Styles": {
+      "header_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Header Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "brand_color": {
+        "type": "Color",
+        "config": {
+          "label": "Brand Color",
+          "placeholder": ""
+        }
+      },
+      "secondary_color": {
+        "type": "Color",
+        "config": {
+          "label": "Secondary Color",
+          "placeholder": ""
+        }
+      },
+      "text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Text Color",
+          "placeholder": ""
+        }
+      },
+      "button_radius": {
+        "type": "Number",
+        "config": {
+          "label": "Button Radius (px)",
+          "placeholder": ""
+        }
+      },
+      "overlay_opacity": {
+        "type": "Number",
+        "config": {
+          "label": "Background Overlay Opacity",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
