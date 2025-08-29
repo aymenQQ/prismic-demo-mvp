@@ -1,11 +1,14 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-
-import { asText, filter } from "@prismicio/client";
+import { filter } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
-
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { Navbar } from "@/components/navbar";
+
+import { buildPageCssVars } from "@/lib/styles";
+import { parseNavLinks, parseNavButtons } from "@/lib/navbarContent";
+import { extractSeo } from "@/lib/seo";
 
 type Params = { uid: string };
 
@@ -13,9 +16,23 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const { uid } = await params;
   const client = createClient();
   const page = await client.getByUID("page", uid).catch(() => notFound());
+  const data = page.data as any;
 
-  // <SliceZone> renders the page's slices.
-  return <SliceZone slices={page.data.slices} components={components} />;
+  const pageCssVars = buildPageCssVars(data);
+  const navLinks = parseNavLinks(data);
+  const navButtons = parseNavButtons(data);
+
+  return (
+    <main style={pageCssVars}>
+      <Navbar
+        logoUrl={data.logo?.url}
+        siteName={data.website_name ?? page.uid}
+        navLinks={navLinks}
+        navButtons={navButtons}
+      />
+      <SliceZone slices={data.slices} components={components} />
+    </main>
+  );
 }
 
 export async function generateMetadata({
@@ -26,31 +43,23 @@ export async function generateMetadata({
   const { uid } = await params;
   const client = createClient();
   const page = await client.getByUID("page", uid).catch(() => notFound());
-
-// SEO Fields
-const seoTitle: string | undefined = (page.data as any).seo_title ?? undefined;
-const seoDescriptionRichText: any = (page.data as any).seo_description
-const seoDescription: string | undefined = seoDescriptionRichText ? (asText(seoDescriptionRichText) ?? undefined): undefined;
-const seoImageUrl: string | undefined = (page.data as any).og_image?.url ?? undefined;
+  const { title, description, ogUrl } = extractSeo(page.data as any);
 
   return {
-    title: seoTitle,
-    description: seoDescription,
+    title,
+    description,
     openGraph: {
-      title: seoTitle,
-      description: seoDescription,
-      images: seoImageUrl ? [{url: seoImageUrl}] : undefined,
+      title,
+      description,
+      images: ogUrl ? [{ url: ogUrl }] : undefined,
     },
   };
 }
 
 export async function generateStaticParams() {
   const client = createClient();
-
-  // Get all pages from Prismic, except the homepage.
   const pages = await client.getAllByType("page", {
     filters: [filter.not("my.page.uid", "home")],
   });
-
   return pages.map((page) => ({ uid: page.uid }));
 }

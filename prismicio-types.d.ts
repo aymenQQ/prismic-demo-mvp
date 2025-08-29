@@ -72,19 +72,61 @@ type ContentRelationshipFieldWithData<
 type PageDocumentDataSlicesSlice = CtaSlice | HeroSlice;
 
 /**
+ * Item in *Page → (Navbar) Links*
+ */
+export interface PageDocumentDataNavbarLinksItem {
+  /**
+   * Text Links field in *Page → (Navbar) Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_links[].text_links
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  text_links: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Item in *Page → (Navbar) Buttons*
+ */
+export interface PageDocumentDataNavbarButtonsItem {
+  /**
+   * Buttons field in *Page → (Navbar) Buttons*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_buttons[].buttons
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  buttons: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
  * Content for Page documents
  */
 interface PageDocumentData {
   /**
-   * Internal Title field in *Page*
+   * Website Name field in *Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: page.internal_title
+   * - **API ID Path**: page.website_name
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  internal_title: prismic.KeyTextField;
+  website_name: prismic.KeyTextField;
 
   /**
    * Slice Zone field in *Page*
@@ -96,15 +138,26 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/slices
    */
   slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
-   * Header Logo field in *Page*
+   * Logo field in *Page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: page.header_logo
-   * - **Tab**: Styles
+   * - **API ID Path**: page.logo
+   * - **Tab**: Global Styles
    * - **Documentation**: https://prismic.io/docs/fields/image
    */;
-  header_logo: prismic.ImageField<never>;
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Background Color field in *Page*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.background_color
+   * - **Tab**: Global Styles
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  background_color: prismic.ColorField;
 
   /**
    * Brand Color field in *Page*
@@ -112,21 +165,10 @@ interface PageDocumentData {
    * - **Field Type**: Color
    * - **Placeholder**: *None*
    * - **API ID Path**: page.brand_color
-   * - **Tab**: Styles
+   * - **Tab**: Global Styles
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   brand_color: prismic.ColorField;
-
-  /**
-   * Secondary Color field in *Page*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.secondary_color
-   * - **Tab**: Styles
-   * - **Documentation**: https://prismic.io/docs/fields/color
-   */
-  secondary_color: prismic.ColorField;
 
   /**
    * Text Color field in *Page*
@@ -134,32 +176,69 @@ interface PageDocumentData {
    * - **Field Type**: Color
    * - **Placeholder**: *None*
    * - **API ID Path**: page.text_color
-   * - **Tab**: Styles
+   * - **Tab**: Global Styles
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   text_color: prismic.ColorField;
 
   /**
-   * Button Radius (px) field in *Page*
+   * Text Heading Font field in *Page*
    *
-   * - **Field Type**: Number
+   * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: page.button_radius
-   * - **Tab**: Styles
-   * - **Documentation**: https://prismic.io/docs/fields/number
+   * - **API ID Path**: page.text_heading_font
+   * - **Tab**: Global Styles
+   * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  button_radius: prismic.NumberField;
+  text_heading_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto Mono"
+  >;
 
   /**
-   * Background Overlay Opacity field in *Page*
+   * Text Body Fonts field in *Page*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.text_body_fonts
+   * - **Tab**: Global Styles
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  text_body_fonts: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto Mono"
+  >;
+
+  /**
+   * Text Heading Size (px) field in *Page*
    *
    * - **Field Type**: Number
    * - **Placeholder**: *None*
-   * - **API ID Path**: page.overlay_opacity
-   * - **Tab**: Styles
+   * - **API ID Path**: page.text_heading_size
+   * - **Tab**: Global Styles
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
-  overlay_opacity: prismic.NumberField /**
+  text_heading_size: prismic.NumberField;
+
+  /**
+   * Text Body Size (px) field in *Page*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.text_body_size
+   * - **Tab**: Global Styles
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  text_body_size: prismic.NumberField;
+
+  /**
+   * Button Corner Radius (px) field in *Page*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.button_corner_radius
+   * - **Tab**: Global Styles
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  button_corner_radius: prismic.NumberField /**
    * SEO Title field in *Page*
    *
    * - **Field Type**: Text
@@ -190,7 +269,117 @@ interface PageDocumentData {
    * - **Tab**: SEO
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  og_image: prismic.ImageField<never>;
+  og_image: prismic.ImageField<never> /**
+   * (Navbar) Links field in *Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_links[]
+   * - **Tab**: Navbar Content
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */;
+  navbar_links: prismic.GroupField<Simplify<PageDocumentDataNavbarLinksItem>>;
+
+  /**
+   * (Navbar) Buttons field in *Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_buttons[]
+   * - **Tab**: Navbar Content
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  navbar_buttons: prismic.GroupField<
+    Simplify<PageDocumentDataNavbarButtonsItem>
+  > /**
+   * (Navbar) Logo Height (px) field in *Page*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_logo_height
+   * - **Tab**: Navbar Styles
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */;
+  navbar_logo_height: prismic.NumberField;
+
+  /**
+   * (Navbar) Background Color field in *Page*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_background_color
+   * - **Tab**: Navbar Styles
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  navbar_background_color: prismic.ColorField;
+
+  /**
+   * (Navbar) Button Color field in *Page*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_button_color
+   * - **Tab**: Navbar Styles
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  navbar_button_color: prismic.ColorField;
+
+  /**
+   * (Navbar) Button Text Color field in *Page*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_button_text_color
+   * - **Tab**: Navbar Styles
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  navbar_button_text_color: prismic.ColorField;
+
+  /**
+   * (Navbar) Text Color field in *Page*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_text_color
+   * - **Tab**: Navbar Styles
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  navbar_text_color: prismic.ColorField;
+
+  /**
+   * (Navbar) Text Size field in *Page*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_text_size
+   * - **Tab**: Navbar Styles
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  navbar_text_size: prismic.NumberField;
+
+  /**
+   * (Navbar) Text Font field in *Page*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_text_font
+   * - **Tab**: Navbar Styles
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  navbar_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto Mono"
+  >;
+
+  /**
+   * (Navbar) Button Corner Radius (px) field in *Page*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_button_corner_radius
+   * - **Tab**: Navbar Styles
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  navbar_button_corner_radius: prismic.NumberField;
 }
 
 /**
@@ -232,16 +421,6 @@ export interface CtaSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Button Label field in *Cta → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: cta.default.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  button_label: prismic.KeyTextField;
-
-  /**
    * Button Link field in *Cta → Default → Primary*
    *
    * - **Field Type**: Link
@@ -256,6 +435,16 @@ export interface CtaSliceDefaultPrimary {
     prismic.FieldState,
     never
   >;
+
+  /**
+   * Side Image field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.side_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  side_image: prismic.ImageField<never>;
 }
 
 /**
@@ -294,16 +483,6 @@ export interface CtaSliceWithBackgroundImagePrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   description: prismic.RichTextField;
-
-  /**
-   * Button Label field in *Cta → With Background Image → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: cta.withBackgroundImage.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  button_label: prismic.KeyTextField;
 
   /**
    * Button Link field in *Cta → With Background Image → Primary*
@@ -384,16 +563,6 @@ export interface HeroSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Button Label field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  button_label: prismic.KeyTextField;
-
-  /**
    * Button Link field in *Hero → Default → Primary*
    *
    * - **Field Type**: Link
@@ -408,6 +577,16 @@ export interface HeroSliceDefaultPrimary {
     prismic.FieldState,
     never
   >;
+
+  /**
+   * Side Image field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.side_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  side_image: prismic.ImageField<never>;
 }
 
 /**
@@ -446,16 +625,6 @@ export interface HeroSliceWithBackgroundImagePrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   description: prismic.RichTextField;
-
-  /**
-   * Button Label field in *Hero → With Background Image → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.withBackgroundImage.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  button_label: prismic.KeyTextField;
 
   /**
    * Button Link field in *Hero → With Background Image → Primary*
@@ -535,6 +704,8 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PageDocumentDataNavbarLinksItem,
+      PageDocumentDataNavbarButtonsItem,
       AllDocumentTypes,
       CtaSlice,
       CtaSliceDefaultPrimary,

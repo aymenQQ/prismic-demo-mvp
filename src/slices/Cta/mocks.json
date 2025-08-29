@@ -19,11 +19,6 @@
 					}
 				]
 			},
-			"button_label": {
-				"__TYPE__": "FieldContent",
-				"value": "real",
-				"type": "Text"
-			},
 			"button_link": {
 				"key": "59c5915d-d008-4d10-a754-e1fa15e0ce5b",
 				"__TYPE__": "LinkContent",
@@ -32,6 +27,29 @@
 					"url": "https://slicemachine.dev",
 					"text": "fence"
 				}
+			},
+			"side_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+					"width": 4380,
+					"height": 2895
+				},
+				"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+				"width": 4380,
+				"height": 2895,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "century",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
 			}
 		},
 		"items": []
@@ -56,11 +74,6 @@
 					}
 				]
 			},
-			"button_label": {
-				"__TYPE__": "FieldContent",
-				"value": "figure",
-				"type": "Text"
-			},
 			"button_link": {
 				"key": "f6f98a12-1f67-4019-bda9-114f7544bea6",
 				"__TYPE__": "LinkContent",
@@ -71,7 +84,6 @@
 				}
 			},
 			"background_image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
@@ -90,6 +102,8 @@
 					"background": "transparent"
 				},
 				"alt": "verb",
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
