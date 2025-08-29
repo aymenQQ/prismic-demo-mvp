@@ -19,11 +19,6 @@
 					}
 				]
 			},
-			"button_label": {
-				"__TYPE__": "FieldContent",
-				"value": "actual",
-				"type": "Text"
-			},
 			"button_link": {
 				"key": "db364a62-da81-4372-9392-6aea1907c799",
 				"__TYPE__": "LinkContent",
@@ -32,6 +27,29 @@
 					"url": "http://google.com",
 					"text": "original"
 				}
+			},
+			"side_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+					"width": 3560,
+					"height": 5340
+				},
+				"url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+				"width": 3560,
+				"height": 5340,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "zipper",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
 			}
 		},
 		"items": []
@@ -87,11 +105,6 @@
 					"url": "https://prismic.io",
 					"text": "pig"
 				}
-			},
-			"button_label": {
-				"__TYPE__": "FieldContent",
-				"value": "system",
-				"type": "Text"
 			}
 		},
 		"items": [

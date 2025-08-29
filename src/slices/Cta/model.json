@@ -28,13 +28,6 @@
             "multi": "paragraph"
           }
         },
-        "button_label": {
-          "type": "Text",
-          "config": {
-            "label": "Button Label",
-            "placeholder": ""
-          }
-        },
         "button_link": {
           "type": "Link",
           "config": {
@@ -44,6 +37,14 @@
             "allowTargetBlank": false,
             "allowText": true,
             "repeat": false
+          }
+        },
+        "side_image": {
+          "type": "Image",
+          "config": {
+            "label": "Side Image",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },
@@ -71,13 +72,6 @@
             "placeholder": "",
             "allowTargetBlank": false,
             "multi": "paragraph"
-          }
-        },
-        "button_label": {
-          "type": "Text",
-          "config": {
-            "label": "Button Label",
-            "placeholder": ""
           }
         },
         "button_link": {
