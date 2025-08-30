@@ -1,52 +1,176 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import type { CSSProperties } from "react";
+import { buildHeroCssVars } from "@/lib/styles";
+import { parseHeroContent } from "@/lib/heroContent";
 
-/**
- * Props for `Hero`.
- */
-export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
-/**
- * Component for "Hero" Slices.
- */
-const Hero: FC<HeroProps> = ({ slice }) => {
+export default function Hero({ slice }: { slice: any }) {
+  
+  const heroCssVars: CSSProperties = buildHeroCssVars(slice);
+  const heroContent = parseHeroContent(slice);
+
+  const headerStyle: CSSProperties = {
+    ...heroCssVars,
+    background: "var(--hero-background-color, transparent)",
+    padding: "60px 5%",
+  };
+  const headerStyleWithBg: CSSProperties = {
+    ...heroCssVars,
+    background: "var(--hero-background-color, transparent)",
+    padding: "60px 5%",
+    position: "relative",
+    overflow: "hidden",
+    minHeight: "var(--hero-height)",
+  };
+
+
+  const headingTextStyle: CSSProperties = {
+    color: "var(--hero-heading-text-color, var(--text-color))",
+    fontFamily: "var(--hero-heading-text-font, var(--text-heading-font))",
+    fontSize: "var(--hero-heading-text-size, var(--text-heading-size))",
+    lineHeight: 1.15,
+    margin: 0,
+  };
+  const bodyTextStyle: CSSProperties = {
+    color: "var(--hero-body-text-color, var(--text-color))",
+    fontFamily: "var(--hero-body-text-font, var(--text-body-font))",
+    fontSize: "var(--hero-body-text-size, var(--text-body-size))",
+    lineHeight: 1.5,
+    marginTop: 12,
+    marginBottom: 20,
+    maxWidth: 700,
+  };
+
+  const buttonsWrapStyle: CSSProperties = { 
+    display: "flex", 
+    gap: 10, 
+    flexWrap: "wrap",
+     };
+  const buttonStyle: CSSProperties = {
+    display: "inline-block",
+    padding: "8px 14px",
+    borderRadius: "var(--hero-button-corner-radius, var(--button-corner-radius))",
+    background: "var(--hero-button-color, var(--brand-color))",
+    color: "var(--hero-button-text-color, var(--text-color))",
+    fontSize: "var(--hero-button-text-size, var(--text-body-size))",
+    fontFamily: "var(--hero-button-text-font, var(--text-body-font))",
+    textDecoration: "none",
+    fontWeight: 600,
+    lineHeight: 1.2,
+  };
+
+  
+
+  const imageStyle: CSSProperties = {
+    display: "block",
+    width: "100%",
+    height: "auto",
+    maxHeight: "var(--hero-height)",
+    objectFit: "contain",
+    borderRadius: 0,
+  };
+  const imageStyleBackground: CSSProperties = {
+    position: "absolute",
+    inset: 0,
+    margin: "auto",
+    transform: "scale(calc(var(--hero-background-image-scale, 1) * 1))", // ancre au centre
+    width: "100%",   // 1 = 100% ; 0.8 = 80%, etc.
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "center",
+    pointerEvents: "none",
+    zIndex: 0,
+    borderRadius: "var(--hero-background-image-corner-radius, 0px)",
+  };
+  
+  const contentCardStyle: CSSProperties = {
+    display: "block",
+    flexDirection: "column",
+    gap: "16px",
+    padding: "70px 210px 70px 70px",
+    background: "var(--hero-card-color, transparent)",
+    width: "fit-content",
+    maxWidth: "min(100%, 80ch)",
+    borderRadius: "var(--hero-card-corner-radius, 0px)",
+  };
+
+  
+
+
+  const gridWrap: CSSProperties = {
+    display: "grid",
+    alignItems: "center",
+    gap: 24,
+    minHeight: "var(--hero-height)",
+  };
+  const gridStyle: CSSProperties = {
+    ...gridWrap,
+    gridTemplateColumns: "1fr 1fr",
+  };
+  const gridLeftStyle: CSSProperties = {};
+  const gridRightStyle: CSSProperties = { 
+    justifySelf: "end" 
+  };
+  const gridStyleSingle: CSSProperties = {
+    ...gridWrap,
+    gridTemplateColumns: "1fr",
+    position: "relative",
+    zIndex: 2,
+  };
+
+  
+
+  const overlayStyle: CSSProperties = {
+    position: "absolute",
+    inset: 0,
+    zIndex: 1,
+    pointerEvents: "none",
+  };
+
+
+  // Variation 1 : image à droite (default)
+  if (slice?.variation === "default") {
+    return (
+      <section style={headerStyle}>
+        <div style={gridStyle}>
+          <div style={gridLeftStyle}>
+            {heroContent.heading && <h1 style={headingTextStyle}>{heroContent.heading}</h1>}
+            {heroContent.description && <p style={bodyTextStyle}>{heroContent.description}</p>}
+            <div style={buttonsWrapStyle}>
+              {heroContent.buttons.slice(0, 2).map((btn, i) => (
+                <a key={i} href={btn.href} style={buttonStyle}>
+                  {btn.title}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div style={gridRightStyle}>
+            <img src={heroContent.sideImageUrl} style={imageStyle} />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Variation 2 : image en background (withBackgroundImage)
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for hero (variation: {slice.variation}) slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use Prismic MCP with your code editor
-       *
-       * Get AI-powered help to build your slice components — based on your actual model.
-       *
-       * ▶️ Setup:
-       * 1. Add a new MCP Server in your code editor:
-       *
-       * {
-       *   "mcpServers": {
-       *     "Prismic MCP": {
-       *       "command": "npx",
-       *       "args": ["-y", "@prismicio/mcp-server@latest"]
-       *     }
-       *   }
-       * }
-       *
-       * 2. Select a model optimized for coding (e.g. Claude 3.7 Sonnet or similar)
-       *
-       * ✅ Then open your slice file and ask your code editor:
-       *    "Code this slice"
-       *
-       * Your code editor reads your slice model and helps you code faster ⚡
-       * 🎙️ Give your feedback: https://community.prismic.io/t/help-us-shape-the-future-of-slice-creation/19505
-       * 📚 Documentation: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
+    <section style={headerStyleWithBg}>
+      <img src={heroContent.backgroundImageUrl} style={imageStyleBackground} />
+
+
+      <div style={gridStyleSingle}>
+        <div style={contentCardStyle}>
+          {heroContent.heading && <h1 style={headingTextStyle}>{heroContent.heading}</h1>}
+          {heroContent.description && <p style={bodyTextStyle}>{heroContent.description}</p>}
+          <div style={buttonsWrapStyle}>
+            {heroContent.buttons.slice(0, 2).map((btn, i) => (
+              <a key={i} href={btn.href} style={buttonStyle}>
+                {btn.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
-};
-
-export default Hero;
+}
