@@ -3,32 +3,45 @@ import { asLink } from "@prismicio/client";
 export type NavLink = { title: string; href: string };
 export type NavButton = { title: string; href: string };
 
-export function parseNavLinks(data: any): NavLink[] {
-  const groups = Array.isArray(data.navbar_links) ? data.navbar_links : [];
-  
-  return groups
-    .map((groupItem: any) => groupItem?.text_links)
-    .filter(Boolean)
-    .map((link: any) => ({
-      title:
-        typeof link?.text === "string" && link.text.trim().length > 0
-          ? link.text
-          : "Link",
-      href: asLink(link) ?? "#",
-    }));
+export type NavContent = {
+  logoUrl?: string;
+  navLinks: NavLink[];
+  navButtons: NavButton[];
+};
+
+function parseLogoUrl(data: any): string | undefined {
+  return data?.navbar_logo?.url ?? data?.logo?.url ?? undefined;
 }
 
-export function parseNavButtons(data: any): NavButton[] {
-  const groups = Array.isArray(data.navbar_buttons) ? data.navbar_buttons : [];
+function parseRepeatableLinks(field: any, fallbackTitle: string) {
+  const items = Array.isArray(field) ? field : field ? [field] : [];
 
-   return groups
-    .map((groupItem: any) => groupItem?.buttons)
-    .filter(Boolean)
-    .map((link: any) => ({
-      title:
-        typeof link?.text === "string" && link.text.trim().length > 0
-          ? link.text
-          : "Action",
-      href: asLink(link) ?? "#",
-    }));
+  return items
+    .map((item: any) => {
+      const href = asLink(item?.link ?? item) ?? "#";
+      const titleCandidate =
+        (typeof item?.label === "string" && item.label.trim()) ||
+        (typeof item?.text === "string" && item.text.trim()) ||
+        (typeof item === "string" && item.trim()) ||
+        fallbackTitle;
+
+      return { title: titleCandidate, href };
+    })
+    .filter((i) => Boolean(i.href));
+}
+
+export function parseNavTextLinks(data: any): NavLink[] {
+  return parseRepeatableLinks(data?.navbar_text_link, "Link");
+}
+
+export function parseNavButtonLinks(data: any): NavButton[] {
+  return parseRepeatableLinks(data?.navbar_button_link, "Button");
+}
+
+export function parseNavContent(data: any): NavContent {
+  return {
+    logoUrl: parseLogoUrl(data),
+    navLinks: parseNavTextLinks(data),
+    navButtons: parseNavButtonLinks(data),
+  };
 }

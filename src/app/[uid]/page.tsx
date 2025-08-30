@@ -7,7 +7,7 @@ import { components } from "@/slices";
 import { Navbar } from "@/components/navbar";
 
 import { buildPageCssVars } from "@/lib/styles";
-import { parseNavLinks, parseNavButtons } from "@/lib/navbarContent";
+import { parseNavContent } from "@/lib/navbarContent";
 import { extractSeo } from "@/lib/seo";
 
 type Params = { uid: string };
@@ -19,16 +19,15 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const data = page.data as any;
 
   const pageCssVars = buildPageCssVars(data);
-  const navLinks = parseNavLinks(data);
-  const navButtons = parseNavButtons(data);
+  const navbar = parseNavContent(data);
 
   return (
     <main style={pageCssVars}>
       <Navbar
-        logoUrl={data.logo?.url}
+        logoUrl={navbar.logoUrl}
         siteName={data.website_name ?? page.uid}
-        navLinks={navLinks}
-        navButtons={navButtons}
+        navLinks={navbar.navLinks}
+        navButtons={navbar.navButtons}
       />
       <SliceZone slices={data.slices} components={components} />
     </main>

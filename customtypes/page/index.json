@@ -73,10 +73,10 @@
           "options": ["Inter", "Lora", "Poppins", "Roboto Mono"]
         }
       },
-      "text_body_fonts": {
+      "text_body_font": {
         "type": "Select",
         "config": {
-          "label": "Text Body Fonts",
+          "label": "Text Body Font",
           "placeholder": "",
           "options": ["Inter", "Lora", "Poppins", "Roboto Mono"]
         }
@@ -130,52 +130,42 @@
       }
     },
     "Navbar Content": {
-      "navbar_links": {
-        "type": "Group",
+      "navbar_logo": {
+        "type": "Image",
         "config": {
-          "label": "(Navbar) Links",
-          "repeat": true,
-          "fields": {
-            "text_links": {
-              "type": "Link",
-              "config": {
-                "label": "Text Links",
-                "placeholder": "",
-                "select": null,
-                "allowTargetBlank": true,
-                "allowText": true,
-                "repeat": false
-              }
-            }
-          }
+          "label": "(Navbar) Logo",
+          "constraint": {},
+          "thumbnails": []
         }
       },
-      "navbar_buttons": {
-        "type": "Group",
+      "navbar_text_link": {
+        "type": "Link",
         "config": {
-          "label": "(Navbar) Buttons",
-          "repeat": true,
-          "fields": {
-            "buttons": {
-              "type": "Link",
-              "config": {
-                "label": "Buttons",
-                "placeholder": "",
-                "select": null,
-                "allowTargetBlank": false,
-                "allowText": true,
-                "repeat": false
-              }
-            }
-          }
+          "label": "(Navbar) Text Link",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": false,
+          "allowText": true,
+          "repeat": true
+        }
+      },
+      "navbar_button_link": {
+        "type": "Link",
+        "config": {
+          "label": "(Navbar) Button Link",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": false,
+          "allowText": true,
+          "repeat": true
         }
       }
     },
     "Navbar Styles": {
-      "navbar_logo_height": {
+      "navbar_logo_size": {
         "type": "Number",
         "config": {
-          "label": "(Navbar) Logo Height (px)",
+          "label": "(Navbar) Logo Size (px)",
           "placeholder": ""
         }
       },
@@ -210,14 +200,14 @@
       "navbar_text_size": {
         "type": "Number",
         "config": {
-          "label": "(Navbar) Text Size",
+          "label": "(Navbar) Text Size (px)",
           "placeholder": ""
         }
       },
       "navbar_text_font": {
         "type": "Select",
         "config": {
-          "label": "(Navbar) Text Font",
+          "label": "(Navbar) Text Font (px)",
           "placeholder": "",
           "options": ["Inter", "Lora", "Poppins", "Roboto Mono"]
         }
