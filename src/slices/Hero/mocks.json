@@ -193,13 +193,13 @@
 			"hero_background_image": {
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-					"width": 2747,
-					"height": 4120
+					"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+					"width": 3500,
+					"height": 2338
 				},
-				"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-				"width": 2747,
-				"height": 4120,
+				"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+				"width": 3500,
+				"height": 2338,
 				"edit": {
 					"zoom": 1,
 					"crop": {
@@ -208,7 +208,7 @@
 					},
 					"background": "transparent"
 				},
-				"alt": "signal",
+				"alt": "pet",
 				"credits": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}

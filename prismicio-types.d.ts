@@ -153,6 +153,17 @@ interface PageDocumentData {
   >;
 
   /**
+   * Text Heading Size (px) field in *Page*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.text_heading_size
+   * - **Tab**: Global Styles
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  text_heading_size: prismic.NumberField;
+
+  /**
    * Text Body Font field in *Page*
    *
    * - **Field Type**: Select
@@ -164,17 +175,6 @@ interface PageDocumentData {
   text_body_font: prismic.SelectField<
     "Inter" | "Lora" | "Poppins" | "Roboto Mono"
   >;
-
-  /**
-   * Text Heading Size (px) field in *Page*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.text_heading_size
-   * - **Tab**: Global Styles
-   * - **Documentation**: https://prismic.io/docs/fields/number
-   */
-  text_heading_size: prismic.NumberField;
 
   /**
    * Text Body Size (px) field in *Page*
@@ -199,7 +199,7 @@ interface PageDocumentData {
   button_corner_radius: prismic.NumberField;
 
   /**
-   * (Styles) Card Color field in *Page*
+   * Card Color field in *Page*
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
@@ -239,23 +239,23 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   og_image: prismic.ImageField<never> /**
-   * (Navbar) Logo field in *Page*
+   * Logo field in *Page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
    * - **API ID Path**: page.navbar_logo
-   * - **Tab**: Navbar Content
+   * - **Tab**: Navbar
    * - **Documentation**: https://prismic.io/docs/fields/image
    */;
   navbar_logo: prismic.ImageField<never>;
 
   /**
-   * (Navbar) Text Link field in *Page*
+   * Text Link field in *Page*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: page.navbar_text_link
-   * - **Tab**: Navbar Content
+   * - **Tab**: Navbar
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
   navbar_text_link: prismic.Repeatable<
@@ -263,25 +263,27 @@ interface PageDocumentData {
   >;
 
   /**
-   * (Navbar) Button Link field in *Page*
+   * Button Link field in *Page*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: page.navbar_button_link
-   * - **Tab**: Navbar Content
+   * - **Tab**: Navbar
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
   navbar_button_link: prismic.Repeatable<
     prismic.LinkField<string, string, unknown, prismic.FieldState, never>
-  > /**
+  >;
+
+  /**
    * (Navbar) Logo Size (px) field in *Page*
    *
    * - **Field Type**: Number
    * - **Placeholder**: *None*
    * - **API ID Path**: page.navbar_logo_size
-   * - **Tab**: Navbar Styles
+   * - **Tab**: Navbar
    * - **Documentation**: https://prismic.io/docs/fields/number
-   */;
+   */
   navbar_logo_size: prismic.NumberField;
 
   /**
@@ -290,10 +292,45 @@ interface PageDocumentData {
    * - **Field Type**: Color
    * - **Placeholder**: *None*
    * - **API ID Path**: page.navbar_background_color
-   * - **Tab**: Navbar Styles
+   * - **Tab**: Navbar
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   navbar_background_color: prismic.ColorField;
+
+  /**
+   * (Navbar) Link Text Color field in *Page*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_link_text_color
+   * - **Tab**: Navbar
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  navbar_link_text_color: prismic.ColorField;
+
+  /**
+   * (Navbar) Link Text Font (px) field in *Page*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_link_text_font
+   * - **Tab**: Navbar
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  navbar_link_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Navbar) Link Text Size (px) field in *Page*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_link_text_size
+   * - **Tab**: Navbar
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  navbar_link_text_size: prismic.NumberField;
 
   /**
    * (Navbar) Button Color field in *Page*
@@ -301,7 +338,7 @@ interface PageDocumentData {
    * - **Field Type**: Color
    * - **Placeholder**: *None*
    * - **API ID Path**: page.navbar_button_color
-   * - **Tab**: Navbar Styles
+   * - **Tab**: Navbar
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   navbar_button_color: prismic.ColorField;
@@ -312,45 +349,34 @@ interface PageDocumentData {
    * - **Field Type**: Color
    * - **Placeholder**: *None*
    * - **API ID Path**: page.navbar_button_text_color
-   * - **Tab**: Navbar Styles
+   * - **Tab**: Navbar
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   navbar_button_text_color: prismic.ColorField;
 
   /**
-   * (Navbar) Text Color field in *Page*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.navbar_text_color
-   * - **Tab**: Navbar Styles
-   * - **Documentation**: https://prismic.io/docs/fields/color
-   */
-  navbar_text_color: prismic.ColorField;
-
-  /**
-   * (Navbar) Text Size (px) field in *Page*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.navbar_text_size
-   * - **Tab**: Navbar Styles
-   * - **Documentation**: https://prismic.io/docs/fields/number
-   */
-  navbar_text_size: prismic.NumberField;
-
-  /**
-   * (Navbar) Text Font (px) field in *Page*
+   * (Navbar) Button Text Font field in *Page*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: page.navbar_text_font
-   * - **Tab**: Navbar Styles
+   * - **API ID Path**: page.navbar_button_text_font
+   * - **Tab**: Navbar
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  navbar_text_font: prismic.SelectField<
-    "Inter" | "Lora" | "Poppins" | "Roboto Mono"
+  navbar_button_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
   >;
+
+  /**
+   * (Navbar) Button Text Size field in *Page*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.navbar_button_text_size
+   * - **Tab**: Navbar
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  navbar_button_text_size: prismic.NumberField;
 
   /**
    * (Navbar) Button Corner Radius (px) field in *Page*
@@ -358,7 +384,7 @@ interface PageDocumentData {
    * - **Field Type**: Number
    * - **Placeholder**: *None*
    * - **API ID Path**: page.navbar_button_corner_radius
-   * - **Tab**: Navbar Styles
+   * - **Tab**: Navbar
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
   navbar_button_corner_radius: prismic.NumberField;
@@ -387,30 +413,40 @@ export interface CtaSliceDefaultPrimary {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta.default.primary.title
+   * - **API ID Path**: cta.default.primary.cta_title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  title: prismic.KeyTextField;
+  cta_title: prismic.KeyTextField;
 
   /**
    * Description field in *Cta → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta.default.primary.description
+   * - **API ID Path**: cta.default.primary.cta_description
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  cta_description: prismic.RichTextField;
+
+  /**
+   * Input Placeholder field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_input_placeholder
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cta_input_placeholder: prismic.KeyTextField;
 
   /**
    * Button Link field in *Cta → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta.default.primary.button_link
+   * - **API ID Path**: cta.default.primary.cta_button_link
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  button_link: prismic.LinkField<
+  cta_button_link: prismic.LinkField<
     string,
     string,
     unknown,
@@ -419,14 +455,130 @@ export interface CtaSliceDefaultPrimary {
   >;
 
   /**
-   * Side Image field in *Cta → Default → Primary*
+   * (Styles) Background Color field in *Cta → Default → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Color
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta.default.primary.side_image
-   * - **Documentation**: https://prismic.io/docs/fields/image
+   * - **API ID Path**: cta.default.primary.cta_background_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
    */
-  side_image: prismic.ImageField<never>;
+  cta_background_color: prismic.ColorField;
+
+  /**
+   * (Styles) Title Text Color field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_title_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_title_text_color: prismic.ColorField;
+
+  /**
+   * (Styles) Title Text Font field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_title_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  cta_title_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Title Text Size (px) field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_title_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_title_text_size: prismic.NumberField;
+
+  /**
+   * (Styles) Description Text Color field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_description_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_description_text_color: prismic.ColorField;
+
+  /**
+   * (Styles) Description Text Font field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_description_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  cta_description_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Description Text Size (px) field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_description_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_description_text_size: prismic.NumberField;
+
+  /**
+   * (Styles) Button Color field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_button_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_button_color: prismic.ColorField;
+
+  /**
+   * (Styles) Button Text Color field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_button_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_button_text_color: prismic.ColorField;
+
+  /**
+   * (Styles) Button Text Font field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_button_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  cta_button_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Button Text Size (px) field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_button_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_button_text_size: prismic.NumberField;
+
+  /**
+   * (Styles) Button Corner Radius (px) field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.cta_button_corner_radius
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_button_corner_radius: prismic.NumberField;
 }
 
 /**
@@ -451,30 +603,40 @@ export interface CtaSliceWithBackgroundImagePrimary {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta.withBackgroundImage.primary.title
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_title
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  title: prismic.KeyTextField;
+  cta_title: prismic.KeyTextField;
 
   /**
    * Description field in *Cta → With Background Image → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta.withBackgroundImage.primary.description
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_description
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  cta_description: prismic.RichTextField;
+
+  /**
+   * Input Placeholder field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_input_placeholder
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cta_input_placeholder: prismic.KeyTextField;
 
   /**
    * Button Link field in *Cta → With Background Image → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta.withBackgroundImage.primary.button_link
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_button_link
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  button_link: prismic.LinkField<
+  cta_button_link: prismic.LinkField<
     string,
     string,
     unknown,
@@ -487,10 +649,176 @@ export interface CtaSliceWithBackgroundImagePrimary {
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta.withBackgroundImage.primary.background_image
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_background_image
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  background_image: prismic.ImageField<never>;
+  cta_background_image: prismic.ImageField<never>;
+
+  /**
+   * (Styles) Background Color field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_background_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_background_color: prismic.ColorField;
+
+  /**
+   * (Styles) Background Image Scale (%) field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_background_image_scale
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_background_image_scale: prismic.NumberField;
+
+  /**
+   * (Styles) Background Img Radius (px) field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_background_image_corner_radius
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_background_image_corner_radius: prismic.NumberField;
+
+  /**
+   * (Styles) Title Text Color field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_title_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_title_text_color: prismic.ColorField;
+
+  /**
+   * (Styles) Title Text Font field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_title_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  cta_title_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Title Text Size (px) field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_title_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_title_text_size: prismic.NumberField;
+
+  /**
+   * (Styles) Description Text Color field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_description_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_description_text_color: prismic.ColorField;
+
+  /**
+   * (Styles) Description Text Font field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_description_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  cta_description_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Description Text Size (px) field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_description_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_description_text_size: prismic.NumberField;
+
+  /**
+   * (Styles) Button Color field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_button_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_button_color: prismic.ColorField;
+
+  /**
+   * (Styles) Button Text Color field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_button_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_button_text_color: prismic.ColorField;
+
+  /**
+   * (Styles) Button Text Font field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_button_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  cta_button_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Button Text Size (px) field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_button_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_button_text_size: prismic.NumberField;
+
+  /**
+   * (Styles) Button Corner Radius (px) field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_button_corner_radius
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_button_corner_radius: prismic.NumberField;
+
+  /**
+   * (Styles) Card Color field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_card_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  cta_card_color: prismic.ColorField;
+
+  /**
+   * (Styles) Card Corner Radius (px) field in *Cta → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.withBackgroundImage.primary.cta_card_corner_radius
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  cta_card_corner_radius: prismic.NumberField;
 }
 
 /**
@@ -587,6 +915,28 @@ export interface HeroSliceDefaultPrimary {
   hero_heading_text_color: prismic.ColorField;
 
   /**
+   * (Styles) Heading Text Font field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.hero_heading_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  hero_heading_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Heading Text Size (px) field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.hero_heading_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  hero_heading_text_size: prismic.NumberField;
+
+  /**
    * (Styles) Body Text Color field in *Hero → Default → Primary*
    *
    * - **Field Type**: Color
@@ -595,6 +945,28 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   hero_body_text_color: prismic.ColorField;
+
+  /**
+   * (Styles) Body Text Font field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.hero_body_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  hero_body_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Body Text Size (px) field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.hero_body_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  hero_body_text_size: prismic.NumberField;
 
   /**
    * (Styles) Button Color field in *Hero → Default → Primary*
@@ -617,60 +989,6 @@ export interface HeroSliceDefaultPrimary {
   hero_button_text_color: prismic.ColorField;
 
   /**
-   * (Styles) Heading Text Size (px) field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.hero_heading_text_size
-   * - **Documentation**: https://prismic.io/docs/fields/number
-   */
-  hero_heading_text_size: prismic.NumberField;
-
-  /**
-   * (Styles) Body Text Size (px) field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.hero_body_text_size
-   * - **Documentation**: https://prismic.io/docs/fields/number
-   */
-  hero_body_text_size: prismic.NumberField;
-
-  /**
-   * (Styles) Button Text Size (px) field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.hero_button_text_size
-   * - **Documentation**: https://prismic.io/docs/fields/number
-   */
-  hero_button_text_size: prismic.NumberField;
-
-  /**
-   * (Styles) Heading Text Font field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.hero_heading_text_font
-   * - **Documentation**: https://prismic.io/docs/fields/select
-   */
-  hero_heading_text_font: prismic.SelectField<
-    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
-  >;
-
-  /**
-   * (Styles) Body Text Font field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.hero_body_text_font
-   * - **Documentation**: https://prismic.io/docs/fields/select
-   */
-  hero_body_text_font: prismic.SelectField<
-    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
-  >;
-
-  /**
    * (Styles) Button Text Font field in *Hero → Default → Primary*
    *
    * - **Field Type**: Select
@@ -681,6 +999,16 @@ export interface HeroSliceDefaultPrimary {
   hero_button_text_font: prismic.SelectField<
     "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
   >;
+
+  /**
+   * (Styles) Button Text Size (px) field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.hero_button_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  hero_button_text_size: prismic.NumberField;
 
   /**
    * (Styles) Button Corner Radius (px) field in *Hero → Default → Primary*
@@ -743,7 +1071,7 @@ export interface HeroSliceWithBackgroundImagePrimary {
   >;
 
   /**
-   * Image (Background) field in *Hero → With Background Image → Primary*
+   * Background Image field in *Hero → With Background Image → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -793,6 +1121,28 @@ export interface HeroSliceWithBackgroundImagePrimary {
   hero_heading_text_color: prismic.ColorField;
 
   /**
+   * (Styles) Heading Text Font field in *Hero → With Background Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.withBackgroundImage.primary.hero_heading_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  hero_heading_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Heading Text Size (px) field in *Hero → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.withBackgroundImage.primary.hero_heading_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  hero_heading_text_size: prismic.NumberField;
+
+  /**
    * (Styles) Body Text Color field in *Hero → With Background Image → Primary*
    *
    * - **Field Type**: Color
@@ -801,6 +1151,28 @@ export interface HeroSliceWithBackgroundImagePrimary {
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   hero_body_text_color: prismic.ColorField;
+
+  /**
+   * (Styles) Body Text Font field in *Hero → With Background Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.withBackgroundImage.primary.hero_body_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  hero_body_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * (Styles) Body Text Size (px) field in *Hero → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.withBackgroundImage.primary.hero_body_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  hero_body_text_size: prismic.NumberField;
 
   /**
    * (Styles) Button Color field in *Hero → With Background Image → Primary*
@@ -823,70 +1195,6 @@ export interface HeroSliceWithBackgroundImagePrimary {
   hero_button_text_color: prismic.ColorField;
 
   /**
-   * (Styles) Card Color field in *Hero → With Background Image → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.withBackgroundImage.primary.hero_card_color
-   * - **Documentation**: https://prismic.io/docs/fields/color
-   */
-  hero_card_color: prismic.ColorField;
-
-  /**
-   * (Styles) Heading Text Size (px) field in *Hero → With Background Image → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.withBackgroundImage.primary.hero_heading_text_size
-   * - **Documentation**: https://prismic.io/docs/fields/number
-   */
-  hero_heading_text_size: prismic.NumberField;
-
-  /**
-   * (Styles) Body Text Size (px) field in *Hero → With Background Image → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.withBackgroundImage.primary.hero_body_text_size
-   * - **Documentation**: https://prismic.io/docs/fields/number
-   */
-  hero_body_text_size: prismic.NumberField;
-
-  /**
-   * (Styles) Button Text Size (px) field in *Hero → With Background Image → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.withBackgroundImage.primary.hero_button_text_size
-   * - **Documentation**: https://prismic.io/docs/fields/number
-   */
-  hero_button_text_size: prismic.NumberField;
-
-  /**
-   * (Styles) Heading Text Font field in *Hero → With Background Image → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.withBackgroundImage.primary.hero_heading_text_font
-   * - **Documentation**: https://prismic.io/docs/fields/select
-   */
-  hero_heading_text_font: prismic.SelectField<
-    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
-  >;
-
-  /**
-   * (Styles) Body Text Font field in *Hero → With Background Image → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.withBackgroundImage.primary.hero_body_text_font
-   * - **Documentation**: https://prismic.io/docs/fields/select
-   */
-  hero_body_text_font: prismic.SelectField<
-    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
-  >;
-
-  /**
    * (Styles) Button Text Font field in *Hero → With Background Image → Primary*
    *
    * - **Field Type**: Select
@@ -899,6 +1207,16 @@ export interface HeroSliceWithBackgroundImagePrimary {
   >;
 
   /**
+   * (Styles) Button Text Size (px) field in *Hero → With Background Image → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.withBackgroundImage.primary.hero_button_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  hero_button_text_size: prismic.NumberField;
+
+  /**
    * (Styles) Button Corner Radius (px) field in *Hero → With Background Image → Primary*
    *
    * - **Field Type**: Number
@@ -907,6 +1225,16 @@ export interface HeroSliceWithBackgroundImagePrimary {
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
   hero_button_corner_radius: prismic.NumberField;
+
+  /**
+   * (Styles) Card Color field in *Hero → With Background Image → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.withBackgroundImage.primary.hero_card_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  hero_card_color: prismic.ColorField;
 
   /**
    * (Styles) Card Corner Radius (px) field in *Hero → With Background Image → Primary*

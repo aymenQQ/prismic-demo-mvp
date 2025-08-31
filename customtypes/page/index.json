@@ -73,19 +73,19 @@
           "options": ["Inter", "Lora", "Poppins", "Roboto Mono"]
         }
       },
+      "text_heading_size": {
+        "type": "Number",
+        "config": {
+          "label": "Text Heading Size (px)",
+          "placeholder": ""
+        }
+      },
       "text_body_font": {
         "type": "Select",
         "config": {
           "label": "Text Body Font",
           "placeholder": "",
           "options": ["Inter", "Lora", "Poppins", "Roboto Mono"]
-        }
-      },
-      "text_heading_size": {
-        "type": "Number",
-        "config": {
-          "label": "Text Heading Size (px)",
-          "placeholder": ""
         }
       },
       "text_body_size": {
@@ -105,7 +105,7 @@
       "card_color": {
         "type": "Color",
         "config": {
-          "label": "(Styles) Card Color",
+          "label": "Card Color",
           "placeholder": ""
         }
       }
@@ -136,11 +136,11 @@
         }
       }
     },
-    "Navbar Content": {
+    "Navbar": {
       "navbar_logo": {
         "type": "Image",
         "config": {
-          "label": "(Navbar) Logo",
+          "label": "Logo",
           "constraint": {},
           "thumbnails": []
         }
@@ -148,7 +148,7 @@
       "navbar_text_link": {
         "type": "Link",
         "config": {
-          "label": "(Navbar) Text Link",
+          "label": "Text Link",
           "placeholder": "",
           "select": null,
           "allowTargetBlank": false,
@@ -159,16 +159,14 @@
       "navbar_button_link": {
         "type": "Link",
         "config": {
-          "label": "(Navbar) Button Link",
+          "label": "Button Link",
           "placeholder": "",
           "select": null,
-          "allowTargetBlank": false,
+          "allowTargetBlank": true,
           "allowText": true,
           "repeat": true
         }
-      }
-    },
-    "Navbar Styles": {
+      },
       "navbar_logo_size": {
         "type": "Number",
         "config": {
@@ -180,6 +178,28 @@
         "type": "Color",
         "config": {
           "label": "(Navbar) Background Color",
+          "placeholder": ""
+        }
+      },
+      "navbar_link_text_color": {
+        "type": "Color",
+        "config": {
+          "label": "(Navbar) Link Text Color",
+          "placeholder": ""
+        }
+      },
+      "navbar_link_text_font": {
+        "type": "Select",
+        "config": {
+          "label": "(Navbar) Link Text Font (px)",
+          "placeholder": "",
+          "options": ["Inter", "Lora", "Poppins", "Roboto_Mono"]
+        }
+      },
+      "navbar_link_text_size": {
+        "type": "Number",
+        "config": {
+          "label": "(Navbar) Link Text Size (px)",
           "placeholder": ""
         }
       },
@@ -197,26 +217,19 @@
           "placeholder": ""
         }
       },
-      "navbar_text_color": {
-        "type": "Color",
-        "config": {
-          "label": "(Navbar) Text Color",
-          "placeholder": ""
-        }
-      },
-      "navbar_text_size": {
-        "type": "Number",
-        "config": {
-          "label": "(Navbar) Text Size (px)",
-          "placeholder": ""
-        }
-      },
-      "navbar_text_font": {
+      "navbar_button_text_font": {
         "type": "Select",
         "config": {
-          "label": "(Navbar) Text Font (px)",
+          "label": "(Navbar) Button Text Font",
           "placeholder": "",
-          "options": ["Inter", "Lora", "Poppins", "Roboto Mono"]
+          "options": ["Inter", "Lora", "Poppins", "Roboto_Mono"]
+        }
+      },
+      "navbar_button_text_size": {
+        "type": "Number",
+        "config": {
+          "label": "(Navbar) Button Text Size",
+          "placeholder": ""
         }
       },
       "navbar_button_corner_radius": {

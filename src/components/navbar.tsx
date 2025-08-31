@@ -15,30 +15,28 @@ export function Navbar({
 
   const headerStyle: CSSProperties = {
     background: "var(--navbar_background_color)",
-    color: "var(--navbar-text-color)",
-    fontFamily: "var(--navbar-text-font)",
-    fontSize: "var(--navbar-text-size)",
     //borderBottom: "1px solid #000000",
     position: "sticky",
     top: 0,
+    zIndex: 100,
   };
-
   const headerContainerStyle: CSSProperties = {
     maxWidth: "95%",
     margin: "0 auto",
     padding: "10px 16px",
   };
 
+
   const logoStyle: CSSProperties = {
     height: "var(--navbar-logo-size)",
     width: "auto",
     display: "block",
-    borderRadius: "var(--navbar-button-corner-radius)",
+    borderRadius: 0,
   };
-
   const siteNameStyle: CSSProperties = {
     fontWeight: 700,
   };
+
 
   const navListStyle: CSSProperties = {
     listStyle: "none",
@@ -47,23 +45,28 @@ export function Navbar({
     display: "flex",
     gap: 28,
   };
-
   const linkStyle: CSSProperties = {
-    color: "var(--navbar-text-color)",
+    color: "var(--navbar-link-text-color)",
+    fontFamily: "var(--navbar-link-text-font)",
+    fontSize: "var(--navbar-link-text-size)",
     textDecoration: "none",
     lineHeight: 1.2,
   };
+
 
   const buttonStyle: CSSProperties = {
-    display: "inline-block",
-    padding: "8px 14px",
-    borderRadius: "var(--navbar-button-corner-radius)",
-    background: "var(--navbar-button-color)",
-    color: "var(--navbar-button-text-color)",
-    textDecoration: "none",
-    fontWeight: 600,
-    lineHeight: 1.2,
-  };
+  display: "inline-block",
+  padding: "8px 14px",
+  borderRadius: "var(--navbar-button-corner-radius)",
+  background: "var(--navbar-button-color)",
+  color: "var(--navbar-button-text-color)",
+  fontFamily: "var(--navbar-button-text-font)",
+  fontSize: "var(--navbar-button-text-size)",
+  textDecoration: "none",
+  fontWeight: 600,
+  lineHeight: 1.2,
+};
+
 
   const gridStyle: CSSProperties = {
     display: "grid",
@@ -71,18 +74,15 @@ export function Navbar({
     alignItems: "center",
     gap: 12,
   };
-
   const gridLeftStyle: CSSProperties = {
     justifySelf: "start",
     display: "flex",
     alignItems: "center",
     gap: 10,
   };
-
   const gridMiddleStyle: CSSProperties = { 
     justifySelf: "center" 
   };
-
   const gridRightStyle: CSSProperties = {
     justifySelf: "end",
     display: "flex",

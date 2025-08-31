@@ -12,14 +12,14 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
+        "cta_title": {
           "type": "Text",
           "config": {
             "label": "Title",
             "placeholder": ""
           }
         },
-        "description": {
+        "cta_description": {
           "type": "StructuredText",
           "config": {
             "label": "Description",
@@ -28,7 +28,14 @@
             "multi": "paragraph"
           }
         },
-        "button_link": {
+        "cta_input_placeholder": {
+          "type": "Text",
+          "config": {
+            "label": "Input Placeholder",
+            "placeholder": ""
+          }
+        },
+        "cta_button_link": {
           "type": "Link",
           "config": {
             "label": "Button Link",
@@ -39,12 +46,106 @@
             "repeat": false
           }
         },
-        "side_image": {
-          "type": "Image",
+        "cta_background_color": {
+          "type": "Color",
           "config": {
-            "label": "Side Image",
-            "constraint": {},
-            "thumbnails": []
+            "label": "(Styles) Background Color",
+            "placeholder": ""
+          }
+        },
+        "cta_title_text_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Title Text Color",
+            "placeholder": ""
+          }
+        },
+        "cta_title_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "(Styles) Title Text Font",
+            "placeholder": "",
+            "options": [
+              "Inter",
+              "Lora",
+              "Poppins",
+              "Roboto_Mono"
+            ]
+          }
+        },
+        "cta_title_text_size": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Title Text Size (px)",
+            "placeholder": ""
+          }
+        },
+        "cta_description_text_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Description Text Color",
+            "placeholder": ""
+          }
+        },
+        "cta_description_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "(Styles) Description Text Font",
+            "placeholder": "",
+            "options": [
+              "Inter",
+              "Lora",
+              "Poppins",
+              "Roboto_Mono"
+            ]
+          }
+        },
+        "cta_description_text_size": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Description Text Size (px)",
+            "placeholder": ""
+          }
+        },
+        "cta_button_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Button Color",
+            "placeholder": ""
+          }
+        },
+        "cta_button_text_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Button Text Color",
+            "placeholder": ""
+          }
+        },
+        "cta_button_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "(Styles) Button Text Font",
+            "placeholder": "",
+            "options": [
+              "Inter",
+              "Lora",
+              "Poppins",
+              "Roboto_Mono"
+            ]
+          }
+        },
+        "cta_button_text_size": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Button Text Size (px)",
+            "placeholder": ""
+          }
+        },
+        "cta_button_corner_radius": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Button Corner Radius (px)",
+            "placeholder": ""
           }
         }
       },
@@ -58,14 +159,14 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
+        "cta_title": {
           "type": "Text",
           "config": {
             "label": "Title",
             "placeholder": ""
           }
         },
-        "description": {
+        "cta_description": {
           "type": "StructuredText",
           "config": {
             "label": "Description",
@@ -74,7 +175,14 @@
             "multi": "paragraph"
           }
         },
-        "button_link": {
+        "cta_input_placeholder": {
+          "type": "Text",
+          "config": {
+            "label": "Input Placeholder",
+            "placeholder": ""
+          }
+        },
+        "cta_button_link": {
           "type": "Link",
           "config": {
             "label": "Button Link",
@@ -85,12 +193,142 @@
             "repeat": false
           }
         },
-        "background_image": {
+        "cta_background_image": {
           "type": "Image",
           "config": {
             "label": "Background Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "cta_background_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Background Color",
+            "placeholder": ""
+          }
+        },
+        "cta_background_image_scale": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Background Image Scale (%)",
+            "placeholder": ""
+          }
+        },
+        "cta_background_image_corner_radius": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Background Img Radius (px)",
+            "placeholder": ""
+          }
+        },
+        "cta_title_text_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Title Text Color",
+            "placeholder": ""
+          }
+        },
+        "cta_title_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "(Styles) Title Text Font",
+            "placeholder": "",
+            "options": [
+              "Inter",
+              "Lora",
+              "Poppins",
+              "Roboto_Mono"
+            ]
+          }
+        },
+        "cta_title_text_size": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Title Text Size (px)",
+            "placeholder": ""
+          }
+        },
+        "cta_description_text_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Description Text Color",
+            "placeholder": ""
+          }
+        },
+        "cta_description_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "(Styles) Description Text Font",
+            "placeholder": "",
+            "options": [
+              "Inter",
+              "Lora",
+              "Poppins",
+              "Roboto_Mono"
+            ]
+          }
+        },
+        "cta_description_text_size": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Description Text Size (px)",
+            "placeholder": ""
+          }
+        },
+        "cta_button_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Button Color",
+            "placeholder": ""
+          }
+        },
+        "cta_button_text_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Button Text Color",
+            "placeholder": ""
+          }
+        },
+        "cta_button_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "(Styles) Button Text Font",
+            "placeholder": "",
+            "options": [
+              "Inter",
+              "Lora",
+              "Poppins",
+              "Roboto_Mono"
+            ]
+          }
+        },
+        "cta_button_text_size": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Button Text Size (px)",
+            "placeholder": ""
+          }
+        },
+        "cta_button_corner_radius": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Button Corner Radius (px)",
+            "placeholder": ""
+          }
+        },
+        "cta_card_color": {
+          "type": "Color",
+          "config": {
+            "label": "(Styles) Card Color",
+            "placeholder": ""
+          }
+        },
+        "cta_card_corner_radius": {
+          "type": "Number",
+          "config": {
+            "label": "(Styles) Card Corner Radius (px)",
+            "placeholder": ""
           }
         }
       },

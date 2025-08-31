@@ -36,7 +36,7 @@ export default function Hero({ slice }: { slice: any }) {
     fontSize: "var(--hero-body-text-size)",
     lineHeight: 1.5,
     marginTop: 12,
-    marginBottom: 20,
+    marginBottom: 24,
     maxWidth: 700,
   };
 
@@ -82,11 +82,12 @@ export default function Hero({ slice }: { slice: any }) {
     borderRadius: "var(--hero-background-image-corner-radius)",
   };
   
+  
   const contentCardStyle: CSSProperties = {
     display: "block",
     flexDirection: "column",
     gap: "16px",
-    padding: "70px 210px 70px 70px",
+    padding: "30px 200px 30px 40px",
     background: "var(--hero-card-color)",
     width: "fit-content",
     maxWidth: "min(100%, 80ch)",
@@ -96,34 +97,22 @@ export default function Hero({ slice }: { slice: any }) {
   
 
 
-  const gridWrap: CSSProperties = {
+  const gridStyle: CSSProperties = {
     display: "grid",
     alignItems: "center",
     gap: 24,
     minHeight: "var(--hero-height)",
-  };
-  const gridStyle: CSSProperties = {
-    ...gridWrap,
     gridTemplateColumns: "1fr 1fr",
   };
   const gridLeftStyle: CSSProperties = {};
   const gridRightStyle: CSSProperties = { 
     justifySelf: "end" 
   };
-  const gridStyleSingle: CSSProperties = {
-    ...gridWrap,
+  const gridSingleStyle: CSSProperties = {
+    ...gridStyle,
     gridTemplateColumns: "1fr",
     position: "relative",
     zIndex: 2,
-  };
-
-  
-
-  const overlayStyle: CSSProperties = {
-    position: "absolute",
-    inset: 0,
-    zIndex: 1,
-    pointerEvents: "none",
   };
 
 
@@ -158,7 +147,7 @@ export default function Hero({ slice }: { slice: any }) {
       <img src={heroContent.backgroundImageUrl} style={imageStyleBackground} />
 
 
-      <div style={gridStyleSingle}>
+      <div style={gridSingleStyle}>
         <div style={contentCardStyle}>
           {heroContent.heading && <h1 style={headingTextStyle}>{heroContent.heading}</h1>}
           {heroContent.description && <p style={bodyTextStyle}>{heroContent.description}</p>}
