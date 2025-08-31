@@ -8,11 +8,6 @@
 				"value": "#855ae3",
 				"type": "Color"
 			},
-			"hero_heading": {
-				"__TYPE__": "FieldContent",
-				"value": "thee",
-				"type": "Text"
-			},
 			"hero_description": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -39,30 +34,10 @@
 					}
 				]
 			},
-			"hero_heading_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#8265aa",
-				"type": "Color"
-			},
-			"hero_body_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#2db9c1",
-				"type": "Color"
-			},
 			"hero_button_color": {
 				"__TYPE__": "FieldContent",
 				"value": "#3d4bdd",
 				"type": "Color"
-			},
-			"hero_heading_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "29",
-				"type": "Number"
-			},
-			"hero_body_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "20",
-				"type": "Number"
 			},
 			"hero_button_corner_radius": {
 				"__TYPE__": "FieldContent",
@@ -92,16 +67,6 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"hero_body_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Inter",
-				"type": "Select"
-			},
-			"hero_heading_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Inter",
-				"type": "Select"
-			},
 			"hero_button_text_color": {
 				"__TYPE__": "FieldContent",
 				"value": "#50e2a8",
@@ -116,6 +81,41 @@
 				"__TYPE__": "FieldContent",
 				"value": "Lora",
 				"type": "Select"
+			},
+			"hero_title_text_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#480078",
+				"type": "Color"
+			},
+			"hero_title_text_font": {
+				"__TYPE__": "FieldContent",
+				"value": "Lora",
+				"type": "Select"
+			},
+			"hero_title_text_size": {
+				"__TYPE__": "FieldContent",
+				"value": "0",
+				"type": "Number"
+			},
+			"hero_description_text_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#4ebc3a",
+				"type": "Color"
+			},
+			"hero_description_text_font": {
+				"__TYPE__": "FieldContent",
+				"value": "Roboto_Mono",
+				"type": "Select"
+			},
+			"hero_description_text_size": {
+				"__TYPE__": "FieldContent",
+				"value": "41",
+				"type": "Number"
+			},
+			"hero_title": {
+				"__TYPE__": "FieldContent",
+				"value": "our",
+				"type": "Text"
 			}
 		},
 		"items": []
@@ -124,11 +124,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "withBackgroundImage",
 		"primary": {
-			"hero_heading": {
-				"__TYPE__": "FieldContent",
-				"value": "shadow",
-				"type": "Text"
-			},
 			"hero_description": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -159,26 +154,6 @@
 				"__TYPE__": "FieldContent",
 				"value": "#988ace",
 				"type": "Color"
-			},
-			"hero_heading_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#5fe756",
-				"type": "Color"
-			},
-			"hero_body_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#0b8478",
-				"type": "Color"
-			},
-			"hero_heading_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "95",
-				"type": "Number"
-			},
-			"hero_body_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "61",
-				"type": "Number"
 			},
 			"hero_button_color": {
 				"__TYPE__": "FieldContent",
@@ -212,16 +187,6 @@
 				"credits": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
-			},
-			"hero_heading_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Poppins",
-				"type": "Select"
-			},
-			"hero_body_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Lora",
-				"type": "Select"
 			},
 			"hero_button_text_color": {
 				"__TYPE__": "FieldContent",
@@ -257,6 +222,41 @@
 				"__TYPE__": "FieldContent",
 				"value": "Roboto_Mono",
 				"type": "Select"
+			},
+			"hero_description_text_size": {
+				"__TYPE__": "FieldContent",
+				"value": "35",
+				"type": "Number"
+			},
+			"hero_description_text_font": {
+				"__TYPE__": "FieldContent",
+				"value": "Lora",
+				"type": "Select"
+			},
+			"hero_description_text_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#68ef3a",
+				"type": "Color"
+			},
+			"hero_title_text_font": {
+				"__TYPE__": "FieldContent",
+				"value": "Inter",
+				"type": "Select"
+			},
+			"hero_title_text_size": {
+				"__TYPE__": "FieldContent",
+				"value": "98",
+				"type": "Number"
+			},
+			"hero_title_text_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#ef47ea",
+				"type": "Color"
+			},
+			"hero_title": {
+				"__TYPE__": "FieldContent",
+				"value": "brother",
+				"type": "Text"
 			}
 		},
 		"items": [

@@ -12,7 +12,7 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "hero_heading": {
+        "hero_title": {
           "type": "Text",
           "config": {
             "label": "Heading",
@@ -54,17 +54,17 @@
             "placeholder": ""
           }
         },
-        "hero_heading_text_color": {
+        "hero_title_text_color": {
           "type": "Color",
           "config": {
-            "label": "(Styles) Heading Text Color",
+            "label": "(Styles) Title Text Color",
             "placeholder": ""
           }
         },
-        "hero_heading_text_font": {
+        "hero_title_text_font": {
           "type": "Select",
           "config": {
-            "label": "(Styles) Heading Text Font",
+            "label": "(Styles) Title Text Font",
             "placeholder": "",
             "options": [
               "Inter",
@@ -74,24 +74,24 @@
             ]
           }
         },
-        "hero_heading_text_size": {
+        "hero_title_text_size": {
           "type": "Number",
           "config": {
-            "label": "(Styles) Heading Text Size (px)",
+            "label": "(Styles) Title Text Size (px)",
             "placeholder": ""
           }
         },
-        "hero_body_text_color": {
+        "hero_description_text_color": {
           "type": "Color",
           "config": {
-            "label": "(Styles) Body Text Color",
+            "label": "(Styles) Description Text Color",
             "placeholder": ""
           }
         },
-        "hero_body_text_font": {
+        "hero_description_text_font": {
           "type": "Select",
           "config": {
-            "label": "(Styles) Body Text Font",
+            "label": "(Styles) Description Text Font",
             "placeholder": "",
             "options": [
               "Inter",
@@ -101,10 +101,10 @@
             ]
           }
         },
-        "hero_body_text_size": {
+        "hero_description_text_size": {
           "type": "Number",
           "config": {
-            "label": "(Styles) Body Text Size (px)",
+            "label": "(Styles) Description Text Size (px)",
             "placeholder": ""
           }
         },
@@ -160,7 +160,7 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "hero_heading": {
+        "hero_title": {
           "type": "Text",
           "config": {
             "label": "Heading",
@@ -216,17 +216,17 @@
             "placeholder": ""
           }
         },
-        "hero_heading_text_color": {
+        "hero_title_text_color": {
           "type": "Color",
           "config": {
-            "label": "(Styles) Heading Text Color",
+            "label": "(Styles) Title Text Color",
             "placeholder": ""
           }
         },
-        "hero_heading_text_font": {
+        "hero_title_text_font": {
           "type": "Select",
           "config": {
-            "label": "(Styles) Heading Text Font",
+            "label": "(Styles) Title Text Font",
             "placeholder": "",
             "options": [
               "Inter",
@@ -236,24 +236,24 @@
             ]
           }
         },
-        "hero_heading_text_size": {
+        "hero_title_text_size": {
           "type": "Number",
           "config": {
-            "label": "(Styles) Heading Text Size (px)",
+            "label": "(Styles) Title Text Size (px)",
             "placeholder": ""
           }
         },
-        "hero_body_text_color": {
+        "hero_description_text_color": {
           "type": "Color",
           "config": {
-            "label": "(Styles) Body Text Color",
+            "label": "(Styles) Description Text Color",
             "placeholder": ""
           }
         },
-        "hero_body_text_font": {
+        "hero_description_text_font": {
           "type": "Select",
           "config": {
-            "label": "(Styles) Body Text Font",
+            "label": "(Styles) Description Text Font",
             "placeholder": "",
             "options": [
               "Inter",
@@ -263,10 +263,10 @@
             ]
           }
         },
-        "hero_body_text_size": {
+        "hero_description_text_size": {
           "type": "Number",
           "config": {
-            "label": "(Styles) Body Text Size (px)",
+            "label": "(Styles) Description Text Size (px)",
             "placeholder": ""
           }
         },

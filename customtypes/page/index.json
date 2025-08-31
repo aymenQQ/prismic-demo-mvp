@@ -51,47 +51,83 @@
           "placeholder": ""
         }
       },
-      "brand_color": {
+      "brand_first_color": {
         "type": "Color",
         "config": {
-          "label": "Brand Color",
+          "label": "Brand First Color",
           "placeholder": ""
         }
       },
-      "text_color": {
+      "brand_second_color": {
         "type": "Color",
         "config": {
-          "label": "Text Color",
+          "label": "Brand Second Color",
           "placeholder": ""
         }
       },
-      "text_heading_font": {
+      "title_text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Title Text Color",
+          "placeholder": ""
+        }
+      },
+      "title_text_font": {
         "type": "Select",
         "config": {
-          "label": "Text Heading Font",
+          "label": "Title Text Font",
           "placeholder": "",
           "options": ["Inter", "Lora", "Poppins", "Roboto Mono"]
         }
       },
-      "text_heading_size": {
+      "title_text_size": {
         "type": "Number",
         "config": {
-          "label": "Text Heading Size (px)",
+          "label": "Title Text Size (px)",
           "placeholder": ""
         }
       },
-      "text_body_font": {
+      "description_text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Description Text Color",
+          "placeholder": ""
+        }
+      },
+      "description_text_font": {
         "type": "Select",
         "config": {
-          "label": "Text Body Font",
+          "label": "Description Text Font",
           "placeholder": "",
           "options": ["Inter", "Lora", "Poppins", "Roboto Mono"]
         }
       },
-      "text_body_size": {
+      "description_text_size": {
         "type": "Number",
         "config": {
-          "label": "Text Body Size (px)",
+          "label": "Description Text Size (px)",
+          "placeholder": ""
+        }
+      },
+      "button_text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Button Text Color",
+          "placeholder": ""
+        }
+      },
+      "button_text_font": {
+        "type": "Select",
+        "config": {
+          "label": "Button Text Font",
+          "placeholder": "",
+          "options": ["Inter", "Lora", "Poppins", "Roboto_Mono"]
+        }
+      },
+      "button_text_size": {
+        "type": "Number",
+        "config": {
+          "label": "Button Text Size (px)",
           "placeholder": ""
         }
       },
@@ -99,13 +135,6 @@
         "type": "Number",
         "config": {
           "label": "Button Corner Radius (px)",
-          "placeholder": ""
-        }
-      },
-      "card_color": {
-        "type": "Color",
-        "config": {
-          "label": "Card Color",
           "placeholder": ""
         }
       }

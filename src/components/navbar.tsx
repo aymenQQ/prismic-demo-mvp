@@ -14,7 +14,7 @@ export function Navbar({
 }) {
 
   const headerStyle: CSSProperties = {
-    background: "var(--navbar_background_color)",
+    background: "var(--navbar-background-color)",
     //borderBottom: "1px solid #000000",
     position: "sticky",
     top: 0,

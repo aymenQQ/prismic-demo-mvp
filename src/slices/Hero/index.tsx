@@ -23,17 +23,17 @@ export default function Hero({ slice }: { slice: any }) {
   };
 
 
-  const headingTextStyle: CSSProperties = {
-    color: "var(--hero-heading-text-color)",
-    fontFamily: "var(--hero-heading-text-font)",
-    fontSize: "var(--hero-heading-text-size)",
+  const titleTextStyle: CSSProperties = {
+    color: "var(--hero-title-text-color)",
+    fontFamily: "var(--hero-title-text-font)",
+    fontSize: "var(--hero-title-text-size)",
     lineHeight: 1.15,
     margin: 0,
   };
-  const bodyTextStyle: CSSProperties = {
-    color: "var(--hero-body-text-color)",
-    fontFamily: "var(--hero-body-text-font)",
-    fontSize: "var(--hero-body-text-size)",
+  const descriptionTextStyle: CSSProperties = {
+    color: "var(--hero-description-text-color)",
+    fontFamily: "var(--hero-description-text-font)",
+    fontSize: "var(--hero-description-text-size)",
     lineHeight: 1.5,
     marginTop: 12,
     marginBottom: 24,
@@ -122,8 +122,8 @@ export default function Hero({ slice }: { slice: any }) {
       <section style={headerStyle}>
         <div style={gridStyle}>
           <div style={gridLeftStyle}>
-            {heroContent.heading && <h1 style={headingTextStyle}>{heroContent.heading}</h1>}
-            {heroContent.description && <p style={bodyTextStyle}>{heroContent.description}</p>}
+            {heroContent.title && <h1 style={titleTextStyle}>{heroContent.title}</h1>}
+            {heroContent.description && <p style={descriptionTextStyle}>{heroContent.description}</p>}
             <div style={buttonsWrapStyle}>
               {heroContent.buttons.slice(0, 2).map((btn, i) => (
                 <a key={i} href={btn.href} style={buttonStyle}>
@@ -149,8 +149,8 @@ export default function Hero({ slice }: { slice: any }) {
 
       <div style={gridSingleStyle}>
         <div style={contentCardStyle}>
-          {heroContent.heading && <h1 style={headingTextStyle}>{heroContent.heading}</h1>}
-          {heroContent.description && <p style={bodyTextStyle}>{heroContent.description}</p>}
+          {heroContent.title && <h1 style={titleTextStyle}>{heroContent.title}</h1>}
+          {heroContent.description && <p style={descriptionTextStyle}>{heroContent.description}</p>}
           <div style={buttonsWrapStyle}>
             {heroContent.buttons.slice(0, 2).map((btn, i) => (
               <a key={i} href={btn.href} style={buttonStyle}>
