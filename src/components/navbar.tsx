@@ -14,10 +14,10 @@ export function Navbar({
 }) {
 
   const headerStyle: CSSProperties = {
-    background: "var(--navbar_background_color, var(--background-color))",
+    background: "var(--navbar_background_color)",
     color: "var(--navbar-text-color)",
-    fontFamily: "var(--navbar-text-font, var(--text-body-font))",
-    fontSize: "var(--navbar-text-size, var(--text-body-size))",
+    fontFamily: "var(--navbar-text-font)",
+    fontSize: "var(--navbar-text-size)",
     //borderBottom: "1px solid #000000",
     position: "sticky",
     top: 0,
@@ -30,7 +30,7 @@ export function Navbar({
   };
 
   const logoStyle: CSSProperties = {
-    height: "var(--navbar-logo-size, var(--navbar-logo-height, 100px))",
+    height: "var(--navbar-logo-size)",
     width: "auto",
     display: "block",
     borderRadius: "var(--navbar-button-corner-radius)",
@@ -59,7 +59,7 @@ export function Navbar({
     padding: "8px 14px",
     borderRadius: "var(--navbar-button-corner-radius)",
     background: "var(--navbar-button-color)",
-    color: "var(--navbar-button-text-color, var(--text-color))",
+    color: "var(--navbar-button-text-color)",
     textDecoration: "none",
     fontWeight: 600,
     lineHeight: 1.2,
