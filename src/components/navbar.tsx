@@ -13,6 +13,7 @@ export function Navbar({
   navButtons?: NavButton[];
 }) {
 
+
   const headerStyle: CSSProperties = {
     background: "var(--navbar-background-color)",
     //borderBottom: "1px solid #000000",

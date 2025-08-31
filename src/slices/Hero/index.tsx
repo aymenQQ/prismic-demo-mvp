@@ -8,6 +8,7 @@ export default function Hero({ slice }: { slice: any }) {
   const heroCssVars: CSSProperties = buildHeroCssVars(slice);
   const heroContent = parseHeroContent(slice);
 
+
   const headerStyle: CSSProperties = {
     ...heroCssVars,
     background: "var(--hero-background-color)",
@@ -40,6 +41,7 @@ export default function Hero({ slice }: { slice: any }) {
     maxWidth: 700,
   };
 
+
   const buttonsWrapStyle: CSSProperties = { 
     display: "flex", 
     gap: 10, 
@@ -58,7 +60,6 @@ export default function Hero({ slice }: { slice: any }) {
     lineHeight: 1.2,
   };
 
-  
 
   const imageStyle: CSSProperties = {
     display: "block",
@@ -72,8 +73,8 @@ export default function Hero({ slice }: { slice: any }) {
     position: "absolute",
     inset: 0,
     margin: "auto",
-    transform: "scale(calc(var(--hero-background-image-scale) * 1))", // ancre au centre
-    width: "100%",   // 1 = 100% ; 0.8 = 80%, etc.
+    transform: "scale(calc(var(--hero-background-image-scale) * 1))",
+    width: "100%",
     height: "100%",
     objectFit: "cover",
     objectPosition: "center",
@@ -93,8 +94,6 @@ export default function Hero({ slice }: { slice: any }) {
     maxWidth: "min(100%, 80ch)",
     borderRadius: "var(--hero-card-corner-radius)",
   };
-
-  
 
 
   const gridStyle: CSSProperties = {
@@ -116,16 +115,18 @@ export default function Hero({ slice }: { slice: any }) {
   };
 
 
-  // Variation 1 : image à droite (default)
+  // Variation 1 : default
   if (slice?.variation === "default") {
     return (
       <section style={headerStyle}>
         <div style={gridStyle}>
           <div style={gridLeftStyle}>
+
             {heroContent.title && <h1 style={titleTextStyle}>{heroContent.title}</h1>}
             {heroContent.description && <p style={descriptionTextStyle}>{heroContent.description}</p>}
+            
             <div style={buttonsWrapStyle}>
-              {heroContent.buttons.slice(0, 2).map((btn, i) => (
+              {heroContent.buttons.slice(0, 2).map((btn, i) => (  // slice(x,y) : x = minimum buttons ; y = maximum buttons
                 <a key={i} href={btn.href} style={buttonStyle}>
                   {btn.title}
                 </a>
@@ -141,16 +142,17 @@ export default function Hero({ slice }: { slice: any }) {
     );
   }
 
-  // Variation 2 : image en background (withBackgroundImage)
+  // Variant 2 : withBackgroundImage
   return (
     <section style={headerStyleWithBg}>
       <img src={heroContent.backgroundImageUrl} style={imageStyleBackground} />
 
-
       <div style={gridSingleStyle}>
         <div style={contentCardStyle}>
+
           {heroContent.title && <h1 style={titleTextStyle}>{heroContent.title}</h1>}
           {heroContent.description && <p style={descriptionTextStyle}>{heroContent.description}</p>}
+          
           <div style={buttonsWrapStyle}>
             {heroContent.buttons.slice(0, 2).map((btn, i) => (
               <a key={i} href={btn.href} style={buttonStyle}>

@@ -895,6 +895,98 @@ type CtaSliceVariation = CtaSliceDefault | CtaSliceWithBackgroundImage;
 export type CtaSlice = prismic.SharedSlice<"cta", CtaSliceVariation>;
 
 /**
+ * Item in *Faq → Default → Primary → FAQ Items*
+ */
+export interface FaqListSliceDefaultPrimaryFaqItemsItem {
+  /**
+   * Question field in *Faq → Default → Primary → FAQ Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.faq_items[].question
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * Answer field in *Faq → Default → Primary → FAQ Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.faq_items[].answer
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Faq → Default → Primary*
+ */
+export interface FaqListSliceDefaultPrimary {
+  /**
+   * Title field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * FAQ Items field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.faq_items[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  faq_items: prismic.GroupField<
+    Simplify<FaqListSliceDefaultPrimaryFaqItemsItem>
+  >;
+}
+
+/**
+ * Default variation for Faq Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Standard FAQ section displaying a title, a description, and multiple collapsible Q&A pairs.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FaqListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqListSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Faq*
+ */
+type FaqListSliceVariation = FaqListSliceDefault;
+
+/**
+ * Faq Shared Slice
+ *
+ * - **API ID**: `faq_list`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FaqListSlice = prismic.SharedSlice<
+  "faq_list",
+  FaqListSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -1351,6 +1443,11 @@ declare module "@prismicio/client" {
       CtaSliceVariation,
       CtaSliceDefault,
       CtaSliceWithBackgroundImage,
+      FaqListSlice,
+      FaqListSliceDefaultPrimaryFaqItemsItem,
+      FaqListSliceDefaultPrimary,
+      FaqListSliceVariation,
+      FaqListSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceWithBackgroundImagePrimary,

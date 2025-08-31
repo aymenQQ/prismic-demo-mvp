@@ -44,7 +44,6 @@ export default function Cta({ slice }: { slice: any }) {
   };
   const inputStyle: CSSProperties = {
     background: "#ffffff",
-    color: "var(--cta-description-text-color)",
     padding: "10px 12px",
     borderRadius: "5px",
     border: "1px",
@@ -151,10 +150,7 @@ export default function Cta({ slice }: { slice: any }) {
           <div style={gridSingleStyle}>
             <div style={formRowStyle}>
               <input 
-                type="email" 
-                name="email" 
                 placeholder={ctaContent.inputPlaceholder || ""}
-                aria-label="Email"
                 style={inputStyle}
               />
               <a href={ctaContent.button.href} style={buttonStyle}>
@@ -177,7 +173,7 @@ export default function Cta({ slice }: { slice: any }) {
         <div style={gridStyle}>
           <div style={gridLeftStyle}>
           <div style={gridSingleStyle}>
-            <div style={leftCardStyle}>              
+            <div style={leftCardStyle}>
             {ctaContent.title && <h1 style={headingTextStyle}>{ctaContent.title}</h1>}
             {ctaContent.description && <p style={bodyTextStyle}>{ctaContent.description}</p>}
             </div>
@@ -193,7 +189,7 @@ export default function Cta({ slice }: { slice: any }) {
               <input 
                 type="email" 
                 name="email" 
-                placeholder={ctaContent.inputPlaceholder || ""}
+                placeholder={ctaContent.inputPlaceholder}
                 aria-label="Email"
                 style={inputStyle}
               />

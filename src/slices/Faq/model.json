@@ -1,0 +1,55 @@
+{
+  "type": "SharedSlice",
+  "id": "faq_list",
+  "name": "Faq",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard FAQ section displaying a title, a description, and multiple collapsible Q&A pairs.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Description"
+          }
+        },
+        "faq_items": {
+          "type": "Group",
+          "config": {
+            "label": "FAQ Items",
+            "repeat": true,
+            "fields": {
+              "question": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Question"
+                }
+              },
+              "answer": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,strong,em,hyperlink",
+                  "label": "Answer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
