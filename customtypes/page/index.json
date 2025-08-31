@@ -101,6 +101,13 @@
           "label": "Button Corner Radius (px)",
           "placeholder": ""
         }
+      },
+      "card_color": {
+        "type": "Color",
+        "config": {
+          "label": "(Styles) Card Color",
+          "placeholder": ""
+        }
       }
     },
     "SEO": {

@@ -196,7 +196,18 @@ interface PageDocumentData {
    * - **Tab**: Global Styles
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
-  button_corner_radius: prismic.NumberField /**
+  button_corner_radius: prismic.NumberField;
+
+  /**
+   * (Styles) Card Color field in *Page*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.card_color
+   * - **Tab**: Global Styles
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  card_color: prismic.ColorField /**
    * SEO Title field in *Page*
    *
    * - **Field Type**: Text

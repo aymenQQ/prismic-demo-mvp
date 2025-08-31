@@ -10,12 +10,12 @@ export default function Hero({ slice }: { slice: any }) {
 
   const headerStyle: CSSProperties = {
     ...heroCssVars,
-    background: "var(--hero-background-color, transparent)",
+    background: "var(--hero-background-color)",
     padding: "60px 5%",
   };
   const headerStyleWithBg: CSSProperties = {
     ...heroCssVars,
-    background: "var(--hero-background-color, transparent)",
+    background: "var(--hero-background-color)",
     padding: "60px 5%",
     position: "relative",
     overflow: "hidden",
@@ -24,16 +24,16 @@ export default function Hero({ slice }: { slice: any }) {
 
 
   const headingTextStyle: CSSProperties = {
-    color: "var(--hero-heading-text-color, var(--text-color))",
-    fontFamily: "var(--hero-heading-text-font, var(--text-heading-font))",
-    fontSize: "var(--hero-heading-text-size, var(--text-heading-size))",
+    color: "var(--hero-heading-text-color)",
+    fontFamily: "var(--hero-heading-text-font)",
+    fontSize: "var(--hero-heading-text-size)",
     lineHeight: 1.15,
     margin: 0,
   };
   const bodyTextStyle: CSSProperties = {
-    color: "var(--hero-body-text-color, var(--text-color))",
-    fontFamily: "var(--hero-body-text-font, var(--text-body-font))",
-    fontSize: "var(--hero-body-text-size, var(--text-body-size))",
+    color: "var(--hero-body-text-color)",
+    fontFamily: "var(--hero-body-text-font)",
+    fontSize: "var(--hero-body-text-size)",
     lineHeight: 1.5,
     marginTop: 12,
     marginBottom: 20,
@@ -48,11 +48,11 @@ export default function Hero({ slice }: { slice: any }) {
   const buttonStyle: CSSProperties = {
     display: "inline-block",
     padding: "8px 14px",
-    borderRadius: "var(--hero-button-corner-radius, var(--button-corner-radius))",
-    background: "var(--hero-button-color, var(--brand-color))",
-    color: "var(--hero-button-text-color, var(--text-color))",
-    fontSize: "var(--hero-button-text-size, var(--text-body-size))",
-    fontFamily: "var(--hero-button-text-font, var(--text-body-font))",
+    borderRadius: "var(--hero-button-corner-radius)",
+    background: "var(--hero-button-color)",
+    color: "var(--hero-button-text-color)",
+    fontSize: "var(--hero-button-text-size)",
+    fontFamily: "var(--hero-button-text-font)",
     textDecoration: "none",
     fontWeight: 600,
     lineHeight: 1.2,
@@ -72,14 +72,14 @@ export default function Hero({ slice }: { slice: any }) {
     position: "absolute",
     inset: 0,
     margin: "auto",
-    transform: "scale(calc(var(--hero-background-image-scale, 1) * 1))", // ancre au centre
+    transform: "scale(calc(var(--hero-background-image-scale) * 1))", // ancre au centre
     width: "100%",   // 1 = 100% ; 0.8 = 80%, etc.
     height: "100%",
     objectFit: "cover",
     objectPosition: "center",
     pointerEvents: "none",
     zIndex: 0,
-    borderRadius: "var(--hero-background-image-corner-radius, 0px)",
+    borderRadius: "var(--hero-background-image-corner-radius)",
   };
   
   const contentCardStyle: CSSProperties = {
@@ -87,10 +87,10 @@ export default function Hero({ slice }: { slice: any }) {
     flexDirection: "column",
     gap: "16px",
     padding: "70px 210px 70px 70px",
-    background: "var(--hero-card-color, transparent)",
+    background: "var(--hero-card-color)",
     width: "fit-content",
     maxWidth: "min(100%, 80ch)",
-    borderRadius: "var(--hero-card-corner-radius, 0px)",
+    borderRadius: "var(--hero-card-corner-radius)",
   };
 
   
