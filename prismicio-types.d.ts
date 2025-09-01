@@ -1154,14 +1154,14 @@ export type FaqListSlice = prismic.SharedSlice<
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Heading field in *Hero → Default → Primary*
+   * Title field in *Hero → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: hero.default.primary.hero_title
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  hero_title: prismic.KeyTextField;
+  hero_title: prismic.RichTextField;
 
   /**
    * Description field in *Hero → Default → Primary*
@@ -1340,14 +1340,14 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
  */
 export interface HeroSliceWithBackgroundImagePrimary {
   /**
-   * Heading field in *Hero → With Background Image → Primary*
+   * Title field in *Hero → With Background Image → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: hero.withBackgroundImage.primary.hero_title
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  hero_title: prismic.KeyTextField;
+  hero_title: prismic.RichTextField;
 
   /**
    * Description field in *Hero → With Background Image → Primary*

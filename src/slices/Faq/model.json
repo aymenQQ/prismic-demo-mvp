@@ -41,7 +41,7 @@
                   "label": "Question",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "single": "paragraph,strong,em"
+                  "single": "paragraph,heading3,heading4,strong,em"
                 }
               },
               "answer": {

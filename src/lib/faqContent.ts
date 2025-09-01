@@ -1,8 +1,8 @@
 import { RichTextField } from "@prismicio/client";
 
 export type FAQItem = {
-  question: RichTextField;
-  answer: RichTextField;
+  question?: RichTextField;
+  answer?: RichTextField;
 };
 
 export type FAQContent = {
@@ -17,6 +17,7 @@ export function parseFAQContent(slice: any): FAQContent {
 
   const title = sp.faq_title ?? undefined;
   const description = sp.faq_description ?? undefined;
+
   const items = item.map((item: any) => ({
     question: item.question ?? null,
     answer: item.answer ?? null,

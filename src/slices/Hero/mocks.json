@@ -14,7 +14,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Fugiat velit consectetur labore veniam irure laborum velit enim. Sunt exercitation reprehenderit aute mollit tempor excepteur proident deserunt enim veniam nulla."
+							"text": "Consectetur qui cupidatat do fugiat officia qui. Deserunt occaecat nisi fugiat dolore ipsum occaecat dolore reprehenderit consequat id consectetur."
 						}
 					}
 				]
@@ -113,9 +113,15 @@
 				"type": "Number"
 			},
 			"hero_title": {
-				"__TYPE__": "FieldContent",
-				"value": "our",
-				"type": "Text"
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Coming"
+						}
+					}
+				]
 			}
 		},
 		"items": []
@@ -130,7 +136,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Do fugiat adipisicing dolore sunt aliqua id consectetur do cillum aute proident sint ex duis fugiat. Dolore in ad exercitation aliquip magna velit consequat velit cillum qui. Nisi amet labore id minim ad deserunt velit sunt."
+							"text": "Nostrud esse ad commodo consectetur nostrud et reprehenderit pariatur laboris ipsum enim culpa nostrud nulla. Sint ipsum culpa anim officia aliqua adipisicing elit id consectetur. Labore reprehenderit consectetur proident in duis."
 						}
 					}
 				]
@@ -254,9 +260,15 @@
 				"type": "Color"
 			},
 			"hero_title": {
-				"__TYPE__": "FieldContent",
-				"value": "brother",
-				"type": "Text"
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Along"
+						}
+					}
+				]
 			}
 		},
 		"items": [

@@ -1,6 +1,8 @@
 import type { CSSProperties } from "react";
+import { PrismicRichText } from "@prismicio/react";
 import { buildHeroCssVars } from "@/lib/styles";
 import { parseHeroContent } from "@/lib/heroContent";
+import { buildHeadingRichText } from "@/lib/richtextPresets";
 
 
 export default function Hero({ slice }: { slice: any }) {
@@ -115,16 +117,26 @@ export default function Hero({ slice }: { slice: any }) {
   };
 
 
+  // Reset margin for headers
+  const resetMargin = buildHeadingRichText(titleTextStyle);
+
+
   // Variation 1 : default
   if (slice?.variation === "default") {
     return (
       <section style={headerStyle}>
         <div style={gridStyle}>
           <div style={gridLeftStyle}>
-
-            {heroContent.title && <h1 style={titleTextStyle}>{heroContent.title}</h1>}
-            {heroContent.description && <p style={descriptionTextStyle}>{heroContent.description}</p>}
-            
+            {heroContent.title && (
+              <div style={titleTextStyle}>
+                <PrismicRichText field={heroContent.title} components={resetMargin}/>
+              </div>
+            )}
+            {heroContent.description && (
+              <div style={descriptionTextStyle}>
+                <PrismicRichText field={heroContent.description}/>
+              </div>
+            )}
             <div style={buttonsWrapStyle}>
               {heroContent.buttons.slice(0, 2).map((btn, i) => (  // slice(x,y) : x = minimum buttons ; y = maximum buttons
                 <a key={i} href={btn.href} style={buttonStyle}>
@@ -149,10 +161,16 @@ export default function Hero({ slice }: { slice: any }) {
 
       <div style={gridSingleStyle}>
         <div style={contentCardStyle}>
-
-          {heroContent.title && <h1 style={titleTextStyle}>{heroContent.title}</h1>}
-          {heroContent.description && <p style={descriptionTextStyle}>{heroContent.description}</p>}
-          
+        {heroContent.title && (
+              <div style={titleTextStyle}>
+                <PrismicRichText field={heroContent.title} components={resetMargin}/>
+              </div>
+            )}
+            {heroContent.description && (
+              <div style={descriptionTextStyle}>
+                <PrismicRichText field={heroContent.description}/>
+              </div>
+            )}
           <div style={buttonsWrapStyle}>
             {heroContent.buttons.slice(0, 2).map((btn, i) => (
               <a key={i} href={btn.href} style={buttonStyle}>

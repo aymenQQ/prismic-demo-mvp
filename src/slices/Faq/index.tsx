@@ -2,10 +2,13 @@ import type { CSSProperties } from "react";
 import { PrismicRichText } from "@prismicio/react";
 import { buildFaqCssVars } from "@/lib/styles";
 import { parseFAQContent } from "@/lib/faqContent";
+import { buildHeadingRichText } from "@/lib/richtextPresets";
+
 
 export default function Faq({ slice }: { slice: any }) {
   const faqCssVars: CSSProperties = buildFaqCssVars(slice);
-  const content = parseFAQContent(slice);
+  const faqcontent = parseFAQContent(slice);
+
 
   const sectionStyle: CSSProperties = {
     ...faqCssVars,
@@ -26,8 +29,6 @@ export default function Faq({ slice }: { slice: any }) {
     margin: 0,
     textAlign: "center",
   };
-
-
   const descriptionStyle: CSSProperties = {
     color: "var(--faq-description-text-color)",
     fontFamily: "var(--faq-description-text-font)",
@@ -44,8 +45,6 @@ export default function Faq({ slice }: { slice: any }) {
     flexDirection: "column",
     gap: "24px",
   };
-
-
   const detailsStyle: CSSProperties = {
     borderBottom: "1px solid var(--faq-divider-color)",
   };
@@ -62,8 +61,6 @@ export default function Faq({ slice }: { slice: any }) {
     fontFamily: "var(--faq-question-text-font)",
     fontSize: "var(--faq-question-text-size)",
   };
-
-
   const answerStyle: CSSProperties = {
     marginTop: 18,
     color: "var(--faq-answer-text-color)",
@@ -72,25 +69,30 @@ export default function Faq({ slice }: { slice: any }) {
     lineHeight: 1.6,
   };
 
+
+  // Reset margin for headers
+  const resetMargin = buildHeadingRichText(summaryStyle);
+
+
   return (
     <section style={sectionStyle}>
       <div style={containerStyle}>
-        {content.title && (
+        {faqcontent.title && (
           <div style={titleStyle}>
-            <PrismicRichText field={content.title}/>
+            <PrismicRichText field={faqcontent.title}/>
           </div>
         )}
-        {content.description && (
+        {faqcontent.description && (
           <div style={descriptionStyle}>
-            <PrismicRichText field={content.description}/>
+            <PrismicRichText field={faqcontent.description}/>
           </div> 
         )}
 
         <div style={listStyle}>
-          {content.items.map((item, i) => (
+          {faqcontent.items.map((item, i) => (
             <details key={i} style={detailsStyle}>
               <summary style={summaryStyle}>
-                <PrismicRichText field={item.question}/>
+                <PrismicRichText field={item.question} components={resetMargin}/>
               </summary>
               {item.answer && (
                 <div style={answerStyle}>

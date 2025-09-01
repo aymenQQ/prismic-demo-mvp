@@ -1,10 +1,10 @@
-import { asLink, asText } from "@prismicio/client";
+import { asLink, RichTextField } from "@prismicio/client";
 
 export type HeroButton = { title: string; href: string };
 
 export type HeroContent = {
-  title?: string;
-  description?: string;
+  title?: RichTextField;
+  description?: RichTextField;
   buttons: HeroButton[];
   sideImageUrl?: string;
   backgroundImageUrl?: string;
@@ -27,15 +27,22 @@ function parseHeroButtons(field: any): HeroButton[] {
     .filter((b) => Boolean(b.href));
 }
 
-
 export function parseHeroContent(slice: any): HeroContent {
   const sp = slice?.primary ?? {};
 
+  const title = sp.hero_title ?? undefined;
+  const description = sp.hero_description ?? undefined;
+
+  const buttons = parseHeroButtons(sp.hero_button_link);
+
+  const sideImageUrl = sp.hero_side_image?.url;
+  const backgroundImageUrl = sp.hero_background_image?.url;
+
   return {
-    title: typeof sp.hero_title === "string" ? sp.hero_title : undefined,
-    description: (asText(sp.hero_description) ?? undefined),
-    buttons: parseHeroButtons(sp.hero_button_link),
-    sideImageUrl: sp.hero_side_image?.url,
-    backgroundImageUrl: sp.hero_background_image?.url,
+    title,
+    description,
+    buttons,
+    sideImageUrl,
+    backgroundImageUrl,
   };
 }

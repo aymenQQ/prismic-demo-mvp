@@ -1,15 +1,20 @@
 import type { CSSProperties } from "react";
 import { buildCtaCssVars } from "@/lib/styles";
 import { parseCTAContent } from "@/lib/ctaContent";
+import { PrismicRichText } from "@prismicio/react";
+import { buildHeadingRichText } from "@/lib/richtextPresets";
+
 
 export default function Cta({ slice }: { slice: any }) {
   const ctaCssVars: CSSProperties = buildCtaCssVars(slice);
   const ctaContent = parseCTAContent(slice);
 
+
   const headerStyle: CSSProperties = {
     ...ctaCssVars,
     background: "var(--cta-background-color)",
     padding: "60px 5%",
+    minHeight: "var(--cta-height)",
   };
   const headerStyleWithBg: CSSProperties = {
     ...ctaCssVars,
@@ -20,14 +25,15 @@ export default function Cta({ slice }: { slice: any }) {
     minHeight: "var(--cta-height)",
   };
 
-  const headingTextStyle: CSSProperties = {
+
+  const titleTextStyle: CSSProperties = {
     color: "var(--cta-title-text-color)",
     fontFamily: "var(--cta-title-text-font)",
     fontSize: "var(--cta-title-text-size)",
     lineHeight: 1.15,
     margin: 0,
   };
-  const bodyTextStyle: CSSProperties = {
+  const descriptionTextStyle: CSSProperties = {
     color: "var(--cta-description-text-color)",
     fontFamily: "var(--cta-description-text-font)",
     fontSize: "var(--cta-description-text-size)",
@@ -36,6 +42,7 @@ export default function Cta({ slice }: { slice: any }) {
     marginBottom: 0,
     maxWidth: 700,
   };
+
 
   const formRowStyle: CSSProperties = { 
     display: "grid", 
@@ -79,6 +86,7 @@ export default function Cta({ slice }: { slice: any }) {
     borderRadius: "var(--cta-background-image-corner-radius)",
   };
   
+
   const leftCardStyle: CSSProperties = {
     display: "block",
     flexDirection: "column",
@@ -89,7 +97,6 @@ export default function Cta({ slice }: { slice: any }) {
     maxWidth: "min(100%, 80ch)",
     borderRadius: "var(--cta-card-corner-radius)",
   };
-
   const rightCardStyle: CSSProperties = {
     display: "block",
     flexDirection: "column",
@@ -99,9 +106,8 @@ export default function Cta({ slice }: { slice: any }) {
     width: "fit-content",
     maxWidth: "min(100%, 80ch)",
     borderRadius: "var(--cta-card-corner-radius)",
-
-
   };
+
 
   const gridStyle: CSSProperties = {
     display: "grid",
@@ -111,26 +117,26 @@ export default function Cta({ slice }: { slice: any }) {
     marginBottom: 10,
     marginTop: 10,
   };
-
   const gridLeftStyle: CSSProperties = {
     justifySelf: "start",
   };
-
   const gridMiddleStyle: CSSProperties = { 
     justifySelf: "center",
   };
-
   const gridRightStyle: CSSProperties = {
-    justifySelf: "end",
-    
+    justifySelf: "end",   
   };
-
   const gridSingleStyle: CSSProperties = {
     ...gridStyle,
     gridTemplateColumns: "1fr",
     position: "relative",
     zIndex: 2,
   };
+  
+  
+  // Reset margin for headers
+  const resetMargin = buildHeadingRichText(titleTextStyle);
+
 
   // Variation 1 : content on left, input+button on right (default)
   if (slice?.variation === "default") {
@@ -139,8 +145,16 @@ export default function Cta({ slice }: { slice: any }) {
         <div style={gridStyle}>
           <div style={gridLeftStyle}>
             <div style={gridSingleStyle}>
-            {ctaContent.title && <h1 style={headingTextStyle}>{ctaContent.title}</h1>}
-            {ctaContent.description && <p style={bodyTextStyle}>{ctaContent.description}</p>}
+            {ctaContent.title && (
+              <div style={titleTextStyle}>
+                <PrismicRichText field={ctaContent.title} components={resetMargin}/>
+              </div>
+            )}
+            {ctaContent.description && (
+              <div style={descriptionTextStyle}>
+                <PrismicRichText field={ctaContent.description}/>
+              </div>
+            )}
           </div>
           </div>
 
@@ -174,8 +188,16 @@ export default function Cta({ slice }: { slice: any }) {
           <div style={gridLeftStyle}>
           <div style={gridSingleStyle}>
             <div style={leftCardStyle}>
-            {ctaContent.title && <h1 style={headingTextStyle}>{ctaContent.title}</h1>}
-            {ctaContent.description && <p style={bodyTextStyle}>{ctaContent.description}</p>}
+            {ctaContent.title && (
+              <div style={titleTextStyle}>
+                <PrismicRichText field={ctaContent.title} components={resetMargin}/>
+              </div>
+              )}
+            {ctaContent.description && (
+              <div style={descriptionTextStyle}>
+                <PrismicRichText field={ctaContent.description}/>
+              </div>
+              )}
             </div>
           </div>
           </div>

@@ -13,10 +13,12 @@
       "imageUrl": "",
       "primary": {
         "hero_title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
-            "label": "Heading",
-            "placeholder": ""
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading1,heading2,strong"
           }
         },
         "hero_description": {
@@ -25,7 +27,7 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "paragraph"
+            "multi": "paragraph,strong,em"
           }
         },
         "hero_button_link": {
@@ -161,10 +163,12 @@
       "imageUrl": "",
       "primary": {
         "hero_title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
-            "label": "Heading",
-            "placeholder": ""
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading1,heading2,strong"
           }
         },
         "hero_description": {
@@ -173,7 +177,7 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "paragraph"
+            "multi": "paragraph,strong,em"
           }
         },
         "hero_button_link": {
