@@ -11,18 +11,22 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "title": {
+        "faq_title": {
           "type": "StructuredText",
           "config": {
-            "single": "heading1",
-            "label": "Title"
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,strong,em"
           }
         },
-        "description": {
+        "faq_description": {
           "type": "StructuredText",
           "config": {
-            "multi": "paragraph,strong,em,hyperlink",
-            "label": "Description"
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
           }
         },
         "faq_items": {
@@ -34,15 +38,150 @@
               "question": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "heading3",
-                  "label": "Question"
+                  "label": "Question",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "paragraph,strong,em"
                 }
               },
               "answer": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph,strong,em,hyperlink",
-                  "label": "Answer"
+                  "label": "Answer",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em,hyperlink"
+                }
+              }
+            }
+          }
+        },
+        "styles": {
+          "type": "Group",
+          "config": {
+            "label": "Styles",
+            "repeat": false,
+            "fields": {
+              "faq_background_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Background Color",
+                  "placeholder": ""
+                }
+              },
+              "faq_title_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Title Text Color",
+                  "placeholder": ""
+                }
+              },
+              "faq_title_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Title Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "faq_title_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Title Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "faq_description_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Description Text Color",
+                  "placeholder": ""
+                }
+              },
+              "faq_description_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Description Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "faq_description_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Description Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "faq_question_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Question Text Color",
+                  "placeholder": ""
+                }
+              },
+              "faq_question_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Question Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "faq_question_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Question Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "faq_answer_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Asnwer Text Color",
+                  "placeholder": ""
+                }
+              },
+              "faq_answer_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Answer Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "faq_answer_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Answer Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "faq_divider_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Divider Color",
+                  "placeholder": ""
                 }
               }
             }

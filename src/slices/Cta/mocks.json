@@ -3,18 +3,13 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"cta_title": {
-				"__TYPE__": "FieldContent",
-				"value": "smile",
-				"type": "Text"
-			},
 			"cta_description": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Id ea ullamco anim incididunt laboris incididunt incididunt quis consectetur eiusmod ut proident minim et."
+							"text": "Culpa commodo id proident ullamco Lorem eu. Et officia irure aute ullamco enim. Laborum qui proident quis aute ipsum in aliqua anim minim officia tempor dolor voluptate."
 						}
 					}
 				]
@@ -92,6 +87,17 @@
 				"__TYPE__": "FieldContent",
 				"value": "Roboto_Mono",
 				"type": "Select"
+			},
+			"cta_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Wooden"
+						}
+					}
+				]
 			}
 		},
 		"items": []
@@ -100,18 +106,13 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "withBackgroundImage",
 		"primary": {
-			"cta_title": {
-				"__TYPE__": "FieldContent",
-				"value": "tax",
-				"type": "Text"
-			},
 			"cta_description": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Irure ea sunt labore non."
+							"text": "Do irure magna proident in adipisicing dolor elit cillum proident culpa do."
 						}
 					}
 				]
@@ -232,6 +233,17 @@
 				"__TYPE__": "FieldContent",
 				"value": "Roboto_Mono",
 				"type": "Select"
+			},
+			"cta_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Coffee"
+						}
+					}
+				]
 			}
 		},
 		"items": [

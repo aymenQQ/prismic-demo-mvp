@@ -97,6 +97,7 @@ export function buildCtaCssVars(slice: any): CSSProperties {
   const sp = slice?.primary ?? slice ?? {};
 
   return {
+
     // Background & Background Image
     ["--cta-background-color" as any]: sp.cta_background_color ?? "var(--background-color)",
     ["--cta-background-image-scale" as any]: typeof sp.cta_background_image_scale === "number" ? `${sp.cta_background_image_scale}%` : undefined,
@@ -129,6 +130,41 @@ export function buildCtaCssVars(slice: any): CSSProperties {
   };
 }
 
+export function buildFaqCssVars(slice: any): CSSProperties {
+  const sp = slice?.primary ?? slice ?? {};
+  const styleItems = Array.isArray(sp.styles) ? sp.styles : [];
+  const style = styleItems[0] ?? {};
+
+  return {
+
+    // Background
+    ["--faq-background-color" as any]: style.faq_background_color ?? "var(--background-color)",
+
+    // Title
+    ["--faq-title-text-color" as any]: style.faq_title_text_color ?? "var(--title-text-color)", 
+    ["--faq-title-text-font" as any]: fontFamilyFromSelect(style.faq_title_text_font) ?? "var(--title-text-font)",
+    ["--faq-title-text-size" as any]: typeof style.faq_title_text_size === "number" ? `${style.faq_title_text_size}px` : "var(--title-text-size)",
+
+    // Description
+    ["--faq-description-text-color" as any]: style.faq_description_text_color ?? "var(--description-text-color)",
+    ["--faq-description-text-font" as any]: fontFamilyFromSelect(style.faq_description_text_font) ?? "var(--description-text-font)",
+    ["--faq-description-text-size" as any]: typeof style.faq_description_text_size === "number" ? `${style.faq_description_text_size}px` : "var(--description-text-size)",
+
+    // Question
+    ["--faq-question-text-color" as any]: style.faq_question_text_color ?? "var(--title-text-color)",
+    ["--faq-question-text-font" as any]: fontFamilyFromSelect(style.faq_question_text_font) ?? "var(--title-text-font)",
+    ["--faq-question-text-size" as any]: typeof style.faq_question_text_size === "number" ? `${style.faq_question_text_size}px` : "var(--title-text-size)",
+
+    // Answer
+    ["--faq-answer-text-color" as any]: style.faq_answer_text_color ?? "var(--description-text-color)",
+    ["--faq-answer-text-font" as any]: fontFamilyFromSelect(style.faq_answer_text_font) ?? "var(--description-text-font)",
+    ["--faq-answer-text-size" as any]: typeof style.faq_answer_text_size === "number" ? `${style.faq_answer_text_size}px` : "var(--description-text-size)",
+
+    // Separator
+    ["--faq-divider-color" as any]: style.faq_divider_color ?? "rgba(0,0,0,.2)",
+  };
+}
+
 export function buildPageCssVars(data: any): CSSProperties {
-  return { ...buildGlobalCssVars(data), ...buildNavbarCssVars(data), ...buildHeroCssVars(data), ...buildCtaCssVars(data) };
+  return { ...buildGlobalCssVars(data), ...buildNavbarCssVars(data), ...buildHeroCssVars(data), ...buildCtaCssVars(data), ...buildFaqCssVars(data) };
 }

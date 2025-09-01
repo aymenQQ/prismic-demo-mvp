@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type PageDocumentDataSlicesSlice = CtaSlice | HeroSlice;
+type PageDocumentDataSlicesSlice = FaqListSlice | CtaSlice | HeroSlice;
 
 /**
  * Content for Page documents
@@ -457,12 +457,12 @@ export interface CtaSliceDefaultPrimary {
   /**
    * Title field in *Cta → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: cta.default.primary.cta_title
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  cta_title: prismic.KeyTextField;
+  cta_title: prismic.RichTextField;
 
   /**
    * Description field in *Cta → Default → Primary*
@@ -647,12 +647,12 @@ export interface CtaSliceWithBackgroundImagePrimary {
   /**
    * Title field in *Cta → With Background Image → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: cta.withBackgroundImage.primary.cta_title
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  cta_title: prismic.KeyTextField;
+  cta_title: prismic.RichTextField;
 
   /**
    * Description field in *Cta → With Background Image → Primary*
@@ -920,6 +920,159 @@ export interface FaqListSliceDefaultPrimaryFaqItemsItem {
 }
 
 /**
+ * Item in *Faq → Default → Primary → Styles*
+ */
+export interface FaqListSliceDefaultPrimaryStylesItem {
+  /**
+   * Background Color field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_background_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  faq_background_color: prismic.ColorField;
+
+  /**
+   * Title Text Color field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_title_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  faq_title_text_color: prismic.ColorField;
+
+  /**
+   * Title Text Size (px) field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_title_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  faq_title_text_size: prismic.NumberField;
+
+  /**
+   * Title Text Font field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_title_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  faq_title_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * Description Text Color field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_description_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  faq_description_text_color: prismic.ColorField;
+
+  /**
+   * Description Text Font field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_description_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  faq_description_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * Description Text Size (px) field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_description_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  faq_description_text_size: prismic.NumberField;
+
+  /**
+   * Question Text Color field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_question_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  faq_question_text_color: prismic.ColorField;
+
+  /**
+   * Question Text Font field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_question_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  faq_question_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * Question Text Size (px) field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_question_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  faq_question_text_size: prismic.NumberField;
+
+  /**
+   * Asnwer Text Color field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_answer_text_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  faq_answer_text_color: prismic.ColorField;
+
+  /**
+   * Answer Text Font field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_answer_text_font
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  faq_answer_text_font: prismic.SelectField<
+    "Inter" | "Lora" | "Poppins" | "Roboto_Mono"
+  >;
+
+  /**
+   * Answer Text Size (px) field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_answer_text_size
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  faq_answer_text_size: prismic.NumberField;
+
+  /**
+   * Divider Color field in *Faq → Default → Primary → Styles*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[].faq_divider_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  faq_divider_color: prismic.ColorField;
+}
+
+/**
  * Primary content in *Faq → Default → Primary*
  */
 export interface FaqListSliceDefaultPrimary {
@@ -928,20 +1081,20 @@ export interface FaqListSliceDefaultPrimary {
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: faq_list.default.primary.title
+   * - **API ID Path**: faq_list.default.primary.faq_title
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  title: prismic.RichTextField;
+  faq_title: prismic.RichTextField;
 
   /**
    * Description field in *Faq → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: faq_list.default.primary.description
+   * - **API ID Path**: faq_list.default.primary.faq_description
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  faq_description: prismic.RichTextField;
 
   /**
    * FAQ Items field in *Faq → Default → Primary*
@@ -954,6 +1107,16 @@ export interface FaqListSliceDefaultPrimary {
   faq_items: prismic.GroupField<
     Simplify<FaqListSliceDefaultPrimaryFaqItemsItem>
   >;
+
+  /**
+   * Styles field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_list.default.primary.styles[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  styles: prismic.GroupField<Simplify<FaqListSliceDefaultPrimaryStylesItem>>;
 }
 
 /**
@@ -1445,6 +1608,7 @@ declare module "@prismicio/client" {
       CtaSliceWithBackgroundImage,
       FaqListSlice,
       FaqListSliceDefaultPrimaryFaqItemsItem,
+      FaqListSliceDefaultPrimaryStylesItem,
       FaqListSliceDefaultPrimary,
       FaqListSliceVariation,
       FaqListSliceDefault,

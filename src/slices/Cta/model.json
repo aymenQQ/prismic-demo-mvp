@@ -13,10 +13,12 @@
       "imageUrl": "",
       "primary": {
         "cta_title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Title",
-            "placeholder": ""
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading1,heading2,strong"
           }
         },
         "cta_description": {
@@ -25,7 +27,7 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "paragraph"
+            "multi": "paragraph,strong,em"
           }
         },
         "cta_input_placeholder": {
@@ -160,10 +162,12 @@
       "imageUrl": "",
       "primary": {
         "cta_title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Title",
-            "placeholder": ""
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading1,heading2,strong"
           }
         },
         "cta_description": {
@@ -172,7 +176,7 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "paragraph"
+            "multi": "paragraph,strong,em"
           }
         },
         "cta_input_placeholder": {

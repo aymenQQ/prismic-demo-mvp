@@ -7,8 +7,6 @@ export type CTAContent = {
   description?: string;
   inputPlaceholder?: string;
   button: CTAButton;
-  legal?: string;
-  sideImageUrl?: string;
   backgroundImageUrl?: string;
 };
 
@@ -20,12 +18,16 @@ export function parseCTAContent(slice: any): CTAContent {
   
   const buttonHref = asLink(sp.cta_button_link) ?? "#";
   const buttonTitle = sp.cta_button_link?.text || "Sign up";
-  
+
+  const inputPlaceholder = sp.cta_input_placeholder ?? "Enter your email";
+  const button = { title: buttonTitle, href: buttonHref };
+  const backgroundImageUrl = sp.cta_background_image?.url;
+
   return {
     title,
     description,
-    inputPlaceholder: sp.cta_input_placeholder ?? "Enter your email",
-    button: { title: buttonTitle, href: buttonHref }, 
-    backgroundImageUrl: sp.cta_background_image?.url,
+    inputPlaceholder,
+    button, 
+    backgroundImageUrl,
   };
 }

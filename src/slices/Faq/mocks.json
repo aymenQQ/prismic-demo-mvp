@@ -3,28 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Certain"
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Sunt occaecat sunt consequat dolore duis ex reprehenderit exercitation do quis elit ullamco culpa. Voluptate do adipisicing tempor."
-						}
-					}
-				]
-			},
 			"faq_items": {
 				"__TYPE__": "GroupContentType",
 				"value": [
@@ -37,9 +15,9 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading3",
+											"type": "paragraph",
 											"content": {
-												"text": "Secret"
+												"text": "Cupidatat aute minim cillum dolore laborum enim nulla aute nulla do elit ea laboris cupidatat."
 											}
 										}
 									]
@@ -53,13 +31,157 @@
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "Eu voluptate est commodo in id id in consequat mollit dolore consectetur. Lorem ad Lorem laboris veniam deserunt do culpa enim. Reprehenderit sit fugiat labore tempor."
+												"text": "Veniam nulla nostrud laboris. Aute in nulla mollit nisi ut nisi incididunt mollit proident est commodo duis labore do."
 											}
 										}
 									]
 								}
 							]
 						]
+					}
+				]
+			},
+			"styles": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"faq_title_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#3acf1e",
+									"type": "Color"
+								}
+							],
+							[
+								"faq_title_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "54",
+									"type": "Number"
+								}
+							],
+							[
+								"faq_background_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#152c68",
+									"type": "Color"
+								}
+							],
+							[
+								"faq_title_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Lora",
+									"type": "Select"
+								}
+							],
+							[
+								"faq_description_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#4f21b8",
+									"type": "Color"
+								}
+							],
+							[
+								"faq_description_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Inter",
+									"type": "Select"
+								}
+							],
+							[
+								"faq_description_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "46",
+									"type": "Number"
+								}
+							],
+							[
+								"faq_question_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#23cedf",
+									"type": "Color"
+								}
+							],
+							[
+								"faq_question_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Lora",
+									"type": "Select"
+								}
+							],
+							[
+								"faq_question_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "0",
+									"type": "Number"
+								}
+							],
+							[
+								"faq_answer_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#6b2010",
+									"type": "Color"
+								}
+							],
+							[
+								"faq_answer_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Roboto_Mono",
+									"type": "Select"
+								}
+							],
+							[
+								"faq_answer_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "10",
+									"type": "Number"
+								}
+							],
+							[
+								"faq_divider_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#b6e30d",
+									"type": "Color"
+								}
+							]
+						]
+					}
+				]
+			},
+			"faq_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat eiusmod sint duis sint. Excepteur quis Lorem aliqua ullamco minim duis ut ea ea commodo adipisicing ut sit qui occaecat. Tempor minim et minim ex do culpa."
+						}
+					}
+				]
+			},
+			"faq_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Create"
+						}
 					}
 				]
 			}

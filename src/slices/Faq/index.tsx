@@ -1,52 +1,105 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import type { CSSProperties } from "react";
+import { PrismicRichText } from "@prismicio/react";
+import { buildFaqCssVars } from "@/lib/styles";
+import { parseFAQContent } from "@/lib/faqContent";
 
-/**
- * Props for `FaqList`.
- */
-export type FaqListProps = SliceComponentProps<Content.FaqListSlice>;
+export default function Faq({ slice }: { slice: any }) {
+  const faqCssVars: CSSProperties = buildFaqCssVars(slice);
+  const content = parseFAQContent(slice);
 
-/**
- * Component for "FaqList" Slices.
- */
-const FaqList: FC<FaqListProps> = ({ slice }) => {
+  const sectionStyle: CSSProperties = {
+    ...faqCssVars,
+    background: "var(--faq-background-color)",
+    padding: "60px 5%",
+  };
+  const containerStyle: CSSProperties = {
+    maxWidth: "700px",
+    margin: "0 auto",
+  };
+
+
+  const titleStyle: CSSProperties = {
+    color: "var(--faq-title-text-color)",
+    fontFamily: "var(--faq-title-text-font)",
+    fontSize: "var(--faq-title-text-size)",
+    lineHeight: 1.15,
+    margin: 0,
+    textAlign: "center",
+  };
+
+
+  const descriptionStyle: CSSProperties = {
+    color: "var(--faq-description-text-color)",
+    fontFamily: "var(--faq-description-text-font)",
+    fontSize: "var(--faq-description-text-size)",
+    lineHeight: 1.5,
+    marginTop: 12,
+    marginBottom: 36,
+    textAlign: "center",
+  };
+
+
+  const listStyle: CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
+    gap: "24px",
+  };
+
+
+  const detailsStyle: CSSProperties = {
+    borderBottom: "1px solid var(--faq-divider-color)",
+  };
+
+
+  const summaryStyle: CSSProperties = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    cursor: "pointer",
+    listStyle: "none",
+    outline: "none",
+    color: "var(--faq-question-text-color)",
+    fontFamily: "var(--faq-question-text-font)",
+    fontSize: "var(--faq-question-text-size)",
+  };
+
+
+  const answerStyle: CSSProperties = {
+    marginTop: 18,
+    color: "var(--faq-answer-text-color)",
+    fontFamily: "var(--faq-answer-text-font)",
+    fontSize: "var(--faq-answer-text-size)",
+    lineHeight: 1.6,
+  };
+
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for faq_list (variation: {slice.variation}) slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use Prismic MCP with your code editor
-       *
-       * Get AI-powered help to build your slice components — based on your actual model.
-       *
-       * ▶️ Setup:
-       * 1. Add a new MCP Server in your code editor:
-       *
-       * {
-       *   "mcpServers": {
-       *     "Prismic MCP": {
-       *       "command": "npx",
-       *       "args": ["-y", "@prismicio/mcp-server@latest"]
-       *     }
-       *   }
-       * }
-       *
-       * 2. Select a model optimized for coding (e.g. Claude 3.7 Sonnet or similar)
-       *
-       * ✅ Then open your slice file and ask your code editor:
-       *    "Code this slice"
-       *
-       * Your code editor reads your slice model and helps you code faster ⚡
-       * 🎙️ Give your feedback: https://community.prismic.io/t/help-us-shape-the-future-of-slice-creation/19505
-       * 📚 Documentation: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
+    <section style={sectionStyle}>
+      <div style={containerStyle}>
+        {content.title && (
+          <div style={titleStyle}>
+            <PrismicRichText field={content.title}/>
+          </div>
+        )}
+        {content.description && (
+          <div style={descriptionStyle}>
+            <PrismicRichText field={content.description}/>
+          </div> 
+        )}
+
+        <div style={listStyle}>
+          {content.items.map((item, i) => (
+            <details key={i} style={detailsStyle}>
+              <summary style={summaryStyle}>
+                <PrismicRichText field={item.question}/>
+              </summary>
+              {item.answer && (
+                <div style={answerStyle}>
+                  <PrismicRichText field={item.answer}/>
+                </div>)}
+            </details>
+          ))}
+        </div>
+      </div>
     </section>
   );
-};
-
-export default FaqList;
+}
