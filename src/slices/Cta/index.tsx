@@ -60,7 +60,7 @@ export default function Cta({ slice }: { slice: any }) {
   };
   const buttonStyle: CSSProperties = {
     display: "inline-block",
-    padding: "8px 14px",
+    padding: "14px 14px",
     borderRadius: "var(--cta-button-corner-radius)",
     background: "var(--cta-button-color)",
     color: "var(--cta-button-text-color)",
@@ -68,7 +68,7 @@ export default function Cta({ slice }: { slice: any }) {
     fontFamily: "var(--cta-button-text-font)",
     textDecoration: "none",
     fontWeight: 600,
-    lineHeight: 1.2,
+    lineHeight: 1,
   };
 
 
