@@ -26,6 +26,10 @@ export function buildGlobalCssVars(data: any): CSSProperties {
     ["--button-text-font" as any]: fontFamilyFromSelect(data.button_text_font),
     ["--button-text-size" as any]: typeof data.button_text_size === "number" ? `${data.button_text_size}px` : "18px",
     ["--button-corner-radius" as any]: typeof data.button_corner_radius === "number" ? `${data.button_corner_radius}px` : "8px",
+
+    // Card
+    ["--card-color" as any]: data.card_color ?? "#ffffff",
+    ["--card-corner-radius" as any]: typeof data.card_corner_radius === "number" ? `${data.card_corner_radius}px` : undefined,
    
   };
 }
@@ -94,8 +98,8 @@ export function buildHeroCssVars(slice: any): CSSProperties {
     ["--hero-button-corner-radius" as any]: typeof style.hero_button_corner_radius === "number" ? `${style.hero_button_corner_radius}px` : "var(--button-corner-radius)",
 
     // Card
-    ["--hero-card-color" as any]: style.hero_card_color ?? "var(--brand-second-color)",
-    ["--hero-card-corner-radius" as any]: typeof style.hero_card_corner_radius === "number" ? `${style.hero_card_corner_radius}px` : undefined,
+    ["--hero-card-color" as any]: style.hero_card_color ?? "var(--card-color)",
+    ["--hero-card-corner-radius" as any]: typeof style.hero_card_corner_radius === "number" ? `${style.hero_card_corner_radius}px` : "var(--card-corner-radius)",
     
   };
 }
@@ -131,8 +135,8 @@ export function buildCtaCssVars(slice: any): CSSProperties {
     ["--cta-button-corner-radius" as any]: typeof style.cta_button_corner_radius === "number" ? `${style.cta_button_corner_radius}px` : "var(--button-corner-radius)",
 
     // Card
-    ["--cta-card-color" as any]: style.cta_card_color ?? "var(--brand-second-color)",
-    ["--cta-card-corner-radius" as any]: typeof style.cta_card_corner_radius === "number" ? `${style.cta_card_corner_radius}px` : undefined,
+    ["--cta-card-color" as any]: style.cta_card_color ?? "var(--card-color)",
+    ["--cta-card-corner-radius" as any]: typeof style.cta_card_corner_radius === "number" ? `${style.cta_card_corner_radius}px` : "var(--card-corner-radius)",
 
   };
 }
