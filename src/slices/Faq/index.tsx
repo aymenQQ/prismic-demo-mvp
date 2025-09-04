@@ -7,7 +7,7 @@ import { buildHeadingRichText } from "@/lib/richtextPresets";
 
 export default function Faq({ slice }: { slice: any }) {
   const faqCssVars: CSSProperties = buildFaqCssVars(slice);
-  const faqcontent = parseFAQContent(slice);
+  const faqContent = parseFAQContent(slice);
 
 
   const sectionStyle: CSSProperties = {
@@ -17,7 +17,7 @@ export default function Faq({ slice }: { slice: any }) {
   };
   const containerStyle: CSSProperties = {
     maxWidth: "700px",
-    margin: "0 auto",
+    margin: "auto",
   };
 
 
@@ -25,16 +25,12 @@ export default function Faq({ slice }: { slice: any }) {
     color: "var(--faq-title-text-color)",
     fontFamily: "var(--faq-title-text-font)",
     fontSize: "var(--faq-title-text-size)",
-    lineHeight: 1.15,
-    margin: 0,
     textAlign: "center",
   };
   const descriptionStyle: CSSProperties = {
     color: "var(--faq-description-text-color)",
     fontFamily: "var(--faq-description-text-font)",
     fontSize: "var(--faq-description-text-size)",
-    lineHeight: 1.5,
-    marginTop: 12,
     marginBottom: 36,
     textAlign: "center",
   };
@@ -45,7 +41,7 @@ export default function Faq({ slice }: { slice: any }) {
     flexDirection: "column",
     gap: "24px",
   };
-  const detailsStyle: CSSProperties = {
+  const separatorStyle: CSSProperties = {
     borderBottom: "1px solid var(--faq-divider-color)",
   };
 
@@ -62,11 +58,10 @@ export default function Faq({ slice }: { slice: any }) {
     fontSize: "var(--faq-question-text-size)",
   };
   const answerStyle: CSSProperties = {
-    marginTop: 18,
+    paddingLeft: 12,
     color: "var(--faq-answer-text-color)",
     fontFamily: "var(--faq-answer-text-font)",
     fontSize: "var(--faq-answer-text-size)",
-    lineHeight: 1.6,
   };
 
 
@@ -77,20 +72,20 @@ export default function Faq({ slice }: { slice: any }) {
   return (
     <section style={sectionStyle}>
       <div style={containerStyle}>
-        {faqcontent.title && (
+        {faqContent.title && (
           <div style={titleStyle}>
-            <PrismicRichText field={faqcontent.title}/>
+            <PrismicRichText field={faqContent.title}/>
           </div>
         )}
-        {faqcontent.description && (
+        {faqContent.description && (
           <div style={descriptionStyle}>
-            <PrismicRichText field={faqcontent.description}/>
+            <PrismicRichText field={faqContent.description}/>
           </div> 
         )}
 
         <div style={listStyle}>
-          {faqcontent.items.map((item, i) => (
-            <details key={i} style={detailsStyle}>
+          {faqContent.items.map((item, i) => (
+            <details key={i} style={separatorStyle}>
               <summary style={summaryStyle}>
                 <PrismicRichText field={item.question} components={resetMargin}/>
               </summary>

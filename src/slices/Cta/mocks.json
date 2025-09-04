@@ -23,70 +23,10 @@
 					"text": "whale"
 				}
 			},
-			"cta_background_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#96371b",
-				"type": "Color"
-			},
-			"cta_title_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#26c0ea",
-				"type": "Color"
-			},
-			"cta_description_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#e26b34",
-				"type": "Color"
-			},
-			"cta_button_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#de5da1",
-				"type": "Color"
-			},
-			"cta_button_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#c445fa",
-				"type": "Color"
-			},
-			"cta_title_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "90",
-				"type": "Number"
-			},
-			"cta_description_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "13",
-				"type": "Number"
-			},
-			"cta_button_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "76",
-				"type": "Number"
-			},
-			"cta_title_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Roboto_Mono",
-				"type": "Select"
-			},
-			"cta_description_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Lora",
-				"type": "Select"
-			},
-			"cta_button_corner_radius": {
-				"__TYPE__": "FieldContent",
-				"value": "11",
-				"type": "Number"
-			},
 			"cta_input_placeholder": {
 				"__TYPE__": "FieldContent",
 				"value": "carbon",
 				"type": "Text"
-			},
-			"cta_button_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Roboto_Mono",
-				"type": "Select"
 			},
 			"cta_title": {
 				"__TYPE__": "StructuredTextContent",
@@ -96,6 +36,112 @@
 						"content": {
 							"text": "Wooden"
 						}
+					}
+				]
+			},
+			"styles": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"cta_background_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#389d6d",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_title_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#5b8f10",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_title_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Lora",
+									"type": "Select"
+								}
+							],
+							[
+								"cta_title_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "22",
+									"type": "Number"
+								}
+							],
+							[
+								"cta_description_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#f130ab",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_description_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Lora",
+									"type": "Select"
+								}
+							],
+							[
+								"cta_description_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "89",
+									"type": "Number"
+								}
+							],
+							[
+								"cta_button_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#51f223",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_button_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#8fbfd2",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_button_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Roboto_Mono",
+									"type": "Select"
+								}
+							],
+							[
+								"cta_button_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "43",
+									"type": "Number"
+								}
+							],
+							[
+								"cta_button_corner_radius",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "42",
+									"type": "Number"
+								}
+							]
+						]
 					}
 				]
 			}
@@ -126,61 +172,6 @@
 					"text": "particles"
 				}
 			},
-			"cta_background_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#a0c3ad",
-				"type": "Color"
-			},
-			"cta_title_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#7b1640",
-				"type": "Color"
-			},
-			"cta_description_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#be3a98",
-				"type": "Color"
-			},
-			"cta_button_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#57ecd4",
-				"type": "Color"
-			},
-			"cta_button_text_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#802016",
-				"type": "Color"
-			},
-			"cta_title_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "22",
-				"type": "Number"
-			},
-			"cta_description_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "65",
-				"type": "Number"
-			},
-			"cta_button_text_size": {
-				"__TYPE__": "FieldContent",
-				"value": "11",
-				"type": "Number"
-			},
-			"cta_title_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Inter",
-				"type": "Select"
-			},
-			"cta_description_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Lora",
-				"type": "Select"
-			},
-			"cta_button_corner_radius": {
-				"__TYPE__": "FieldContent",
-				"value": "57",
-				"type": "Number"
-			},
 			"cta_background_image": {
 				"origin": {
 					"id": "main",
@@ -204,35 +195,10 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"cta_background_image_scale": {
-				"__TYPE__": "FieldContent",
-				"value": "58",
-				"type": "Number"
-			},
-			"cta_background_image_corner_radius": {
-				"__TYPE__": "FieldContent",
-				"value": "35",
-				"type": "Number"
-			},
-			"cta_card_color": {
-				"__TYPE__": "FieldContent",
-				"value": "#1c2cf5",
-				"type": "Color"
-			},
-			"cta_card_corner_radius": {
-				"__TYPE__": "FieldContent",
-				"value": "19",
-				"type": "Number"
-			},
 			"cta_input_placeholder": {
 				"__TYPE__": "FieldContent",
 				"value": "lips",
 				"type": "Text"
-			},
-			"cta_button_text_font": {
-				"__TYPE__": "FieldContent",
-				"value": "Roboto_Mono",
-				"type": "Select"
 			},
 			"cta_title": {
 				"__TYPE__": "StructuredTextContent",
@@ -242,6 +208,144 @@
 						"content": {
 							"text": "Coffee"
 						}
+					}
+				]
+			},
+			"styles": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"cta_background_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#11c656",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_background_image_scale",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "37",
+									"type": "Number"
+								}
+							],
+							[
+								"cta_background_image_corner_radius",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "24",
+									"type": "Number"
+								}
+							],
+							[
+								"cta_title_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#555ae0",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_title_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Inter",
+									"type": "Select"
+								}
+							],
+							[
+								"cta_title_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "51",
+									"type": "Number"
+								}
+							],
+							[
+								"cta_description_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#09a632",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_description_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Lora",
+									"type": "Select"
+								}
+							],
+							[
+								"cta_description_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "94",
+									"type": "Number"
+								}
+							],
+							[
+								"cta_button_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#62065a",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_button_text_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#af8050",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_button_text_font",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Roboto_Mono",
+									"type": "Select"
+								}
+							],
+							[
+								"cta_button_text_size",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "61",
+									"type": "Number"
+								}
+							],
+							[
+								"cta_button_corner_radius",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "86",
+									"type": "Number"
+								}
+							],
+							[
+								"cta_card_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#a2960c",
+									"type": "Color"
+								}
+							],
+							[
+								"cta_card_corner_radius",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "99",
+									"type": "Number"
+								}
+							]
+						]
 					}
 				]
 			}

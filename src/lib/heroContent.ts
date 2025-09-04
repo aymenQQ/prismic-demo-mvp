@@ -1,30 +1,24 @@
-import { asLink, RichTextField } from "@prismicio/client";
+import { RichTextField } from "@prismicio/client";
+import type { LinkField, ImageFieldImage } from "@prismicio/client";
 
-export type HeroButton = { title: string; href: string };
+export type HeroButton = { title: string; field?: LinkField };
 
 export type HeroContent = {
   title?: RichTextField;
   description?: RichTextField;
   buttons: HeroButton[];
-  sideImageUrl?: string;
-  backgroundImageUrl?: string;
+  sideImage?: ImageFieldImage;
+  backgroundImage?: ImageFieldImage;
 };
 
-function parseHeroButtons(field: any): HeroButton[] {
-  const items = Array.isArray(field) ? field : field ? [field] : [];
-
-  return items
-    .map((item: any) => {
-      const href = asLink(item?.link ?? item) ?? "#";
-      const titleCandidate =
-        (typeof item?.label === "string" && item.label.trim()) ||
-        (typeof item?.text === "string" && item.text.trim()) ||
-        (typeof item === "string" && item.trim()) ||
-        "Button";
-
-      return { title: titleCandidate, href };
-    })
-    .filter((b) => Boolean(b.href));
+function parseHeroButtons(links: LinkField[]): HeroButton[] {
+  
+  return links
+    .map((link) => ({
+      title: ((link as any).text ?? "").trim(),
+      field: link,
+    }))
+    .filter((b) => b.title.length > 0);
 }
 
 export function parseHeroContent(slice: any): HeroContent {
@@ -32,17 +26,15 @@ export function parseHeroContent(slice: any): HeroContent {
 
   const title = sp.hero_title ?? undefined;
   const description = sp.hero_description ?? undefined;
-
   const buttons = parseHeroButtons(sp.hero_button_link);
-
-  const sideImageUrl = sp.hero_side_image?.url;
-  const backgroundImageUrl = sp.hero_background_image?.url;
+  const sideImage = sp.hero_side_image as ImageFieldImage | undefined;
+  const backgroundImage = sp.hero_background_image as ImageFieldImage | undefined;
 
   return {
     title,
     description,
     buttons,
-    sideImageUrl,
-    backgroundImageUrl,
+    sideImage,
+    backgroundImage,
   };
 }

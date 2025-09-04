@@ -1,0 +1,131 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Navbar": {
+      "navbar_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "navbar_text_link": {
+        "type": "Link",
+        "config": {
+          "label": "Text Link",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": false,
+          "allowText": true,
+          "repeat": true
+        }
+      },
+      "navbar_button_link": {
+        "type": "Link",
+        "config": {
+          "label": "Button Link",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": false,
+          "allowText": true,
+          "repeat": true
+        }
+      },
+      "navbar_rendering": {
+        "type": "Boolean",
+        "config": {
+          "label": "Navbar Rendering",
+          "placeholder_false": "Fixed",
+          "placeholder_true": "Sticky",
+          "default_value": false
+        }
+      },
+      "styles": {
+        "type": "Group",
+        "config": {
+          "label": "Styles",
+          "repeat": false,
+          "fields": {
+            "navbar_logo_size": {
+              "type": "Number",
+              "config": {
+                "label": "Logo Size (px)",
+                "placeholder": ""
+              }
+            },
+            "navbar_background_color": {
+              "type": "Color",
+              "config": {
+                "label": "Background Color",
+                "placeholder": ""
+              }
+            },
+            "navbar_link_text_color": {
+              "type": "Color",
+              "config": {
+                "label": "Link Text Color",
+                "placeholder": ""
+              }
+            },
+            "navbar_link_text_font": {
+              "type": "Select",
+              "config": {
+                "label": "Link Text Font (px)",
+                "placeholder": "",
+                "options": ["Inter", "Lora", "Poppins", "Roboto_Mono"]
+              }
+            },
+            "navbar_link_text_size": {
+              "type": "Number",
+              "config": {
+                "label": "Link Text Size (px)",
+                "placeholder": ""
+              }
+            },
+            "navbar_button_color": {
+              "type": "Color",
+              "config": {
+                "label": "Button Color",
+                "placeholder": ""
+              }
+            },
+            "navbar_button_text_color": {
+              "type": "Color",
+              "config": {
+                "label": "Button Text Color",
+                "placeholder": ""
+              }
+            },
+            "navbar_button_text_font": {
+              "type": "Select",
+              "config": {
+                "label": "Button Text Font",
+                "placeholder": "",
+                "options": ["Inter", "Lora", "Poppins", "Roboto_Mono"]
+              }
+            },
+            "navbar_button_text_size": {
+              "type": "Number",
+              "config": {
+                "label": "Button Text Size",
+                "placeholder": ""
+              }
+            },
+            "navbar_button_corner_radius": {
+              "type": "Number",
+              "config": {
+                "label": "Button Corner Radius (px)",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,33 +1,35 @@
-import { asLink, RichTextField } from "@prismicio/client";
+import { RichTextField } from "@prismicio/client";
+import type { LinkField, ImageFieldImage } from "@prismicio/client";
 
-export type CTAButton = { title: any; href: any };
+export type CTAButton = { title: any; field: LinkField };
 
 export type CTAContent = {
   title?: RichTextField;
   description?: RichTextField;
   inputPlaceholder?: string;
   button: CTAButton;
-  backgroundImageUrl?: string;
+  backgroundImage?: ImageFieldImage;
 };
+
+function parseCTAButton(link: LinkField): CTAButton {
+  const title = ((link as any).text ?? "").trim();
+  return { title, field: link };
+}
 
 export function parseCTAContent(slice: any): CTAContent {
   const sp = slice?.primary ?? {};
 
   const title = sp.cta_title ?? undefined;
   const description = sp.cta_description ?? undefined;
-  
-  const buttonHref = asLink(sp.cta_button_link) ?? "#";
-  const buttonTitle = sp.cta_button_link?.text || "Sign up";
-
   const inputPlaceholder = sp.cta_input_placeholder ?? "Enter your email";
-  const button = { title: buttonTitle, href: buttonHref };
-  const backgroundImageUrl = sp.cta_background_image?.url;
+  const button = parseCTAButton(sp.cta_button_link);
+  const backgroundImage = sp.cta_background_image as ImageFieldImage | undefined;
 
   return {
     title,
     description,
     inputPlaceholder,
     button, 
-    backgroundImageUrl,
+    backgroundImage,
   };
 }

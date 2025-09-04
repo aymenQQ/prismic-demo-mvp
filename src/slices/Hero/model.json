@@ -49,106 +49,129 @@
             "thumbnails": []
           }
         },
-        "hero_background_color": {
-          "type": "Color",
+        "styles": {
+          "type": "Group",
           "config": {
-            "label": "(Styles) Background Color",
-            "placeholder": ""
-          }
-        },
-        "hero_title_text_color": {
-          "type": "Color",
-          "config": {
-            "label": "(Styles) Title Text Color",
-            "placeholder": ""
-          }
-        },
-        "hero_title_text_font": {
-          "type": "Select",
-          "config": {
-            "label": "(Styles) Title Text Font",
-            "placeholder": "",
-            "options": [
-              "Inter",
-              "Lora",
-              "Poppins",
-              "Roboto_Mono"
-            ]
-          }
-        },
-        "hero_title_text_size": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Title Text Size (px)",
-            "placeholder": ""
-          }
-        },
-        "hero_description_text_color": {
-          "type": "Color",
-          "config": {
-            "label": "(Styles) Description Text Color",
-            "placeholder": ""
-          }
-        },
-        "hero_description_text_font": {
-          "type": "Select",
-          "config": {
-            "label": "(Styles) Description Text Font",
-            "placeholder": "",
-            "options": [
-              "Inter",
-              "Lora",
-              "Poppins",
-              "Roboto_Mono"
-            ]
-          }
-        },
-        "hero_description_text_size": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Description Text Size (px)",
-            "placeholder": ""
-          }
-        },
-        "hero_button_color": {
-          "type": "Color",
-          "config": {
-            "label": "(Styles) Button Color",
-            "placeholder": ""
-          }
-        },
-        "hero_button_text_color": {
-          "type": "Color",
-          "config": {
-            "label": "(Styles) Button Text Color",
-            "placeholder": ""
-          }
-        },
-        "hero_button_text_font": {
-          "type": "Select",
-          "config": {
-            "label": "(Styles) Button Text Font",
-            "placeholder": "",
-            "options": [
-              "Inter",
-              "Lora",
-              "Poppins",
-              "Roboto_Mono"
-            ]
-          }
-        },
-        "hero_button_text_size": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Button Text Size (px)",
-            "placeholder": ""
-          }
-        },
-        "hero_button_corner_radius": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Button Corner Radius (px)",
-            "placeholder": ""
+            "label": "Styles",
+            "repeat": false,
+            "fields": {
+              "hero_background_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Background Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_side_image_scale": {
+                "type": "Number",
+                "config": {
+                  "label": "Side Image Scale (%)",
+                  "placeholder": ""
+                }
+              },
+              "hero_side_image_corner_radius": {
+                "type": "Number",
+                "config": {
+                  "label": "Side Image Radius (px)",
+                  "placeholder": ""
+                }
+              },
+              "hero_title_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Title Text Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_title_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Title Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "hero_title_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Title Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "hero_description_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Description Text Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_description_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Description Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "hero_description_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Description Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "hero_button_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Button Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_button_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Button Text Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_button_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Button Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "hero_button_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Button Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "hero_button_corner_radius": {
+                "type": "Number",
+                "config": {
+                  "label": "Button Corner Radius (px)",
+                  "placeholder": ""
+                }
+              }
+            }
           }
         }
       },
@@ -199,134 +222,143 @@
             "thumbnails": []
           }
         },
-        "hero_background_color": {
-          "type": "Color",
+        "styles": {
+          "type": "Group",
           "config": {
-            "label": "(Styles) Background Color",
-            "placeholder": ""
-          }
-        },
-        "hero_background_image_scale": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Background Image Scale (%)",
-            "placeholder": ""
-          }
-        },
-        "hero_background_image_corner_radius": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Background Img Radius (px)",
-            "placeholder": ""
-          }
-        },
-        "hero_title_text_color": {
-          "type": "Color",
-          "config": {
-            "label": "(Styles) Title Text Color",
-            "placeholder": ""
-          }
-        },
-        "hero_title_text_font": {
-          "type": "Select",
-          "config": {
-            "label": "(Styles) Title Text Font",
-            "placeholder": "",
-            "options": [
-              "Inter",
-              "Lora",
-              "Poppins",
-              "Roboto_Mono"
-            ]
-          }
-        },
-        "hero_title_text_size": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Title Text Size (px)",
-            "placeholder": ""
-          }
-        },
-        "hero_description_text_color": {
-          "type": "Color",
-          "config": {
-            "label": "(Styles) Description Text Color",
-            "placeholder": ""
-          }
-        },
-        "hero_description_text_font": {
-          "type": "Select",
-          "config": {
-            "label": "(Styles) Description Text Font",
-            "placeholder": "",
-            "options": [
-              "Inter",
-              "Lora",
-              "Poppins",
-              "Roboto_Mono"
-            ]
-          }
-        },
-        "hero_description_text_size": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Description Text Size (px)",
-            "placeholder": ""
-          }
-        },
-        "hero_button_color": {
-          "type": "Color",
-          "config": {
-            "label": "(Styles) Button Color",
-            "placeholder": ""
-          }
-        },
-        "hero_button_text_color": {
-          "type": "Color",
-          "config": {
-            "label": "(Styles) Button Text Color",
-            "placeholder": ""
-          }
-        },
-        "hero_button_text_font": {
-          "type": "Select",
-          "config": {
-            "label": "(Styles) Button Text Font",
-            "placeholder": "",
-            "options": [
-              "Inter",
-              "Lora",
-              "Poppins",
-              "Roboto_Mono"
-            ]
-          }
-        },
-        "hero_button_text_size": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Button Text Size (px)",
-            "placeholder": ""
-          }
-        },
-        "hero_button_corner_radius": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Button Corner Radius (px)",
-            "placeholder": ""
-          }
-        },
-        "hero_card_color": {
-          "type": "Color",
-          "config": {
-            "label": "(Styles) Card Color",
-            "placeholder": ""
-          }
-        },
-        "hero_card_corner_radius": {
-          "type": "Number",
-          "config": {
-            "label": "(Styles) Card Corner Radius (px)",
-            "placeholder": ""
+            "label": "Styles",
+            "repeat": false,
+            "fields": {
+              "hero_background_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Background Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_background_image_scale": {
+                "type": "Number",
+                "config": {
+                  "label": "Background Image Scale (%)",
+                  "placeholder": ""
+                }
+              },
+              "hero_background_image_corner_radius": {
+                "type": "Number",
+                "config": {
+                  "label": "Background Img Radius (px)",
+                  "placeholder": ""
+                }
+              },
+              "hero_title_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Title Text Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_title_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Title Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "hero_title_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Title Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "hero_description_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Description Text Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_description_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Description Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "hero_description_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Description Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "hero_button_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Button Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_button_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Button Text Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_button_text_font": {
+                "type": "Select",
+                "config": {
+                  "label": "Button Text Font",
+                  "placeholder": "",
+                  "options": [
+                    "Inter",
+                    "Lora",
+                    "Poppins",
+                    "Roboto_Mono"
+                  ]
+                }
+              },
+              "hero_button_text_size": {
+                "type": "Number",
+                "config": {
+                  "label": "Button Text Size (px)",
+                  "placeholder": ""
+                }
+              },
+              "hero_button_corner_radius": {
+                "type": "Number",
+                "config": {
+                  "label": "Button Corner Radius (px)",
+                  "placeholder": ""
+                }
+              },
+              "hero_card_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Card Color",
+                  "placeholder": ""
+                }
+              },
+              "hero_card_corner_radius": {
+                "type": "Number",
+                "config": {
+                  "label": "Card Corner Radius (px)",
+                  "placeholder": ""
+                }
+              }
+            }
           }
         }
       },

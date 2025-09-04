@@ -1,47 +1,50 @@
-import { asLink } from "@prismicio/client";
+import type { LinkField, ImageFieldImage } from "@prismicio/client";
 
-export type NavLink = { title: string; href: string };
-export type NavButton = { title: string; href: string };
+export type NavLink = { title: string; field?: LinkField };
+export type NavButton = { title: string; field?: LinkField };
 
 export type NavContent = {
-  logoUrl?: string;
+  logoImage?: ImageFieldImage;
   navLinks: NavLink[];
   navButtons: NavButton[];
+  navRendering: boolean;
 };
 
-function parseLogoUrl(data: any): string | undefined {
-  return data?.navbar_logo?.url ?? data?.logo?.url ?? undefined;
+function parseLogoImage(data: any): ImageFieldImage | undefined {
+  return (data?.navbar_logo as ImageFieldImage) ?? undefined;
 }
 
-function parseRepeatableLinks(field: any, fallbackTitle: string) {
-  const items = Array.isArray(field) ? field : field ? [field] : [];
+function parseRepeatableLinks(field: LinkField[]) {
+  const links = Array.isArray(field) ? field : [];
 
-  return items
-    .map((item: any) => {
-      const href = asLink(item?.link ?? item) ?? "#";
-      const titleCandidate =
-        (typeof item?.label === "string" && item.label.trim()) ||
-        (typeof item?.text === "string" && item.text.trim()) ||
-        (typeof item === "string" && item.trim()) ||
-        fallbackTitle;
-
-      return { title: titleCandidate, href };
-    })
-    .filter((i) => Boolean(i.href));
+  return links
+  .map((link) => ({
+    title: ((link as any).text ?? "").trim(),
+    field: link,
+  }))
+  .filter((b) => b.title.length > 0);
 }
+
 
 export function parseNavTextLinks(data: any): NavLink[] {
-  return parseRepeatableLinks(data?.navbar_text_link, "Link");
+  return parseRepeatableLinks(data?.navbar_text_link);
 }
 
 export function parseNavButtonLinks(data: any): NavButton[] {
-  return parseRepeatableLinks(data?.navbar_button_link, "Button");
+  return parseRepeatableLinks(data?.navbar_button_link);
 }
 
 export function parseNavContent(data: any): NavContent {
+
+  const logoImage = parseLogoImage(data);
+  const navLinks = parseNavTextLinks(data);
+  const navButtons =  parseNavButtonLinks(data);
+  const navRendering = data?.navbar_rendering;
+  
   return {
-    logoUrl: parseLogoUrl(data),
-    navLinks: parseNavTextLinks(data),
-    navButtons: parseNavButtonLinks(data),
+    logoImage,
+    navLinks,
+    navButtons,
+    navRendering
   };
 }

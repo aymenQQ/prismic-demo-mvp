@@ -10,8 +10,7 @@ const map: Record<string, string> = {
   inter: "var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
   lora: "var(--font-lora), Georgia, serif",
   poppins: "var(--font-poppins), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
-  roboto_mono:
-    "var(--font-roboto-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+  roboto_mono: "var(--font-roboto-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
   system: "system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
 };
 

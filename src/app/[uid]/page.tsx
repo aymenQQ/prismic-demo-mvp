@@ -4,10 +4,8 @@ import { filter } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import { Navbar } from "@/components/navbar";
 
 import { buildPageCssVars } from "@/lib/styles";
-import { parseNavContent } from "@/lib/navbarContent";
 import { extractSeo } from "@/lib/seo";
 
 type Params = { uid: string };
@@ -19,16 +17,9 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const data = page.data as any;
 
   const pageCssVars = buildPageCssVars(data);
-  const navbar = parseNavContent(data);
 
   return (
     <main style={pageCssVars}>
-      <Navbar
-        logoUrl={navbar.logoUrl}
-        siteName={data.website_name ?? page.uid}
-        navLinks={navbar.navLinks}
-        navButtons={navbar.navButtons}
-      />
       <SliceZone slices={data.slices} components={components} />
     </main>
   );

@@ -20,6 +20,15 @@
           "placeholder": ""
         }
       },
+      "hide_navbar": {
+        "type": "Boolean",
+        "config": {
+          "label": "Hide Navbar",
+          "placeholder_false": "No",
+          "placeholder_true": "Yes",
+          "default_value": false
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -39,14 +48,6 @@
       }
     },
     "Global Styles": {
-      "logo": {
-        "type": "Image",
-        "config": {
-          "label": "Logo",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
       "background_color": {
         "type": "Color",
         "config": {
@@ -140,134 +141,18 @@
           "label": "Button Corner Radius (px)",
           "placeholder": ""
         }
-      }
-    },
-    "SEO": {
-      "seo_title": {
-        "type": "Text",
-        "config": {
-          "label": "SEO Title",
-          "placeholder": ""
-        }
       },
-      "seo_description": {
-        "type": "StructuredText",
-        "config": {
-          "label": "SEO Description",
-          "placeholder": "",
-          "allowTargetBlank": false,
-          "multi": "paragraph"
-        }
-      },
-      "og_image": {
-        "type": "Image",
-        "config": {
-          "label": "OG Image",
-          "constraint": {},
-          "thumbnails": []
-        }
-      }
-    },
-    "Navbar": {
-      "navbar_logo": {
-        "type": "Image",
-        "config": {
-          "label": "Logo",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "navbar_text_link": {
-        "type": "Link",
-        "config": {
-          "label": "Text Link",
-          "placeholder": "",
-          "select": null,
-          "allowTargetBlank": false,
-          "allowText": true,
-          "repeat": true
-        }
-      },
-      "navbar_button_link": {
-        "type": "Link",
-        "config": {
-          "label": "Button Link",
-          "placeholder": "",
-          "select": null,
-          "allowTargetBlank": true,
-          "allowText": true,
-          "repeat": true
-        }
-      },
-      "navbar_logo_size": {
-        "type": "Number",
-        "config": {
-          "label": "(Navbar) Logo Size (px)",
-          "placeholder": ""
-        }
-      },
-      "navbar_background_color": {
+      "card_color": {
         "type": "Color",
         "config": {
-          "label": "(Navbar) Background Color",
+          "label": "Card Color",
           "placeholder": ""
         }
       },
-      "navbar_link_text_color": {
-        "type": "Color",
-        "config": {
-          "label": "(Navbar) Link Text Color",
-          "placeholder": ""
-        }
-      },
-      "navbar_link_text_font": {
-        "type": "Select",
-        "config": {
-          "label": "(Navbar) Link Text Font (px)",
-          "placeholder": "",
-          "options": ["Inter", "Lora", "Poppins", "Roboto_Mono"]
-        }
-      },
-      "navbar_link_text_size": {
+      "card_corner_radius": {
         "type": "Number",
         "config": {
-          "label": "(Navbar) Link Text Size (px)",
-          "placeholder": ""
-        }
-      },
-      "navbar_button_color": {
-        "type": "Color",
-        "config": {
-          "label": "(Navbar) Button Color",
-          "placeholder": ""
-        }
-      },
-      "navbar_button_text_color": {
-        "type": "Color",
-        "config": {
-          "label": "(Navbar) Button Text Color",
-          "placeholder": ""
-        }
-      },
-      "navbar_button_text_font": {
-        "type": "Select",
-        "config": {
-          "label": "(Navbar) Button Text Font",
-          "placeholder": "",
-          "options": ["Inter", "Lora", "Poppins", "Roboto_Mono"]
-        }
-      },
-      "navbar_button_text_size": {
-        "type": "Number",
-        "config": {
-          "label": "(Navbar) Button Text Size",
-          "placeholder": ""
-        }
-      },
-      "navbar_button_corner_radius": {
-        "type": "Number",
-        "config": {
-          "label": "(Navbar) Button Corner Radius (px)",
+          "label": "Card Corner Radius (px)",
           "placeholder": ""
         }
       }

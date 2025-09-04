@@ -3,7 +3,7 @@ import { fontFamilyFromSelect } from "@/lib/fonts";
 
 export function buildGlobalCssVars(data: any): CSSProperties {
   return {
-
+    
     // Backgrounds
     ["--background-color" as any]: data.background_color ?? "#ffffff",
 
@@ -31,109 +31,114 @@ export function buildGlobalCssVars(data: any): CSSProperties {
 }
 
 export function buildNavbarCssVars(data: any): CSSProperties {
+  const style = data?.styles?.[0] ?? {};
+
   return {
 
     // Logo
-    ["--navbar-logo-size" as any]: typeof data.navbar_logo_size === "number" ? `${data.navbar_logo_size}px` : "50px",
+    ["--navbar-logo-size" as any]: typeof style.navbar_logo_size === "number" ? `${style.navbar_logo_size}px` : "50px",
 
     // Background
-    ["--navbar-background-color" as any]: data.navbar_background_color ?? "var(--background-color)",
+    ["--navbar-background-color" as any]: style.navbar_background_color ?? "var(--background-color)",
 
     // Links
-    ["--navbar-link-text-color" as any]: data.navbar_link_text_color ?? "var(--description-text-color)",
-    ["--navbar-link-text-font" as any]: fontFamilyFromSelect(data.navbar_link_text_font),
-    ["--navbar-link-text-size" as any]: typeof data.navbar_link_text_size === "number" ? `${data.navbar_link_text_size}px` : "var(--description-text-size)",
+    ["--navbar-link-text-color" as any]: style.navbar_link_text_color ?? "var(--description-text-color)",
+    ["--navbar-link-text-font" as any]: fontFamilyFromSelect(style.navbar_link_text_font),
+    ["--navbar-link-text-size" as any]: typeof style.navbar_link_text_size === "number" ? `${style.navbar_link_text_size}px` : "var(--description-text-size)",
 
     // Buttons
-    ["--navbar-button-color" as any]: data.navbar_button_color ?? "var(--brand-first-color)",
-    ["--navbar-button-text-color" as any]: data.navbar_button_text_color ?? "var(--button-text-color)",
-    ["--navbar-button-text-font" as any]: fontFamilyFromSelect(data.navbar_button_text_font),
-    ["--navbar-button-text-size" as any]: typeof data.navbar_button_text_size === "number" ? `${data.navbar_button_text_size}px` : "var(--button-text-size)",
-    ["--navbar-button-corner-radius" as any]: typeof data.navbar_button_corner_radius === "number" ? `${data.navbar_button_corner_radius}px` : "var(--button-corner-radius)",
+    ["--navbar-button-color" as any]: style.navbar_button_color ?? "var(--brand-first-color)",
+    ["--navbar-button-text-color" as any]: style.navbar_button_text_color ?? "var(--button-text-color)",
+    ["--navbar-button-text-font" as any]: fontFamilyFromSelect(style.navbar_button_text_font),
+    ["--navbar-button-text-size" as any]: typeof style.navbar_button_text_size === "number" ? `${style.navbar_button_text_size}px` : "var(--button-text-size)",
+    ["--navbar-button-corner-radius" as any]: typeof style.navbar_button_corner_radius === "number" ? `${style.navbar_button_corner_radius}px` : "var(--button-corner-radius)",
 
   };
 }
 
 
 export function buildHeroCssVars(slice: any): CSSProperties {
-  const sp = slice?.primary ?? {};
+  const style = slice?.primary?.styles?.[0] ?? {};
 
   return {
 
-    // Background & Side Image (default variant) & Background Image (withBackgroundImage variant)
-    ["--hero-background-color" as any]: sp.hero_background_color ?? "var(--background-color)",
-    ["--hero-background-image-scale" as any]: typeof sp.hero_background_image_scale === "number" ? `${sp.hero_background_image_scale}%` : undefined,
-    ["--hero-background-image-corner-radius" as any]: typeof sp.hero_background_image_corner_radius === "number" ? `${sp.hero_background_image_corner_radius}px` : undefined,
-    ["--hero-side-image-url" as any]: sp.hero_side_image?.url ? `url("${sp.hero_side_image.url}")` : undefined,
+    // Background color
+    ["--hero-background-color" as any]: style.hero_background_color ?? "var(--background-color)",
+
+    // Side Image (default variant)
+    ["--hero-side-image-scale" as any]: typeof style.hero_side_image_scale === "number" ? `${style.hero_side_image_scale}%` : undefined,
+    ["--hero-side-image-corner-radius" as any]: typeof style.hero_side_image_corner_radius === "number" ? `${style.hero_side_image_corner_radius}px` : undefined,
+
+    // Background Image (withBackgroundImage variant)
+    ["--hero-background-image-scale" as any]: typeof style.hero_background_image_scale === "number" ? `${style.hero_background_image_scale}%` : undefined,
+    ["--hero-background-image-corner-radius" as any]: typeof style.hero_background_image_corner_radius === "number" ? `${style.hero_background_image_corner_radius}px` : undefined,
 
     // Hero height
-    ["--hero-height" as any]: typeof sp.hero_height === "number" ? `${sp.hero_height}px` : "600px",
+    ["--hero-height" as any]: typeof style.hero_height === "number" ? `${style.hero_height}px` : "600px",
 
     // Title
-    ["--hero-title-text-color" as any]: sp.hero_title_text_color ?? "var(--title-text-color)",
-    ["--hero-title-text-font" as any]: fontFamilyFromSelect(sp.hero_title_text_font),
-    ["--hero-title-text-size" as any]: typeof sp.hero_title_text_size === "number" ? `${sp.hero_title_text_size}px` : "var(--title-text-size)",
+    ["--hero-title-text-color" as any]: style.hero_title_text_color ?? "var(--title-text-color)",
+    ["--hero-title-text-font" as any]: fontFamilyFromSelect(style.hero_title_text_font),
+    ["--hero-title-text-size" as any]: typeof style.hero_title_text_size === "number" ? `${style.hero_title_text_size}px` : "var(--title-text-size)",
   
     // Description
-    ["--hero-description-text-color" as any]: sp.hero_description_text_color ?? "var(--description-text-color)",
-    ["--hero-description-text-font" as any]: fontFamilyFromSelect(sp.hero_description_text_font),
-    ["--hero-description-text-size" as any]: typeof sp.hero_description_text_size === "number" ? `${sp.hero_description_text_size}px` : "var(--description-text-size)",
+    ["--hero-description-text-color" as any]: style.hero_description_text_color ?? "var(--description-text-color)",
+    ["--hero-description-text-font" as any]: fontFamilyFromSelect(style.hero_description_text_font),
+    ["--hero-description-text-size" as any]: typeof style.hero_description_text_size === "number" ? `${style.hero_description_text_size}px` : "var(--description-text-size)",
 
     // Buttons
-    ["--hero-button-color" as any]: sp.hero_button_color ?? "var(--brand-first-color)",
-    ["--hero-button-text-color" as any] : sp.hero_button_text_color ?? "var(--button-text-color)",
-    ["--hero-button-text-font" as any]: fontFamilyFromSelect(sp.hero_button_text_font),
-    ["--hero-button-text-size" as any]: typeof sp.hero_button_text_size === "number" ? `${sp.hero_button_text_size}px` : "var(--button-text-size)",
-    ["--hero-button-corner-radius" as any]: typeof sp.hero_button_corner_radius === "number" ? `${sp.hero_button_corner_radius}px` : "var(--button-corner-radius)",
+    ["--hero-button-color" as any]: style.hero_button_color ?? "var(--brand-first-color)",
+    ["--hero-button-text-color" as any] : style.hero_button_text_color ?? "var(--button-text-color)",
+    ["--hero-button-text-font" as any]: fontFamilyFromSelect(style.hero_button_text_font),
+    ["--hero-button-text-size" as any]: typeof style.hero_button_text_size === "number" ? `${style.hero_button_text_size}px` : "var(--button-text-size)",
+    ["--hero-button-corner-radius" as any]: typeof style.hero_button_corner_radius === "number" ? `${style.hero_button_corner_radius}px` : "var(--button-corner-radius)",
 
     // Card
-    ["--hero-card-color" as any]: sp.hero_card_color ?? "var(--brand-second-color)",
-    ["--hero-card-corner-radius" as any]: typeof sp.hero_card_corner_radius === "number" ? `${sp.hero_card_corner_radius}px` : undefined,
+    ["--hero-card-color" as any]: style.hero_card_color ?? "var(--brand-second-color)",
+    ["--hero-card-corner-radius" as any]: typeof style.hero_card_corner_radius === "number" ? `${style.hero_card_corner_radius}px` : undefined,
     
   };
 }
 
 export function buildCtaCssVars(slice: any): CSSProperties {
-  const sp = slice?.primary ?? slice ?? {};
+  const style = slice?.primary?.styles?.[0] ?? {};
 
   return {
 
     // Background & Background Image
-    ["--cta-background-color" as any]: sp.cta_background_color ?? "var(--background-color)",
-    ["--cta-background-image-scale" as any]: typeof sp.cta_background_image_scale === "number" ? `${sp.cta_background_image_scale}%` : undefined,
-    ["--cta-background-image-corner-radius" as any]: typeof sp.cta_background_image_corner_radius === "number" ? `${sp.cta_background_image_corner_radius}px` : undefined,
+    ["--cta-background-color" as any]: style.cta_background_color ?? "var(--background-color)",
+    ["--cta-background-image-scale" as any]: typeof style.cta_background_image_scale === "number" ? `${style.cta_background_image_scale}%` : undefined,
+    ["--cta-background-image-corner-radius" as any]: typeof style.cta_background_image_corner_radius === "number" ? `${style.cta_background_image_corner_radius}px` : undefined,
     
     // CTA height
-    ["--cta-height" as any]: typeof sp.cta_height === "number" ? `${sp.cta_height}px` : "200px",
+    ["--cta-height" as any]: typeof style.cta_height === "number" ? `${style.cta_height}px` : "200px",
 
     // Title
-    ["--cta-title-text-color" as any]: sp.cta_title_text_color ?? "var(--title-text-color)",
-    ["--cta-title-text-font" as any]: fontFamilyFromSelect(sp.cta_title_text_font) ?? "var(--title-text-font)",
-    ["--cta-title-text-size" as any]: typeof sp.cta_title_text_size === "number" ? `${sp.cta_title_text_size}px` : "var(--title-text-size)",
+    ["--cta-title-text-color" as any]: style.cta_title_text_color ?? "var(--title-text-color)",
+    ["--cta-title-text-font" as any]: fontFamilyFromSelect(style.cta_title_text_font) ?? "var(--title-text-font)",
+    ["--cta-title-text-size" as any]: typeof style.cta_title_text_size === "number" ? `${style.cta_title_text_size}px` : "var(--title-text-size)",
 
     // Description
-    ["--cta-description-text-color" as any]: sp.cta_description_text_color ?? "var(--description-text-color)",
-    ["--cta-description-text-size" as any]: typeof sp.cta_description_text_size === "number" ? `${sp.cta_description_text_size}px` : "var(--description-text-size)",
-    ["--cta-description-text-font" as any]: fontFamilyFromSelect(sp.cta_description_text_font) ?? "var(--description-text-font)",
+    ["--cta-description-text-color" as any]: style.cta_description_text_color ?? "var(--description-text-color)",
+    ["--cta-description-text-size" as any]: typeof style.cta_description_text_size === "number" ? `${style.cta_description_text_size}px` : "var(--description-text-size)",
+    ["--cta-description-text-font" as any]: fontFamilyFromSelect(style.cta_description_text_font) ?? "var(--description-text-font)",
 
     // Button
-    ["--cta-button-color" as any]: sp.cta_button_color ?? "var(--brand-first-color)",
-    ["--cta-button-text-color" as any]: sp.cta_button_text_color ?? "var(--button-text-color)",
-    ["--cta-button-text-font" as any]: fontFamilyFromSelect(sp.cta_button_text_font),
-    ["--cta-button-text-size" as any]: typeof sp.cta_button_text_size === "number" ? `${sp.cta_button_text_size}px` : "var(--button-text-size)",
-    ["--cta-button-corner-radius" as any]: typeof sp.cta_button_corner_radius === "number" ? `${sp.cta_button_corner_radius}px` : "var(--button-corner-radius)",
+    ["--cta-button-color" as any]: style.cta_button_color ?? "var(--brand-first-color)",
+    ["--cta-button-text-color" as any]: style.cta_button_text_color ?? "var(--button-text-color)",
+    ["--cta-button-text-font" as any]: fontFamilyFromSelect(style.cta_button_text_font),
+    ["--cta-button-text-size" as any]: typeof style.cta_button_text_size === "number" ? `${style.cta_button_text_size}px` : "var(--button-text-size)",
+    ["--cta-button-corner-radius" as any]: typeof style.cta_button_corner_radius === "number" ? `${style.cta_button_corner_radius}px` : "var(--button-corner-radius)",
 
     // Card
-    ["--cta-card-color" as any]: sp.cta_card_color ?? "var(--brand-second-color)",
-    ["--cta-card-corner-radius" as any]: typeof sp.cta_card_corner_radius === "number" ? `${sp.cta_card_corner_radius}px` : undefined,
+    ["--cta-card-color" as any]: style.cta_card_color ?? "var(--brand-second-color)",
+    ["--cta-card-corner-radius" as any]: typeof style.cta_card_corner_radius === "number" ? `${style.cta_card_corner_radius}px` : undefined,
 
   };
 }
 
 export function buildFaqCssVars(slice: any): CSSProperties {
-  const sp = slice?.primary ?? slice ?? {};
-  const styleItems = Array.isArray(sp.styles) ? sp.styles : [];
-  const style = styleItems[0] ?? {};
+  const style = slice?.primary?.styles?.[0] ?? {};
 
   return {
 
@@ -161,7 +166,7 @@ export function buildFaqCssVars(slice: any): CSSProperties {
     ["--faq-answer-text-size" as any]: typeof style.faq_answer_text_size === "number" ? `${style.faq_answer_text_size}px` : "var(--description-text-size)",
 
     // Separator
-    ["--faq-divider-color" as any]: style.faq_divider_color ?? "rgba(0,0,0,.2)",
+    ["--faq-divider-color" as any]: style.faq_divider_color ?? "#000000",
   };
 }
 
