@@ -5,10 +5,10 @@ export function buildGlobalCssVars(data: any): CSSProperties {
   return {
     
     // Backgrounds
-    ["--background-color" as any]: data.background_color ?? "#ffffff",
+    ["--background-color" as any]: data.background_color ?? "#F2F2F2",
 
     // Buttons & Cards Colors
-    ["--brand-first-color" as any]: data.brand_first_color ?? "#575757",
+    ["--brand-first-color" as any]: data.brand_first_color ?? "#111111",
     ["--brand-second-color" as any]: data.brand_second_color ?? "#ffffff",
 
     // Titles
@@ -22,13 +22,13 @@ export function buildGlobalCssVars(data: any): CSSProperties {
     ["--description-text-size" as any]: typeof data.description_text_size === "number" ? `${data.description_text_size}px` : "24px",
     
     // Buttons
-    ["--button-text-color" as any]: data.button_text_color ?? "#111111",
+    ["--button-text-color" as any]: data.button_text_color ?? "#ffffff",
     ["--button-text-font" as any]: fontFamilyFromSelect(data.button_text_font),
     ["--button-text-size" as any]: typeof data.button_text_size === "number" ? `${data.button_text_size}px` : "18px",
     ["--button-corner-radius" as any]: typeof data.button_corner_radius === "number" ? `${data.button_corner_radius}px` : "8px",
 
     // Card
-    ["--card-color" as any]: data.card_color ?? "#ffffff",
+    ["--card-color" as any]: data.card_color ?? "#F2F2F2",
     ["--card-corner-radius" as any]: typeof data.card_corner_radius === "number" ? `${data.card_corner_radius}px` : undefined,
    
   };
