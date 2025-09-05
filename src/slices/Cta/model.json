@@ -85,7 +85,7 @@
                 "type": "Number",
                 "config": {
                   "label": "Title Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "48"
                 }
               },
               "cta_description_text_color": {
@@ -112,7 +112,7 @@
                 "type": "Number",
                 "config": {
                   "label": "Description Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "24"
                 }
               },
               "cta_button_color": {
@@ -146,14 +146,14 @@
                 "type": "Number",
                 "config": {
                   "label": "Button Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "18"
                 }
               },
               "cta_button_corner_radius": {
                 "type": "Number",
                 "config": {
                   "label": "Button Corner Radius (px)",
-                  "placeholder": ""
+                  "placeholder": "8"
                 }
               }
             }
@@ -231,14 +231,14 @@
                 "type": "Number",
                 "config": {
                   "label": "Background Image Scale (%)",
-                  "placeholder": ""
+                  "placeholder": "100"
                 }
               },
               "cta_background_image_corner_radius": {
                 "type": "Number",
                 "config": {
                   "label": "Background Img Radius (px)",
-                  "placeholder": ""
+                  "placeholder": "0"
                 }
               },
               "cta_title_text_color": {
@@ -265,7 +265,7 @@
                 "type": "Number",
                 "config": {
                   "label": "Title Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "48"
                 }
               },
               "cta_description_text_color": {
@@ -292,7 +292,7 @@
                 "type": "Number",
                 "config": {
                   "label": "Description Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "24"
                 }
               },
               "cta_button_color": {
@@ -326,14 +326,14 @@
                 "type": "Number",
                 "config": {
                   "label": "Button Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "18"
                 }
               },
               "cta_button_corner_radius": {
                 "type": "Number",
                 "config": {
                   "label": "Button Corner Radius (px)",
-                  "placeholder": ""
+                  "placeholder": "8"
                 }
               },
               "cta_card_color": {
@@ -347,7 +347,7 @@
                 "type": "Number",
                 "config": {
                   "label": "Card Corner Radius (px)",
-                  "placeholder": ""
+                  "placeholder": "0"
                 }
               }
             }

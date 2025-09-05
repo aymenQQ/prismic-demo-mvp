@@ -80,7 +80,7 @@
                 "type": "Number",
                 "config": {
                   "label": "Title Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "48"
                 }
               },
               "faq_title_text_font": {
@@ -120,7 +120,7 @@
                 "type": "Number",
                 "config": {
                   "label": "Description Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "24"
                 }
               },
               "faq_question_text_color": {
@@ -147,7 +147,7 @@
                 "type": "Number",
                 "config": {
                   "label": "Question Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "48"
                 }
               },
               "faq_answer_text_color": {
@@ -174,7 +174,7 @@
                 "type": "Number",
                 "config": {
                   "label": "Answer Text Size (px)",
-                  "placeholder": ""
+                  "placeholder": "24"
                 }
               },
               "faq_divider_color": {

@@ -59,7 +59,7 @@
 								"faq_title_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "54",
+									"value": "27",
 									"type": "Number"
 								}
 							],
@@ -99,7 +99,7 @@
 								"faq_description_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "46",
+									"value": "42",
 									"type": "Number"
 								}
 							],
@@ -123,7 +123,7 @@
 								"faq_question_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "0",
+									"value": "15",
 									"type": "Number"
 								}
 							],
@@ -147,7 +147,7 @@
 								"faq_answer_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "10",
+									"value": "90",
 									"type": "Number"
 								}
 							],

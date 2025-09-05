@@ -73,7 +73,7 @@
 								"hero_side_image_scale",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "96",
+									"value": "17",
 									"type": "Number"
 								}
 							],
@@ -81,7 +81,7 @@
 								"hero_side_image_corner_radius",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "21",
+									"value": "11",
 									"type": "Number"
 								}
 							],
@@ -113,7 +113,7 @@
 								"hero_title_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "32",
+									"value": "4",
 									"type": "Number"
 								}
 							],
@@ -145,7 +145,7 @@
 								"hero_button_corner_radius",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "58",
+									"value": "28",
 									"type": "Number"
 								}
 							],
@@ -153,7 +153,7 @@
 								"hero_button_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "62",
+									"value": "57",
 									"type": "Number"
 								}
 							],
@@ -177,7 +177,7 @@
 								"hero_description_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "9",
+									"value": "70",
 									"type": "Number"
 								}
 							]
@@ -270,7 +270,7 @@
 								"hero_background_image_scale",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "15",
+									"value": "98",
 									"type": "Number"
 								}
 							],
@@ -278,7 +278,7 @@
 								"hero_background_image_corner_radius",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "13",
+									"value": "38",
 									"type": "Number"
 								}
 							],
@@ -302,7 +302,7 @@
 								"hero_title_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "41",
+									"value": "35",
 									"type": "Number"
 								}
 							],
@@ -326,7 +326,7 @@
 								"hero_description_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "82",
+									"value": "27",
 									"type": "Number"
 								}
 							],
@@ -350,7 +350,7 @@
 								"hero_button_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "98",
+									"value": "41",
 									"type": "Number"
 								}
 							],
@@ -358,7 +358,7 @@
 								"hero_button_corner_radius",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "61",
+									"value": "63",
 									"type": "Number"
 								}
 							],
@@ -374,7 +374,7 @@
 								"hero_card_corner_radius",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "9",
+									"value": "40",
 									"type": "Number"
 								}
 							],

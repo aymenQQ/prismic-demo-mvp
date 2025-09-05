@@ -523,7 +523,7 @@ export interface CtaSliceDefaultPrimaryStylesItem {
    * Title Text Size (px) field in *Cta → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 48
    * - **API ID Path**: cta.default.primary.styles[].cta_title_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -555,7 +555,7 @@ export interface CtaSliceDefaultPrimaryStylesItem {
    * Description Text Size (px) field in *Cta → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 24
    * - **API ID Path**: cta.default.primary.styles[].cta_description_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -597,7 +597,7 @@ export interface CtaSliceDefaultPrimaryStylesItem {
    * Button Text Size (px) field in *Cta → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 18
    * - **API ID Path**: cta.default.primary.styles[].cta_button_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -607,7 +607,7 @@ export interface CtaSliceDefaultPrimaryStylesItem {
    * Button Corner Radius (px) field in *Cta → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 8
    * - **API ID Path**: cta.default.primary.styles[].cta_button_corner_radius
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -632,7 +632,7 @@ export interface CtaSliceWithBackgroundImagePrimaryStylesItem {
    * Background Image Scale (%) field in *Cta → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 100
    * - **API ID Path**: cta.withBackgroundImage.primary.styles[].cta_background_image_scale
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -642,7 +642,7 @@ export interface CtaSliceWithBackgroundImagePrimaryStylesItem {
    * Background Img Radius (px) field in *Cta → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 0
    * - **API ID Path**: cta.withBackgroundImage.primary.styles[].cta_background_image_corner_radius
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -674,7 +674,7 @@ export interface CtaSliceWithBackgroundImagePrimaryStylesItem {
    * Title Text Size (px) field in *Cta → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 48
    * - **API ID Path**: cta.withBackgroundImage.primary.styles[].cta_title_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -706,7 +706,7 @@ export interface CtaSliceWithBackgroundImagePrimaryStylesItem {
    * Description Text Size (px) field in *Cta → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 24
    * - **API ID Path**: cta.withBackgroundImage.primary.styles[].cta_description_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -748,7 +748,7 @@ export interface CtaSliceWithBackgroundImagePrimaryStylesItem {
    * Button Text Size (px) field in *Cta → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 18
    * - **API ID Path**: cta.withBackgroundImage.primary.styles[].cta_button_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -758,7 +758,7 @@ export interface CtaSliceWithBackgroundImagePrimaryStylesItem {
    * Button Corner Radius (px) field in *Cta → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 8
    * - **API ID Path**: cta.withBackgroundImage.primary.styles[].cta_button_corner_radius
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -778,7 +778,7 @@ export interface CtaSliceWithBackgroundImagePrimaryStylesItem {
    * Card Corner Radius (px) field in *Cta → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 0
    * - **API ID Path**: cta.withBackgroundImage.primary.styles[].cta_card_corner_radius
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1012,7 +1012,7 @@ export interface FaqListSliceDefaultPrimaryStylesItem {
    * Title Text Size (px) field in *Faq → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 48
    * - **API ID Path**: faq_list.default.primary.styles[].faq_title_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1056,7 +1056,7 @@ export interface FaqListSliceDefaultPrimaryStylesItem {
    * Description Text Size (px) field in *Faq → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 24
    * - **API ID Path**: faq_list.default.primary.styles[].faq_description_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1088,7 +1088,7 @@ export interface FaqListSliceDefaultPrimaryStylesItem {
    * Question Text Size (px) field in *Faq → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 48
    * - **API ID Path**: faq_list.default.primary.styles[].faq_question_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1120,7 +1120,7 @@ export interface FaqListSliceDefaultPrimaryStylesItem {
    * Answer Text Size (px) field in *Faq → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 24
    * - **API ID Path**: faq_list.default.primary.styles[].faq_answer_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1232,7 +1232,7 @@ export interface HeroSliceDefaultPrimaryStylesItem {
    * Side Image Scale (%) field in *Hero → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 100
    * - **API ID Path**: hero.default.primary.styles[].hero_side_image_scale
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1242,7 +1242,7 @@ export interface HeroSliceDefaultPrimaryStylesItem {
    * Side Image Radius (px) field in *Hero → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 0
    * - **API ID Path**: hero.default.primary.styles[].hero_side_image_corner_radius
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1274,7 +1274,7 @@ export interface HeroSliceDefaultPrimaryStylesItem {
    * Title Text Size (px) field in *Hero → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 48
    * - **API ID Path**: hero.default.primary.styles[].hero_title_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1306,7 +1306,7 @@ export interface HeroSliceDefaultPrimaryStylesItem {
    * Description Text Size (px) field in *Hero → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 24
    * - **API ID Path**: hero.default.primary.styles[].hero_description_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1348,7 +1348,7 @@ export interface HeroSliceDefaultPrimaryStylesItem {
    * Button Text Size (px) field in *Hero → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 18
    * - **API ID Path**: hero.default.primary.styles[].hero_button_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1358,7 +1358,7 @@ export interface HeroSliceDefaultPrimaryStylesItem {
    * Button Corner Radius (px) field in *Hero → Default → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 8
    * - **API ID Path**: hero.default.primary.styles[].hero_button_corner_radius
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1383,7 +1383,7 @@ export interface HeroSliceWithBackgroundImagePrimaryStylesItem {
    * Background Image Scale (%) field in *Hero → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 100
    * - **API ID Path**: hero.withBackgroundImage.primary.styles[].hero_background_image_scale
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1393,7 +1393,7 @@ export interface HeroSliceWithBackgroundImagePrimaryStylesItem {
    * Background Img Radius (px) field in *Hero → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 0
    * - **API ID Path**: hero.withBackgroundImage.primary.styles[].hero_background_image_corner_radius
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1425,7 +1425,7 @@ export interface HeroSliceWithBackgroundImagePrimaryStylesItem {
    * Title Text Size (px) field in *Hero → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 48
    * - **API ID Path**: hero.withBackgroundImage.primary.styles[].hero_title_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1457,7 +1457,7 @@ export interface HeroSliceWithBackgroundImagePrimaryStylesItem {
    * Description Text Size (px) field in *Hero → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 24
    * - **API ID Path**: hero.withBackgroundImage.primary.styles[].hero_description_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1499,7 +1499,7 @@ export interface HeroSliceWithBackgroundImagePrimaryStylesItem {
    * Button Text Size (px) field in *Hero → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 18
    * - **API ID Path**: hero.withBackgroundImage.primary.styles[].hero_button_text_size
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1509,7 +1509,7 @@ export interface HeroSliceWithBackgroundImagePrimaryStylesItem {
    * Button Corner Radius (px) field in *Hero → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 8
    * - **API ID Path**: hero.withBackgroundImage.primary.styles[].hero_button_corner_radius
    * - **Documentation**: https://prismic.io/docs/fields/number
    */
@@ -1529,7 +1529,7 @@ export interface HeroSliceWithBackgroundImagePrimaryStylesItem {
    * Card Corner Radius (px) field in *Hero → With Background Image → Primary → Styles*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: 0
    * - **API ID Path**: hero.withBackgroundImage.primary.styles[].hero_card_corner_radius
    * - **Documentation**: https://prismic.io/docs/fields/number
    */

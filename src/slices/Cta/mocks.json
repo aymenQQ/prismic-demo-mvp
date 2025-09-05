@@ -73,7 +73,7 @@
 								"cta_title_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "22",
+									"value": "44",
 									"type": "Number"
 								}
 							],
@@ -97,7 +97,7 @@
 								"cta_description_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "89",
+									"value": "62",
 									"type": "Number"
 								}
 							],
@@ -129,7 +129,7 @@
 								"cta_button_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "43",
+									"value": "21",
 									"type": "Number"
 								}
 							],
@@ -137,7 +137,7 @@
 								"cta_button_corner_radius",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "42",
+									"value": "80",
 									"type": "Number"
 								}
 							]
@@ -229,7 +229,7 @@
 								"cta_background_image_scale",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "37",
+									"value": "40",
 									"type": "Number"
 								}
 							],
@@ -237,7 +237,7 @@
 								"cta_background_image_corner_radius",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "24",
+									"value": "11",
 									"type": "Number"
 								}
 							],
@@ -261,7 +261,7 @@
 								"cta_title_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "51",
+									"value": "91",
 									"type": "Number"
 								}
 							],
@@ -285,7 +285,7 @@
 								"cta_description_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "94",
+									"value": "33",
 									"type": "Number"
 								}
 							],
@@ -317,7 +317,7 @@
 								"cta_button_text_size",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "61",
+									"value": "85",
 									"type": "Number"
 								}
 							],
@@ -325,7 +325,7 @@
 								"cta_button_corner_radius",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "86",
+									"value": "93",
 									"type": "Number"
 								}
 							],
@@ -341,7 +341,7 @@
 								"cta_card_corner_radius",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "99",
+									"value": "1",
 									"type": "Number"
 								}
 							]
