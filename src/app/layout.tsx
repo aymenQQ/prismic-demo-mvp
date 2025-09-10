@@ -1,19 +1,15 @@
-import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
-import { inter, lora, poppins, robotoMono } from "@/lib/fonts"
 import type { ReactNode } from "react";
+import "./globals.css";
+import { getTheme } from "@/lib/theme";
+import { bmwTypeNext, inter, lora, poppins, robotoMono } from "@/lib/fonts";
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
-
+export default function RootLayout({ children }: { children: ReactNode }) {
+  const theme = getTheme();
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${lora.variable} ${poppins.variable} ${robotoMono.variable}`}
-        style={{ margin: 0, padding: 0 }}
-        >
+      <body className={`${bmwTypeNext.variable} ${inter.variable} ${lora.variable} ${poppins.variable} ${robotoMono.variable}`}>
         {children}
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }

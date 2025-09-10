@@ -18,7 +18,7 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "heading1,heading2,strong"
+            "multi": "heading1,heading2,strong,paragraph"
           }
         },
         "hero_description": {
@@ -185,13 +185,22 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "hero_tagline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tagline",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
         "hero_title": {
           "type": "StructuredText",
           "config": {
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "heading1,heading2,strong"
+            "multi": "heading1,heading2,strong,paragraph"
           }
         },
         "hero_description": {

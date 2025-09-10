@@ -1,18 +1,25 @@
 import type { CSSProperties } from "react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { parseNavContent } from "@/lib/navbarContent";
+import { getTheme } from "@/lib/theme";
+import { buildNavbarCssVars } from "@/lib/build-css/navbar";
 
 export function Navbar({ settings }: { settings: any }) {
   const navContent = parseNavContent(settings);
 
+  const navVars = buildNavbarCssVars(getTheme()) as CSSProperties & Record<string, string | number>;
+
   const headerStyle: CSSProperties = {
+    ...navVars,
     background: "var(--navbar-background-color)",
-    //borderBottom: "1px solid #000000",
-    position: navContent.navRendering ? "sticky" : undefined,
+    position: (navContent.navRendering
+      ? ((navVars["--navbar-position"] as string) ?? "sticky")
+      : "absolute") as CSSProperties["position"],
     top: 0,
     left: 0,
     right: 0,
-    zIndex: 100,
+    zIndex: Number((navVars["--navbar-z-index"] as number | string | undefined) ?? 100),
+    backdropFilter: "var(--navbar-backdrop-filter)"
   };
   const headerContainerStyle: CSSProperties = {
     maxWidth: "95%",
@@ -102,6 +109,13 @@ export function Navbar({ settings }: { settings: any }) {
             )}
           </div>
         </div>
+        <div style={{
+          width: "var(--navbar-border-width)",
+          borderBottom: "var(--navbar-border-bottom)",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "var(--navbar-divider-margin-top, 0)",
+        }} />
       </div>
     </header>
   );

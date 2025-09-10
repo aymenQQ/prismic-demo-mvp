@@ -1,152 +1,119 @@
+// src/slices/Cta/index.tsx
 import type { CSSProperties } from "react";
-import { buildCtaCssVars } from "@/lib/styles";
-import { parseCTAContent } from "@/lib/ctaContent";
 import { PrismicRichText } from "@prismicio/react";
-import { buildHeadingRichText } from "@/lib/richtextPresets";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { parseCTAContent } from "@/lib/ctaContent";
+import { buildCtaCssVars } from "@/lib/build-css/cta";
 
+const leftCol: CSSProperties = { display: "flex", flexDirection: "column", gap: 16, zIndex: 2 };
 
 export default function Cta({ slice }: { slice: any }) {
-  const ctaCssVars: CSSProperties = buildCtaCssVars(slice);
-  const ctaContent = parseCTAContent(slice);
+  const cta = parseCTAContent(slice);
+  const cssVars = buildCtaCssVars(cta.variant);
 
+  if (cta.variant === "carBackground") {
+    const section: CSSProperties = {
+      position: "relative",
+      overflow: "hidden",
+      height: "var(--cta-height)",
+      ...cssVars,
+      color: "var(--cta-title-color, #fff)",
+    };
 
-  const headerStyle: CSSProperties = {
-    ...ctaCssVars,
-    background: "var(--cta-background-color)",
-    padding: "60px 5%",
-  };
-  const headerStyleWithBg: CSSProperties = {
-    ...ctaCssVars,
-    background: "var(--cta-background-color)",
-    padding: "60px 5%",
-    position: "relative",
-  };
+    const overlay: CSSProperties = {
+      position: "absolute", inset: 0, zIndex: 1,
+      background: "var(--cta-overlay, none)",
+      pointerEvents: "none",
+    };
 
+    const bgWrap: CSSProperties = { position: "absolute", inset: 0 };
+    const bgImg: CSSProperties  = { objectFit: "cover", width: "100%", height: "100%" };
 
-  const titleTextStyle: CSSProperties = {
-    color: "var(--cta-title-text-color)",
-    fontFamily: "var(--cta-title-text-font)",
-    fontSize: "var(--cta-title-text-size)",
-    margin: 0,
-  };
-  const descriptionTextStyle: CSSProperties = {
-    color: "var(--cta-description-text-color)",
-    fontFamily: "var(--cta-description-text-font)",
-    fontSize: "var(--cta-description-text-size)",
-    maxWidth: 700,
-  };
+    const container: CSSProperties = {
+      position: "relative",
+      zIndex: 2,
+      maxWidth: "1200px",
+      marginLeft: "5%",
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+    };
 
+    const priceStyle: CSSProperties = {
+      fontFamily: "var(--cta-price-font, inherit)",
+      fontSize: "var(--cta-price-size, 56px)",
+      lineHeight: 1,
+      fontWeight: 300,
+      letterSpacing: "var(--cta-price-tracking, 0)",
+      color: "var(--cta-price-color, #fff)",
+    };
 
-  const formRowStyle: CSSProperties = { 
-    display: "grid", 
-    gridTemplateColumns: "1fr auto", 
-    gap: 40,
-  };
-  const inputStyle: CSSProperties = {
-    background: "#ffffff",
-    padding: "8px 12px",
-    borderRadius: "5px",
-    border: "1px",
-    width: "100%",
-    fontSize: "20px",
-    fontFamily: "var(--cta-description-text-font)",
-  };
-  const buttonStyle: CSSProperties = {
-    display: "inline-block",
-    padding: "14px 14px",
-    borderRadius: "var(--cta-button-corner-radius)",
-    background: "var(--cta-button-color)",
-    color: "var(--cta-button-text-color)",
-    fontSize: "var(--cta-button-text-size)",
-    fontFamily: "var(--cta-button-text-font)",
-    textDecoration: "none",
-    fontWeight: 600,
-    lineHeight: 1,
-  };
+    const button: CSSProperties = {
+      display: "inline-block",
+      padding: "15px 50px",
+      borderRadius: "var(--cta-button-corner-radius)",
+      textDecoration: "none",
+      background: "var(--cta-button-bg)",
+      color: "var(--cta-button-text)",
+      fontFamily: "var(--cta-button-font, inherit)",
+      fontSize: "var(--cta-button-size, 18px)",
+      fontWeight: 300,
+    };
 
-
-  const backgroundImageStyle: CSSProperties = {
-    position: "absolute",
-    inset: 0,
-    margin: "auto",
-    transform: "scale(calc(var(--cta-background-image-scale) * 1))",
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    objectPosition: "center",
-    zIndex: 0,
-    borderRadius: "var(--cta-background-image-corner-radius)",
-  };
-  
-
-  const cardStyle: CSSProperties = {
-    display: "block",
-    flexDirection: "column",
-    gap: "16px",
-    padding: "30px 100px 30px 40px",
-    background: "var(--cta-card-color)",
-    width: "fit-content",
-    maxWidth: "min(100%, 80ch)",
-    borderRadius: "var(--cta-card-corner-radius)",
-  };
-
-
-  const gridStyle: CSSProperties = {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    alignItems: "center",
-  };
-  const gridLeftStyle: CSSProperties = {
-    justifySelf: "start",
-  };
-  const gridRightStyle: CSSProperties = {
-    justifySelf: "end",   
-  };
-  const gridSingleStyle: CSSProperties = {
-    ...gridStyle,
-    gridTemplateColumns: "1fr",
-    position: "relative",
-  };
-  
-  
-  // Reset margin for headers
-  const resetMargin = buildHeadingRichText(titleTextStyle);
-
-
-  // Variation 1 : content on left, input+button on right (default)
-  if (slice?.variation === "default") {
     return (
-      <section style={headerStyle}>
-        <div style={gridStyle}>
-          <div style={gridLeftStyle}>
-            <div style={gridSingleStyle}>
-            {ctaContent.title && (
-              <div style={titleTextStyle}>
-                <PrismicRichText field={ctaContent.title} components={resetMargin}/>
-              </div>
-            )}
-            {ctaContent.description && (
-              <div style={descriptionTextStyle}>
-                <PrismicRichText field={ctaContent.description}/>
-              </div>
-            )}
+      <section style={section}>
+        {/* background image */}
+        {cta.backgroundImage && (
+          <div style={bgWrap}>
+            <PrismicNextImage field={cta.backgroundImage} alt="" style={bgImg} />
           </div>
-          </div>
+        )}
 
-          <div style={gridRightStyle}>
-          <div style={gridSingleStyle}>
-            <div style={formRowStyle}>
-              <input 
-                placeholder={ctaContent.inputPlaceholder || ""}
-                style={inputStyle}
-              />
-              {ctaContent.button && (
-                <PrismicNextLink field={ctaContent.button.field} style={buttonStyle}>
-                  {ctaContent.button.title}
-                </PrismicNextLink>
-              )}
+        {/* overlay */}
+        <div style={overlay} />
+
+        {/* content */}
+        <div style={container}>
+          <div style={leftCol}>
+            {cta.title && (
+              <div
+                style={{
+                  fontFamily: "var(--cta-title-font, inherit)",
+                  fontSize: "var(--cta-title-size, 112px)",
+                  lineHeight: "0.9",
+                  fontWeight: 300,
+                  letterSpacing: "var(--cta-title-tracking, 0)",
+                }}
+              >
+                <PrismicRichText field={cta.title} />
               </div>
+            )}
+
+            {cta.description && (
+              <div
+                style={{
+                  fontFamily: "var(--cta-description-font, inherit)", // ← NEW
+                  color: "var(--cta-description-color, rgba(255,255,255,.85))",
+                  fontSize: "var(--cta-description-size, 28px)",
+                  fontWeight: 300,
+                }}
+              >
+                <PrismicRichText field={cta.description} />
+              </div>
+            )}
+
+            {cta.price && (
+              <div style={priceStyle}>
+                <PrismicRichText field={cta.price} />
+              </div>
+            )}
+
+            <div style={{ display: "flex", gap: 16 }}>
+              {cta.buttons.slice(0, 2).map((b, i) => (
+                <PrismicNextLink key={i} field={b.field} style={button}>
+                  {b.title}
+                </PrismicNextLink>
+              ))}
             </div>
           </div>
         </div>
@@ -154,45 +121,120 @@ export default function Cta({ slice }: { slice: any }) {
     );
   }
 
-  // Variation 2 : background image with card content (withBackgroundImage)
-  return (
-    <section style={headerStyleWithBg}>
-        {ctaContent.backgroundImage && (
-          <PrismicNextImage field={ctaContent.backgroundImage} alt="" style={backgroundImageStyle} />
-        )}
-      
-        <div style={gridStyle}>
-          <div style={gridLeftStyle}>
-          </div>
+  // default variant: same structure as carBackground but without background image; text inside a card
+  if (cta.variant === "default") {
+    return (
+      <section
+        style={{
+          ...cssVars,
+          padding: "var(--cta-pad, 60px 5%)",
+          background: "var(--cta-background-color)",
+          position: "relative",
+        }}
+      >
+        <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "var(--cta-overlay, none)", pointerEvents: "none" }} />
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "var(--cta-grid-columns, 1fr)",
+            gridTemplateAreas: "var(--cta-areas, 'content')",
+            gap: "var(--cta-grid-gap, 20px)",
+            alignItems: "center",
+            minHeight: "var(--cta-height, auto)",
+            position: "relative",
+            zIndex: 2,
+          }}
+        >
+          <div
+            style={{
+              display: "block",
+              flexDirection: "column",
+              gap: "16px",
+              padding: "30px 100px 30px 40px",
+              background: "var(--cta-card-color)",
+              width: "fit-content",
+              maxWidth: "min(100%, 80ch)",
+              borderRadius: "var(--cta-card-corner-radius)",
+              gridArea: "var(--cta-content-area, content)",
+            }}
+          >
+            {cta.title && (
+              <div
+                style={{
+                  fontFamily: "var(--cta-title-font, inherit)",
+                  fontSize: "var(--cta-title-size, 56px)",
+                  lineHeight: 1,
+                  fontWeight: 300,
+                  letterSpacing: "var(--cta-title-tracking, 0)",
+                  color: "var(--cta-title-color, inherit)",
+                }}
+              >
+                <PrismicRichText field={cta.title} />
+              </div>
+            )}
 
-          <div style={gridRightStyle}>
-          <div style={gridSingleStyle}>
-          <div style={cardStyle}>
-          {ctaContent.title && (
-              <div style={titleTextStyle}>
-                <PrismicRichText field={ctaContent.title} components={resetMargin}/>
+            {cta.description && (
+              <div
+                style={{
+                  fontFamily: "var(--cta-description-font, inherit)",
+                  color: "var(--cta-description-color, inherit)",
+                  fontSize: "var(--cta-description-size, 20px)",
+                  fontWeight: 300,
+                }}
+              >
+                <PrismicRichText field={cta.description} />
               </div>
-              )}
-            {ctaContent.description && (
-              <div style={descriptionTextStyle}>
-                <PrismicRichText field={ctaContent.description}/>
+            )}
+
+            {cta.price && (
+              <div
+                style={{
+                  fontFamily: "var(--cta-price-font, inherit)",
+                  fontSize: "var(--cta-price-size, 48px)",
+                  lineHeight: 1,
+                  fontWeight: 300,
+                  letterSpacing: "var(--cta-price-tracking, 0)",
+                  color: "var(--cta-price-color, inherit)",
+                }}
+              >
+                <PrismicRichText field={cta.price} />
               </div>
-              )}
-              <div style={formRowStyle}>
-              <input 
-                placeholder={ctaContent.inputPlaceholder}
-                style={inputStyle}
-              />
-              {ctaContent.button && (
-                <PrismicNextLink field={ctaContent.button.field} style={buttonStyle}>
-                  {ctaContent.button.title}
+            )}
+
+            <div style={{ display: "flex", gap: 16 }}>
+              {cta.buttons.slice(0, 2).map((b, i) => (
+                <PrismicNextLink
+                  key={i}
+                  field={b.field}
+                  style={{
+                    display: "inline-block",
+                    padding: "15px 50px",
+                    borderRadius: "var(--cta-button-corner-radius)",
+                    textDecoration: "none",
+                    background: "var(--cta-button-bg)",
+                    color: "var(--cta-button-text)",
+                    fontFamily: "var(--cta-button-font, inherit)",
+                    fontSize: "var(--cta-button-size, 18px)",
+                    fontWeight: 300,
+                  }}
+                >
+                  {b.title}
                 </PrismicNextLink>
-              )}
-              </div>
-              </div>
+              ))}
             </div>
           </div>
+          {(cta.backgroundImage) && (
+            <div style={{ gridArea: "var(--cta-media-area, media)", justifySelf: "end" }}>
+              <PrismicNextImage field={cta.backgroundImage} alt="" style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }} />
+            </div>
+          )}
         </div>
       </section>
-  );
+    );
+  }
+
+  // …fallback for other variants unchanged
+  return <section style={{ padding: "60px 5%" }} />;
 }

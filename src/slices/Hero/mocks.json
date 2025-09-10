@@ -56,9 +56,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "paragraph",
 						"content": {
-							"text": "Coming"
+							"text": "Adipisicing proident dolore qui excepteur proident eiusmod cupidatat. Sint est cillum magna fugiat incididunt esse incididunt cupidatat et irure ea exercitation nostrud."
 						}
 					}
 				]
@@ -245,9 +245,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "paragraph",
 						"content": {
-							"text": "Along"
+							"text": "Nulla est qui in ipsum ullamco sunt nostrud ut mollit. Exercitation deserunt est cillum labore laborum eu."
 						}
 					}
 				]
@@ -387,6 +387,17 @@
 								}
 							]
 						]
+					}
+				]
+			},
+			"hero_tagline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim eiusmod nisi ex dolore minim elit ea eu proident voluptate pariatur excepteur cillum. Sunt esse cupidatat velit do cupidatat nulla est sit consectetur duis reprehenderit tempor enim. Ea nulla ullamco ad ad."
+						}
 					}
 				]
 			}

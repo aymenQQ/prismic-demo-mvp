@@ -1,35 +1,41 @@
-import { RichTextField } from "@prismicio/client";
-import type { LinkField, ImageFieldImage } from "@prismicio/client";
+import type { LinkField, ImageFieldImage, RichTextField } from "@prismicio/client";
 
-export type CTAButton = { title: any; field: LinkField };
+export type CTAButton = { title: string; field: LinkField };
+export type CTAVariant = "default" | "withBackgroundImage" | "carBackground";
 
 export type CTAContent = {
+  variant: CTAVariant;
   title?: RichTextField;
   description?: RichTextField;
-  inputPlaceholder?: string;
-  button: CTAButton;
+  price?: RichTextField;
+  buttons: CTAButton[];
   backgroundImage?: ImageFieldImage;
 };
 
-function parseCTAButton(link: LinkField): CTAButton {
-  const title = ((link as any).text ?? "").trim();
-  return { title, field: link };
+function parseCTAButtons(links: LinkField[] | LinkField | null | undefined) {
+  const arr: LinkField[] = Array.isArray(links) ? links : links ? [links] : [];
+
+  return arr
+    .map((link) => ({
+      title: ((link as any).text ?? "").trim(),
+      field: link,
+    }))
+    .filter((b) => b.title.length > 0);
 }
 
 export function parseCTAContent(slice: any): CTAContent {
-  const sp = slice?.primary ?? {};
-
-  const title = sp.cta_title ?? undefined;
-  const description = sp.cta_description ?? undefined;
-  const inputPlaceholder = sp.cta_input_placeholder ?? "Enter your email";
-  const button = parseCTAButton(sp.cta_button_link);
-  const backgroundImage = sp.cta_background_image as ImageFieldImage | undefined;
+  const p = slice?.primary ?? {};
+  const v: CTAVariant =
+    slice?.variation === "withBackgroundImage" ? "withBackgroundImage" :
+    slice?.variation === "carBackground"       ? "carBackground" :
+    "default";
 
   return {
-    title,
-    description,
-    inputPlaceholder,
-    button, 
-    backgroundImage,
+    variant: v,
+    title: p.cta_title ?? undefined,
+    description: p.cta_description ?? undefined,
+    price: p.price ?? undefined,                     
+    backgroundImage: p.cta_background_image ?? undefined,
+    buttons: parseCTAButtons(p.cta_button_link),
   };
 }

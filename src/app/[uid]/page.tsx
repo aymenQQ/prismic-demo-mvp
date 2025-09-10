@@ -3,25 +3,20 @@ import { notFound } from "next/navigation";
 import { filter } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
+import { components as sliceComponents } from "@/slices";
 
-import { buildPageCssVars } from "@/lib/styles";
 import { extractSeo } from "@/lib/seo";
 
 type Params = { uid: string };
 
-export default async function Page({ params }: { params: Promise<Params> }) {
+export default async function Page({ params }: { params: Promise<{ uid: string }> }) {
   const { uid } = await params;
   const client = createClient();
-  const page = await client.getByUID("page", uid).catch(() => notFound());
-  const data = page.data as any;
-
-  const pageCssVars = buildPageCssVars(data);
-
+  const page = await client.getByUID("page", uid);
   return (
-    <main style={pageCssVars}>
-      <SliceZone slices={data.slices} components={components} />
-    </main>
+    <div style={{ display: "grid", gap: "var(--slice-gap)" }}>
+      <SliceZone slices={page.data.slices} components={sliceComponents} />
+    </div>
   );
 }
 

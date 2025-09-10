@@ -1,9 +1,11 @@
 import { RichTextField } from "@prismicio/client";
 import type { LinkField, ImageFieldImage } from "@prismicio/client";
 
+
 export type HeroButton = { title: string; field?: LinkField };
 
 export type HeroContent = {
+  tagline?: RichTextField;
   title?: RichTextField;
   description?: RichTextField;
   buttons: HeroButton[];
@@ -24,6 +26,7 @@ function parseHeroButtons(links: LinkField[]): HeroButton[] {
 export function parseHeroContent(slice: any): HeroContent {
   const sp = slice?.primary ?? {};
 
+  const tagline = sp.hero_tagline ?? undefined;
   const title = sp.hero_title ?? undefined;
   const description = sp.hero_description ?? undefined;
   const buttons = parseHeroButtons(sp.hero_button_link);
@@ -31,6 +34,7 @@ export function parseHeroContent(slice: any): HeroContent {
   const backgroundImage = sp.hero_background_image as ImageFieldImage | undefined;
 
   return {
+    tagline,
     title,
     description,
     buttons,

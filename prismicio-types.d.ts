@@ -946,9 +946,82 @@ export type CtaSliceWithBackgroundImage = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Cta → Car Background → Primary*
+ */
+export interface CtaSliceCarBackgroundPrimary {
+  /**
+   * Title field in *Cta → Car Background → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.carBackground.primary.cta_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  cta_title: prismic.RichTextField;
+
+  /**
+   * Description field in *Cta → Car Background → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.carBackground.primary.cta_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  cta_description: prismic.RichTextField;
+
+  /**
+   * Price field in *Cta → Car Background → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.carBackground.primary.price
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  price: prismic.RichTextField;
+
+  /**
+   * Button Link field in *Cta → Car Background → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.carBackground.primary.cta_button_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  cta_button_link: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * Background Image field in *Cta → Car Background → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.carBackground.primary.cta_background_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  cta_background_image: prismic.ImageField<never>;
+}
+
+/**
+ * Car Background variation for Cta Slice
+ *
+ * - **API ID**: `carBackground`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CtaSliceCarBackground = prismic.SharedSliceVariation<
+  "carBackground",
+  Simplify<CtaSliceCarBackgroundPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Cta*
  */
-type CtaSliceVariation = CtaSliceDefault | CtaSliceWithBackgroundImage;
+type CtaSliceVariation =
+  | CtaSliceDefault
+  | CtaSliceWithBackgroundImage
+  | CtaSliceCarBackground;
 
 /**
  * Cta Shared Slice
@@ -1611,6 +1684,16 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
  */
 export interface HeroSliceWithBackgroundImagePrimary {
   /**
+   * Tagline field in *Hero → With Background Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.withBackgroundImage.primary.hero_tagline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  hero_tagline: prismic.RichTextField;
+
+  /**
    * Title field in *Hero → With Background Image → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1725,9 +1808,11 @@ declare module "@prismicio/client" {
       CtaSliceDefaultPrimary,
       CtaSliceWithBackgroundImagePrimaryStylesItem,
       CtaSliceWithBackgroundImagePrimary,
+      CtaSliceCarBackgroundPrimary,
       CtaSliceVariation,
       CtaSliceDefault,
       CtaSliceWithBackgroundImage,
+      CtaSliceCarBackground,
       FaqListSlice,
       FaqListSliceDefaultPrimaryFaqItemsItem,
       FaqListSliceDefaultPrimaryStylesItem,
